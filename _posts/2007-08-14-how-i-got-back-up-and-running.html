@@ -1,0 +1,48 @@
+---
+layout: post
+title: How I got back up and running
+date: 2007-08-14 09:42:46.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- apache
+- blog
+- gentoo
+- linux
+- mysql
+- mythdora
+- mythtv
+- wordpress
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>The reason for this site's extended absence from cyberspace was due mainly to a hardware changeover. The site is run as a secondary functionality off the back of my home media server, which recently underwent a major upgrade. I got sick of watching videos where the video would get out of sync with the audio, after this happened 1 of 2 things would happen: 1) a comical fast-forward effect would bring them back into sync 2) they would stay that way until a fast forward/rewind event brought about sync. Needless to say this was kind of annoying.</p>
+<p>The cause however was simple to diagnose, it was the Celeron 500MHz CPU that was doing the decoding. The fix was also (in essence) simple - upgrade the CPU, however given my constraints (mainly of the monetary variety) this was a bit harder to accomplish. What I ended up deciding to do was to beg some decommissioned equipment from work which would do a better job and then to buy a solid 320Gb HD to store all my digital media on.</p>
+<p>I decided that if I was doing a full hardware upgrade I might as well go the whole hog and scrap my previous <a href="http://www.gentoo.org/">Gentoo</a> distribution in favour of something a bit more media centric. Enter <a href="http://g-ding.tv/?q=MythDora">Mythdora</a>! Mythdora is a specialized Linux distribution based on Fedora Core 6 and MythTV 0.20-1 (thanks wikipedia), what that basically means is that it wraps up the mythtv package (very hard to install) with a nice fedora core 6 system install (very easy to install - if you have a blank harddrive to install to). I've been using fedora quite a bit as it is the distro of choice for our work computers so it wasn't hard for me to transition - plus being able to install new applications without having to fiddle with USE flags and such was such a relief.</p>
+<p>The unfortunate part of all this is that with wordpress being stored mainly in a MYSQL database it took me a while to transition the site over from the old Gentoo install to the new Mythdora. The default installation comes with the LAMP (linux, apache, mysql and PHP) stack already enabled so there wasn't a whole lot to do in the setup department, there were however a couple of gotchas. Firstly is the movement of the mysql database from the old machine to the new. The easiest way to do this was to reboot the machine into Gentoo (thank god I didn't wipe that)</p>
+<p><code><br />
+mysqldump -h localhost -u root -p wpress_db &gt; wpress_db.sql<br />
+</code></p>
+<p>then reboot to mythdora</p>
+<p><code><br />
+mysql -h localhost -u root -p wpress_db &lt; wpress_db.sql<br />
+</code></p>
+<p>After this I had to create a wordpress user for mysql and grant privileges to the newly created database. Things now worked well except that my settings weren't as I'd like them (don't know why my theme had reverted to default) but that was fairly easy to fix. The thing that took the longest was the lack of pages (ie. http://jamie.homelinux.org/publications/), I eventually tracked this down to the mod_rewrite apache module being incorrectly configured, well it was correctly configured for a default system but needed the following change to allow on the fly re-writes of urls for my blog.</p>
+<pre>
+<code>
+
+  Options Indexes FollowSymLinks
+  #AllowOverride None     # Comment out this line
+  AllowOverride All       # And add this line instead
+  ...
+
+</code>
+</pre>
+<p>Sweet! Now things were back up and running just the way I like them.</p>

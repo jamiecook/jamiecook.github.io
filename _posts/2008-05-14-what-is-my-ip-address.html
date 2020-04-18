@@ -1,0 +1,28 @@
+---
+layout: post
+title: What is my IP address?
+date: 2008-05-14 17:07:50.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- command line
+- grep
+- ip address
+- ipconfig
+- linux
+- regex
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>If you are on a 192.168.*.* subnet the following should work for you</p>
+<pre><code>
+ifconfig | grep -e 192.168 | grep -o -e addr:[0-9]*\.[0-9]*\.[0-9]*\.[0-9]* | grep -o -e '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*'
+</code></pre>
+<p>which gives you a nicely formated "192.168.0.1" or whatever your ip address might happen to be</p>

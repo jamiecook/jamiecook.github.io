@@ -1,0 +1,34 @@
+---
+layout: post
+title: Why use ++i instead of i++?
+date: 2007-11-06 08:51:34.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- c++
+- increment
+- iterators
+- programming
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I knew that it was better practice to specify my for loops in c++ in the following form</p>
+<p><code><br />
+for (int i=0; i&lt;max_ITER; ++i)....<br />
+</code></p>
+<p>rather than</p>
+<p><code><br />
+for (int i=0; i&lt;max_ITER; i++)....<br />
+</code></p>
+<p>but I was unsure exactly why. The reason is that the post-fix operator requires three steps<br />
+1) a copy of the current value of i is made<br />
+2) the current value of i is incremented<br />
+3) the copy is returned</p>
+<p>Obviously this isn't a very big performance hit for simple integers but for more complicated classes where the pre/post fix operators are overloaded the second step may be a non-negligible stage and in a case such as the above for-loop counter where the value isn't being used it is an unnecessary stage. Hence it is better practice to always use the ++i form of the increment unless the value is actually being used.</p>

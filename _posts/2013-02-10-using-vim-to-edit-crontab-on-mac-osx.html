@@ -1,0 +1,40 @@
+---
+layout: post
+title: Using vim to edit crontab on Mac OS/X
+date: 2013-02-10 14:54:48.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- crontab
+- osx
+- vi
+- vim
+- vimrc
+tags:
+- crontab
+- osx
+- vi
+- vim
+- vimrc
+meta:
+  _publicize_pending: '1'
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Was trying to edit my crontab after making some changes to my .bashrc file and came across this strange error while saving</p>
+<pre>crontab: temp file must be edited in place</pre>
+<p>You can solve this in one of two ways<br />
+1) Use vi as your editor (<code>EDITOR=vi crontab -e)</code><br />
+2) Set some special flags set in your vimrc to allow crontab editing to work properly</p>
+<p>In your bashrc or where ever you store your aliases (I use a separate .aliases/commands config file that I source from .bashrc)<br />
+<code><br />
+alias crontab=”VIM_CRONTAB=true EDITOR=vim crontab”<br />
+</code></p>
+<p>and then in your .vimrc<br />
+https://gist.github.com/jamiecook/4748455</p>

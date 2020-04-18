@@ -1,0 +1,51 @@
+---
+layout: post
+title: Tasque
+date: 2008-05-01 12:01:19.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- remember the milk
+- RTM
+- task
+- tasklist
+- tasque
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Just saw <a href="http://live.gnome.org/Tasque">this app</a> from the <a href="http://www.rememberthemilk.com/">Remember the Milk</a> page and decided to give it a go. Tasque is a gnome mono app that allows you to manage your RTM task list from the desktop, which is quite handy for me (I can add stuff straight from gmail but I don't want to have gmail open all day - plus the notes system from gmail is horrible - you have to navigate via three or four clicks back the RTM note taking page yuck!)</p>
+<p>However I had some problems compiling from source (seems that there is a debian package but nothing in the ubuntu repositories just yet).</p>
+<p>First thing - had to install gmcs</p>
+<p><code><br />
+sudo apt-get install mono-gmcs<br />
+</code></p>
+<p>Then cairo</p>
+<p><code>sudo apt-get install libmono-cairo2.0-cil</code></p>
+<p>Then gettext, this was hard to track down as it manifested as a weird variable $(GMSGFMT) in the makefile in a po subdir not being defined. Thus this rule from the makefile</p>
+<pre><code>
+file=`echo $* | sed 's,.*/,,'`.gmo \
+  &amp;&amp; rm -f $$file &amp;&amp; $(GMSGFMT) -o $$file $&lt;
+</code></pre>
+<p>resulted in the following error in the build</p>
+<pre><code>
+file=`echo fi | sed 's,.*/,,'`.gmo \
+        &amp;&amp; rm -f $file &amp;&amp;  -o $file fi.po
+/bin/sh: -o: not found
+</code></pre>
+<p>To fix that particular one</p>
+<pre><code>
+sudo apt-get install gettext
+./configure # (again)
+</code></pre>
+<p>Then it compiled but wouldn't run</p>
+<p><code>System.DllNotFoundException: gdk-x11-2.0</code></p>
+<p>Which I had to install the gtk development libraries to fix (which is weird to me because the binaries are already compiled.. why is a dev package required to run them?</p>
+<p><code>sudo apt-get install libgtk2.0-dev</code></p>
+<p>After all that tho it seems to run quite well.</p>

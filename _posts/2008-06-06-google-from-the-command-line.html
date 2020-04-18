@@ -1,0 +1,32 @@
+---
+layout: post
+title: Google from the command line
+date: 2008-06-06 08:02:08.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- bash
+- command line
+- google
+- goosh
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<pre>
+#!/bin/bash
+query="$@"
+if [ -z "$query" ]; then
+  echo "Usage:   google \"
+  echo "You must specify a search query"
+  exit -1
+fi
+query=`echo $query | sed -e s/'\ '/%20/g`
+w3m -dump -no-cookie -cols 200 http://www.google.com/search?q=${query} | grep Cached | cut -f 1 -d' '
+</pre>

@@ -1,0 +1,44 @@
+---
+layout: post
+title: RDTSC using GCC
+date: 2008-05-26 12:35:22.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- gcc
+- linux
+- optimisation
+- optimization
+- RDTSC
+- timing
+- windows
+tags: []
+meta:
+  _oembed_8a49d0861e12ce4632bc182d0ac733bb: '{{unknown}}'
+  _oembed_5b351b07ff5de0ef17b786b8ee3f637c: '{{unknown}}'
+  _oembed_69200c62ed74cad6701ecd9d6ed26fb8: '{{unknown}}'
+  _oembed_8be6616cfe396377042ea7221323be00: '{{unknown}}'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>A lot of the work I do involves making a given piece of code do the same thing it used to do but in less time (some people call it optimisation). The first step in this is to accurately quantify the amount of time taken to perform some piece of work and to that end I have a nifty little piece of code which interogates the  processor for the current value of the time stamp counter, this looks something like this.</p>
+<pre>
+ inline unsigned __int64 RDTSC(void)
+ {
+   _asm  _emit 0x0F
+   _asm  _emit 0x31
+ }
+</pre>
+<p>This sends the processor opcode 0F 31 to the processor and returns the result, unfortunately, this doesn't work so well when you move away from the windows environment due to the use of the non-standard "_emit" statement. Thankfully Chistrian Schueler has a <a href="http://www.flipcode.com/archives/How_To_Read_The_TSC_With_GCC.shtml">nice way to do this</a> with GCC</p>
+<pre>
+inline volatile long long RDTSC() {
+   register long long TSC asm("eax");
+   asm volatile (".byte 15, 49" : : : "eax", "edx");
+   return TSC;
+}
+</pre>

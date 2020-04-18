@@ -1,0 +1,77 @@
+---
+layout: post
+title: Vim indent script
+date: 2007-11-14 22:22:55.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- bash
+- linux
+- unix
+- vi
+- vim
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I've been using vi a lot lately and was bummed to have forgotten a very nice piece of .vimrc magic I used to have to autoindent an entire file at once. The way it works is you stick the following in your ~/.vimrc and then in any file you can just press -- and it will properly indent the entire file, I finally tracked it down and am putting it here as a central location to come back to later.</p>
+<pre>
+" Stolen from some guy named ben :) benoit.cerrina@writeme.com
+fun BenIndent()
+let oldLine=line('.')
+normal(gg=G)
+execute ':' . oldLine
+endfun
+map -- :call BenIndent()
+</pre>
+<p>I'm also going to put the rest of my vimrc up here just for completeness.</p>
+<pre>
+" .vimrc
+"
+" Copied from Smylers's .vimrc
+" http://www.stripey.com/vim/
+"
+
+" use indents of 2 spaces, and have them copied down lines:
+set shiftwidth=2
+set shiftround
+set expandtab
+set autoindent
+set smarttab
+
+set bs=indent,eol,start         " allow backspacing over everything in insert mode
+
+" for C-like programming, have automatic indentation:
+autocmd FileType c,cpp,slang set cindent
+
+" show the `best match so far' as search strings are typed:
+set incsearch
+
+" Makefile sanity
+autocmd BufEnter ?akefile* set noet ts=8 sw=8
+autocmd BufEnter */debian/rules set noet ts=8 sw=8
+
+
+" Map f11 to toggle background
+map  :let &amp;background = ( &amp;background == "dark"? "light" : "dark" )
+" Map f5 to toggle search highlighting
+map  :set hls!set hls?
+
+" Change the colorscheme
+" colorscheme murphy
+colorscheme elflord
+
+" Stolen from some guy named ben :) benoit.cerrina@writeme.com
+fun BenIndent()
+let oldLine=line('.')
+normal(gg=G)
+execute ':' . oldLine
+endfun
+map -- :call BenIndent()
+</pre>

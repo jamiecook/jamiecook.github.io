@@ -1,0 +1,33 @@
+---
+layout: post
+title: OpenSSH upgrade
+date: 2008-05-15 10:02:05.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- authentication
+- openssh
+- openssl
+- private key
+- public key
+- ssh
+- ubuntu
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>The latest version of the openSSH server/client has just landed for both Ubuntu 7.10 and 8.04 and this has generated some problems with our local network. Namely our public/private keys that we use for password-less access between our development machines, turns out the keys were generated using a version of openSSL that had a faulty random number generator which made the keys not really random at all :) Upon update you'll probably see a message box with something like the following if this applies to you.</p>
+<blockquote><p>
+Some of the OpenSSH server host keys on this system were generated with a version of OpenSSL that had a broken random number generator. As a result, these host keys are from a well-known set, are subject to brute-force attacks, and must be regenerated.</p>
+<p>Users of this system should be informed of this change, as they will be prompted about the host key change the next time they log in. Use 'ssh-keygen -l -f HOST_KEY_FILE' after the upgrade has changed to print the fingerprints of the new host keys.</p>
+<p>The affected host keys are:</p>
+<p>/etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key</p>
+<p>User keys may also be affected by this problem. The 'ssh-vulnkey' command may be used as a partial test for this. See /usr/share/doc/openssh-server/README.compromised-keys.gz for more details.
+</p></blockquote>
+<p>The solution was simply to regenerate our keys and push them out to all the boxes that we wanted to be able to log into to... time consuming but ultimately giving us a more secure environment.</p>

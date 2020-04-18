@@ -1,0 +1,56 @@
+---
+layout: post
+title: More STLPort and Boost problems
+date: 2008-02-25 14:06:49.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- boost
+- headache
+- intel compiler
+- stlport
+tags: []
+meta:
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>As a follow up to a previous post I had about getting boost to play nicely with stlport (<a href="http://jamie.homelinux.org/boost-stlport-visual-studio-2005/">here</a>), I decided that I'd like to do all of this with the Intel compiler rather than the standard VIsual Studio compiler... needless to say this created, headaches lets call them.</p>
+<p>From the boost <a href="http://www.boost.org/more/getting_started/windows.html">getting started page</a> there is a section describing the ABI-tag that is used to describe the build options used to create a library:</p>
+<ul>
+<li> s 	linking statically to the C++ standard library and compiler runtime support libraries.</li>
+<li> g 	using debug versions of the standard and runtime support libraries.</li>
+<li> y 	using a special debug build of Python.</li>
+<li> d 	building a debug version of your code.</li>
+<li> p 	using the STLPort standard library rather than the default one supplied with your compiler.</li>
+<li> n 	using STLPort's deprecated “native iostreams” feature.</li>
+</ul>
+<p>however there is no helpful resource I can find to show you how to specifically build these using the boost bjam build system so I'm going to try and summarise them here.</p>
+<ul>
+<li>s =&gt; link=static - This should give static (as opposed to dynamic linking) <strong>UPDATE for 1.42</strong> you should also use runtime-link=static</li>
+<li>mt =&gt; threading=multi - This will compile against the multi-threaded version of runtime libraries</li>
+<li>p =&gt; stdlib=stlport - This compiles against the STLport version of runtime libraries instead of the default "native"</li>
+<li>g =&gt; runtime-debugging=on</li>
+</ul>
+<p>But for the life of me I couldn't figure out what command/switch would get the g-option compiled into the library... now this was a problem because when I compiled my own code, the boost autolinking required a 'mt-gd' version of the library and I could only compile a 'mt-d' version. According to <a href="http://boost.org/boost-build2/doc/html/bbv2/advanced/builtins/features.html">this</a> page from boost, simply building against the debug variant should get you</p>
+<pre><code>
+off on off on
+</code></pre>
+<p>After spending too many hours trying to figure this out, I simply renamed the 'mt-d' version of my libraries to 'mt-gd' and the auto linking seemed to work fine :)</p>
+<p>I'm also repeating here the regular command line I ended up using to compile the bloody thing...</p>
+<pre>cd "\Program Files\boost\boost_1_34_1\libs\test\build"
+del /Q ..\..\..\bin.v2\libs\test\build\intel-win-10.1\debug\link-static\threading-multi\*
+bjam --toolset=intel link=static threading=multi
+copy /Y ..\..\..\bin.v2\libs\test\build\intel-win-10.1\debug\link-static\threading-multi\libboost_unit_test_framework-iw-mt-d-1_34_1.lib c:\bdk\Source\deps\boost_1_34_1\lib\Intel
+bjam --toolset=intel link=static threading=multi release
+copy /Y ..\..\..\bin.v2\libs\test\build\intel-win-10.1\release\link-static\threading-multi\libboost_unit_test_framework-iw-mt-1_34_1.lib   c:\bdk\Source\deps\boost_1_34_1\lib\Intel</pre>
+<p>and then because I was also using the filesystem library I had to recompile that aswell using the same form.</p>
+<pre>cd "\Program Files\boost\boost_1_34_1\libs\filesystem\build"
+del /Q ..\..\..\bin.v2\libs\filesystem\build\intel-win-10.1\debug\link-static\threading-multi\*
+bjam --toolset=intel link=static threading=multi
+copy /Y ..\..\..\bin.v2\libs\filesystem\build\intel-win-10.1\debug\link-static\threading-multi\libboost_filesystem-iw-mt-d-1_34_1.lib c:\bdk\Source\deps\boost_1_34_1\lib\Intel</pre>

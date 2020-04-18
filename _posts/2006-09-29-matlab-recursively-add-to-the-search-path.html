@@ -1,0 +1,38 @@
+---
+layout: post
+title: Matlab - recursively add to the search path
+date: 2006-09-29 15:55:32.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- code
+- matlab
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I couldn't find a functional form to add a directory and all it's subdirectories recursively to the path, so I wrote it myself. Here for your enjoyment!</p>
+<pre>
+function addDirPath(dirName)
+% functional form of the add recursive subdirectories command
+</pre>
+<pre>
+% add current directory
+addpath(dirName);
+</pre>
+<pre>
+% recursively add subdirectories
+f=dir(dirName);
+% skip the first two entries . &amp; ..
+for i=3:length(f)
+  if f(i).isdir
+    addDirPath([dirName filesep f(i).name]);
+  end
+end
+</pre>

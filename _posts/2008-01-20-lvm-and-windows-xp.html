@@ -1,0 +1,43 @@
+---
+layout: post
+title: LVM and Windows XP
+date: 2008-01-20 21:49:21.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- fedora
+- linux
+- lvm
+- ubuntu
+- windows
+- xp
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>So I was building a machine for my mother for her medical practice... nothing fancy just a regular sit-out-back headless server that she can have chugging away co-ordinating her office while the prettier looking machines get stuck out front for patients to see. Well while building it I noticed that she didn't really require 500Gb of hard drive, 320Gb would be fine for her needs and luck just happened to have it that I had a spare 320Gb hanging around and a hankering for a 500Gb drive in my new desktop. A deal was made and my time was given over in return for a hard drive upgrade, I would install ubuntu on the new 500Gb drive, copy data over from the old one and then install windows XP on the 320Gb for her to install her new software packages on.</p>
+<p>This all went swimmingly after I realised that the old 320 was formatted with Logical Volume Management (LVM) partitions and that I needed to install the LVM2 tools and then restart my new machine (thanks Fedora).</p>
+<pre>
+sudo apt-get install lvm2
+</pre>
+<p>So after finally realising that a reboot was required (I guess I'm spoilt by never having to restart normally), I finally managed to get the required data off the HD and onto the new 500. Phew.... problems over right? wrong!! When I built the new system and tried to install windows XP I got a rude shock... the cd-rom didn't seem to like the boot cd and wouldn't get any further than</p>
+<pre>
+Setup is inspecting your computers hardware... this may take a few minutes
+</pre>
+<p>Well I left that thing for hours and no joy it was most definitely hanging and was not about to progress any further, luckily being the technophile that I am I had a spare cd-rom (or 5) lying around and I swapped each and every one of those units in to no effect. Maybe the memory got buggered? memcheck passed! Maybe it's the cd itself? Got a spare install media from work same edition, still no joy! Hmmm, where to next? Google! Turns out windows XP doesn't play well LVM and in fact having an LVM partitioned hard drive in there will cause the entire process to summarily seize up!</p>
+<p>The solution I ended up going with was to take an Ubuntu 7.10 live CD, start up and then use fdisk to remove all partitions on the disk and then "create a new empty DOS partition table".</p>
+<pre>
+sudo fdisk /dev/sda
+d 1 # delete partition 1
+d 2 # delete partition 2
+o # create a new empty DOS partition table
+v # verify the partition table
+w #write table to disk and exit
+</pre>
+<p>restart with the windows XP cd in the drive and things went perfectly... so kids the moral of the story is that, like gasoline and matches, Windows XP and LVM DO NOT MIX!!!</p>

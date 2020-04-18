@@ -1,0 +1,33 @@
+---
+layout: post
+title: Linux fstab and UUIDs
+date: 2009-04-19 09:59:57.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- fstab
+- linux
+- mount
+- uuid
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>When I upgraded to Ubuntu Intrepid Ibex I installed it clean on a new harddrive that I installed alongside my old Hardy hard drive (that was totally unintentional - but hilarious). I then mounted the old hard drive, which was much bigger, via fstab so that I could have access to more storage and my older files, but then a funny thing started happening... occasionally when booting the mount would fail and upon inspection it was because the hard drives labeling had been swapped around. One HD is SATA and the other older one is IDE, when I was setting things up the SATA drive was hda and the IDE was given hdb, the problem was that on subsequent boots this would be reversed !!! I'm not sure if this is a linux thing or a bios thing but either way it was screwing up my system so I needed a solution, thankfully this was very simple - all i had to do was find the UUID of the harddrive in question using one of the following two commands</p>
+<pre><code>ls -las /dev/disk/by-uuid/</code></pre>
+<pre><code>blkid /dev/hda1</code></pre>
+<p>Then it was as simple as editing my /etc/fstab to replace the reference to /dev/hd[ab]1 with a reference to the uuid and I was done</p>
+<pre><code>
+/dev/hda1 /data ext3 defaults,errors=remount-ro 0 1
+</code></pre>
+<p>to</p>
+<pre><code>
+UUID=21819e49-70fa-477e-9937-bd04e0550aab /data ext3 defaults,errors=remount-ro 0 1
+</code></pre>
+<p>Thanks to <a href="http://f241vc15.wordpress.com/2008/11/08/uuids-linux-devices-and-fstab/">f241vc15</a> for pointing me in the right direction.</p>

@@ -1,0 +1,284 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>LVM and Windows XP &#8211; </title>
+<meta name="description" content="So I was building a machine for my mother for her medical practice... nothing fancy just a regular sit-out-back headless server that she can have chugging away co-ordinating her office while the prettier looking machines get stuck out front for patients to see. Well while building it I noticed that she didn't really require 500Gb of hard drive, 320Gb would be fine for her needs and luck just happened to have it that I had a spare 320Gb hanging around and a hankering for a 500Gb drive in my new desktop. A deal was made and my time was given over in return for a hard drive upgrade, I would install ubuntu on the new 500Gb drive, copy data over from the old one and then install windows XP on the 320Gb for her to install her new software packages on.
+This all went swimmingly after I realised that the old 320 was formatted with Logical Volume Management (LVM) partitions and that I needed to install the LVM2 tools and then restart my new machine (thanks Fedora).
+
+sudo apt-get install lvm2
+
+So after finally realising that a reboot was required (I guess I'm spoilt by never having to restart normally), I finally managed to get the required data off the HD and onto the new 500. Phew.... problems over right? wrong!! When I built the new system and tried to install windows XP I got a rude shock... the cd-rom didn't seem to like the boot cd and wouldn't get any further than
+
+Setup is inspecting your computers hardware... this may take a few minutes
+
+Well I left that thing for hours and no joy it was most definitely hanging and was not about to progress any further, luckily being the technophile that I am I had a spare cd-rom (or 5) lying around and I swapped each and every one of those units in to no effect. Maybe the memory got buggered? memcheck passed! Maybe it's the cd itself? Got a spare install media from work same edition, still no joy! Hmmm, where to next? Google! Turns out windows XP doesn't play well LVM and in fact having an LVM partitioned hard drive in there will cause the entire process to summarily seize up!
+The solution I ended up going with was to take an Ubuntu 7.10 live CD, start up and then use fdisk to remove all partitions on the disk and then "create a new empty DOS partition table".
+
+sudo fdisk /dev/sda
+d 1 # delete partition 1
+d 2 # delete partition 2
+o # create a new empty DOS partition table
+v # verify the partition table
+w #write table to disk and exit
+
+restart with the windows XP cd in the drive and things went perfectly... so kids the moral of the story is that, like gasoline and matches, Windows XP and LVM DO NOT MIX!!!
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="LVM and Windows XP">
+<meta name="twitter:description" content="So I was building a machine for my mother for her medical practice... nothing fancy just a regular sit-out-back headless server that she can have chugging away co-ordinating her office while the prettier looking machines get stuck out front for patients to see. Well while building it I noticed that she didn't really require 500Gb of hard drive, 320Gb would be fine for her needs and luck just happened to have it that I had a spare 320Gb hanging around and a hankering for a 500Gb drive in my new desktop. A deal was made and my time was given over in return for a hard drive upgrade, I would install ubuntu on the new 500Gb drive, copy data over from the old one and then install windows XP on the 320Gb for her to install her new software packages on.
+This all went swimmingly after I realised that the old 320 was formatted with Logical Volume Management (LVM) partitions and that I needed to install the LVM2 tools and then restart my new machine (thanks Fedora).
+
+sudo apt-get install lvm2
+
+So after finally realising that a reboot was required (I guess I'm spoilt by never having to restart normally), I finally managed to get the required data off the HD and onto the new 500. Phew.... problems over right? wrong!! When I built the new system and tried to install windows XP I got a rude shock... the cd-rom didn't seem to like the boot cd and wouldn't get any further than
+
+Setup is inspecting your computers hardware... this may take a few minutes
+
+Well I left that thing for hours and no joy it was most definitely hanging and was not about to progress any further, luckily being the technophile that I am I had a spare cd-rom (or 5) lying around and I swapped each and every one of those units in to no effect. Maybe the memory got buggered? memcheck passed! Maybe it's the cd itself? Got a spare install media from work same edition, still no joy! Hmmm, where to next? Google! Turns out windows XP doesn't play well LVM and in fact having an LVM partitioned hard drive in there will cause the entire process to summarily seize up!
+The solution I ended up going with was to take an Ubuntu 7.10 live CD, start up and then use fdisk to remove all partitions on the disk and then "create a new empty DOS partition table".
+
+sudo fdisk /dev/sda
+d 1 # delete partition 1
+d 2 # delete partition 2
+o # create a new empty DOS partition table
+v # verify the partition table
+w #write table to disk and exit
+
+restart with the windows XP cd in the drive and things went perfectly... so kids the moral of the story is that, like gasoline and matches, Windows XP and LVM DO NOT MIX!!!
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LVM and Windows XP">
+<meta property="og:description" content="So I was building a machine for my mother for her medical practice... nothing fancy just a regular sit-out-back headless server that she can have chugging away co-ordinating her office while the prettier looking machines get stuck out front for patients to see. Well while building it I noticed that she didn't really require 500Gb of hard drive, 320Gb would be fine for her needs and luck just happened to have it that I had a spare 320Gb hanging around and a hankering for a 500Gb drive in my new desktop. A deal was made and my time was given over in return for a hard drive upgrade, I would install ubuntu on the new 500Gb drive, copy data over from the old one and then install windows XP on the 320Gb for her to install her new software packages on.
+This all went swimmingly after I realised that the old 320 was formatted with Logical Volume Management (LVM) partitions and that I needed to install the LVM2 tools and then restart my new machine (thanks Fedora).
+
+sudo apt-get install lvm2
+
+So after finally realising that a reboot was required (I guess I'm spoilt by never having to restart normally), I finally managed to get the required data off the HD and onto the new 500. Phew.... problems over right? wrong!! When I built the new system and tried to install windows XP I got a rude shock... the cd-rom didn't seem to like the boot cd and wouldn't get any further than
+
+Setup is inspecting your computers hardware... this may take a few minutes
+
+Well I left that thing for hours and no joy it was most definitely hanging and was not about to progress any further, luckily being the technophile that I am I had a spare cd-rom (or 5) lying around and I swapped each and every one of those units in to no effect. Maybe the memory got buggered? memcheck passed! Maybe it's the cd itself? Got a spare install media from work same edition, still no joy! Hmmm, where to next? Google! Turns out windows XP doesn't play well LVM and in fact having an LVM partitioned hard drive in there will cause the entire process to summarily seize up!
+The solution I ended up going with was to take an Ubuntu 7.10 live CD, start up and then use fdisk to remove all partitions on the disk and then "create a new empty DOS partition table".
+
+sudo fdisk /dev/sda
+d 1 # delete partition 1
+d 2 # delete partition 2
+o # create a new empty DOS partition table
+v # verify the partition table
+w #write table to disk and exit
+
+restart with the windows XP cd in the drive and things went perfectly... so kids the moral of the story is that, like gasoline and matches, Windows XP and LVM DO NOT MIX!!!
+">
+<meta property="og:url" content="/fedora/linux/lvm/ubuntu/windows/xp/2008/01/20/lvm-and-windows-xp.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/fedora/linux/lvm/ubuntu/windows/xp/2008/01/20/lvm-and-windows-xp.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/fedora/linux/lvm/ubuntu/windows/xp/2008/01/20/lvm-and-windows-xp.html" rel="bookmark" title="LVM and Windows XP">LVM and Windows XP</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>So I was building a machine for my mother for her medical practice... nothing fancy just a regular sit-out-back headless server that she can have chugging away co-ordinating her office while the prettier looking machines get stuck out front for patients to see. Well while building it I noticed that she didn't really require 500Gb of hard drive, 320Gb would be fine for her needs and luck just happened to have it that I had a spare 320Gb hanging around and a hankering for a 500Gb drive in my new desktop. A deal was made and my time was given over in return for a hard drive upgrade, I would install ubuntu on the new 500Gb drive, copy data over from the old one and then install windows XP on the 320Gb for her to install her new software packages on.</p>
+<p>This all went swimmingly after I realised that the old 320 was formatted with Logical Volume Management (LVM) partitions and that I needed to install the LVM2 tools and then restart my new machine (thanks Fedora).</p>
+<pre>
+sudo apt-get install lvm2
+</pre>
+<p>So after finally realising that a reboot was required (I guess I'm spoilt by never having to restart normally), I finally managed to get the required data off the HD and onto the new 500. Phew.... problems over right? wrong!! When I built the new system and tried to install windows XP I got a rude shock... the cd-rom didn't seem to like the boot cd and wouldn't get any further than</p>
+<pre>
+Setup is inspecting your computers hardware... this may take a few minutes
+</pre>
+<p>Well I left that thing for hours and no joy it was most definitely hanging and was not about to progress any further, luckily being the technophile that I am I had a spare cd-rom (or 5) lying around and I swapped each and every one of those units in to no effect. Maybe the memory got buggered? memcheck passed! Maybe it's the cd itself? Got a spare install media from work same edition, still no joy! Hmmm, where to next? Google! Turns out windows XP doesn't play well LVM and in fact having an LVM partitioned hard drive in there will cause the entire process to summarily seize up!</p>
+<p>The solution I ended up going with was to take an Ubuntu 7.10 live CD, start up and then use fdisk to remove all partitions on the disk and then "create a new empty DOS partition table".</p>
+<pre>
+sudo fdisk /dev/sda
+d 1 # delete partition 1
+d 2 # delete partition 2
+o # create a new empty DOS partition table
+v # verify the partition table
+w #write table to disk and exit
+</pre>
+<p>restart with the windows XP cd in the drive and things went perfectly... so kids the moral of the story is that, like gasoline and matches, Windows XP and LVM DO NOT MIX!!!</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/fedora/linux/lvm/ubuntu/windows/xp/2008/01/20/lvm-and-windows-xp.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/fedora/linux/lvm/ubuntu/windows/xp/2008/01/20/lvm-and-windows-xp.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/fedora/linux/lvm/ubuntu/windows/xp/2008/01/20/lvm-and-windows-xp.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>LVM and Windows XP</strong> was published on <time datetime="2008-01-20T21:49:21+10:00">January 20, 2008</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

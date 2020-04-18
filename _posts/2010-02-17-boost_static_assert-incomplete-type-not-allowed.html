@@ -1,0 +1,38 @@
+---
+layout: post
+title: BOOST_STATIC_ASSERT incomplete type not allowed
+date: 2010-02-17 09:12:55.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- boost
+- c++
+- compiler
+- Intel
+- templates
+tags:
+- boost
+- c++
+- compiler
+- Intel
+- templates
+meta:
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I've recently been trying to compile the newest boost library (1.42.0) using the Intel 11.0 compiler and came across this error in code which previously compiled using 1.34.1</p>
+<pre>1&gt;../../deps/boost_1_42_0/boost/test/floating_point_comparison.hpp(229): error: incomplete type is not allowed
+1&gt;          BOOST_STATIC_ASSERT( !is_integral::value );
+1&gt;          ^
+1&gt;          detected during:
+1&gt;            instantiation of "boost::test_tools::predicate_result boost::test_tools::check_is_close_t::operator()(FPT1, FPT2, boost::test_tools::percent_tolerance_t, boost::test_tools::floating_point_comparison_type) const [with FPT1=int, FPT2=int, ToleranceBaseType=double]" at line 523 of "../../deps/boost_1_42_0/boost/test/test_tools.hpp"
+1&gt;            instantiation of "bool boost::test_tools::tt_detail::check_frwd(Pred, const boost::unit_test::lazy_ostream &amp;, boost::test_tools::const_string, size_t={unsigned int}, boost::test_tools::tt_detail::tool_level, boost::test_tools::tt_detail::check_type, const Arg0 &amp;, const char *, const Arg1 &amp;, const char *, const Arg2 &amp;, const char *) [with Pred=boost::test_tools::check_is_close_t, Arg0=int, Arg1=int, Arg2=boost::test_tools::percent_tolerance_t]" at line 26 of
+1&gt;                      "..\tests\Timing\VlcTimingProfile_test.cpp"
+</pre>
+<p>incomplete type huh, what the hell could that be about? Well it turns out that this is just a very *un*informative error which is generated when the assert evaluated to false. In my case it was caused by calling BOOST_CHECK_CLOSE(int,int,float), when I changed this to BOOST_CHECK_CLOSE(float,float,float) it compiled fine... but the error message didn't really reflect where the error was at all.</p>

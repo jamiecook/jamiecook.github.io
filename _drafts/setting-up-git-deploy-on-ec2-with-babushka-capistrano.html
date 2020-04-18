@@ -1,0 +1,32 @@
+---
+layout: post
+title: Setting up git deploy on ec2 with babushka, capistrano
+date: 
+type: post
+published: false
+status: draft
+categories: []
+tags: []
+meta:
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Step 1<br />
+Boot the server and give it some initial config<br />
+* rvm installed<br />
+* add user for your application<br />
+* rvm and appropriate rubies installed for your application user<br />
+* babushka installed</p>
+<p>Step 2</p>
+<p>* make sure nginx is running<br />
+** sudo babushka benhoskings:'running.nginx'<br />
+** sudo babushka benhoskings:'postgres access'<br />
+**</p>
+<p> babs benhoskings:'vhost enabled.nginx' path=~/current vhost_type=unicorn domain=...<br />
+ babs benhoskings:'vhost configured.nginx' path=~/current vhost_type=unicorn listen_host=0.0.0.0 domain=...<br />
+ babs benhoskings:'unicorn running' env=production</p>

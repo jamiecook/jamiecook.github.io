@@ -1,0 +1,32 @@
+---
+layout: post
+title: Cleaning up the desktop
+date: 2006-08-10 23:40:03.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- browser
+- desktop
+- firefox
+- icons
+- internet
+- windows
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>If you are like me and are using firefox you'll probably have noticed that your desktop has become a bit more cluttered now that all your downloads are being sent there. I've recently been cleaning mine up and finding some pretty wallpapers from deviant art to brighten things up a bit. I've managed to remove just about everything from there except the bloody recycle bin - thankfully there is help at hand.</p>
+<p>Undeletable icons on the desktop are controlled by entries in the registry at :<br />
+<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace</code><br />
+in my case I'm trying to remove the "Recycle Bin" and the "My Bluetooth Places" which can be achieved by deleting the following keys<br />
+<code><br />
+{645FF040-5081-101B-9F08-00AA002F954E} - Recycle Bin<br />
+{6af09ec9-b429-11d4-a1fb-0090960218cb} - Bluetooth Icon<br />
+</code></p>
+<p>Thanks to <a href="http://www.petri.co.il/delete_recycle_bin_icon_from_the_desktop_in_xp_2003.htm">Daniel</a> for the info.</p>

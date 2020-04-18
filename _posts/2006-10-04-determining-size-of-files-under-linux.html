@@ -1,0 +1,37 @@
+---
+layout: post
+title: Determining size of files under Linux
+date: 2006-10-04 11:51:48.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- code
+- linux
+- perl
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Back in the old days when I had never heard of *nix opertating systems I never thought twice about typing 'dir' and expecting a list of files, their sizes and <b>their total size</b> to pop up. Fast forward to many years later and I'm again trying to find the same type of functionality under bash, but to all intents it doesn't appear to exist in any easy form. Sure you use 'du' to give the total for a directory, but what if you just want the total for the files in that directory that end with say .dat. Turns out you have to do some funky piping to get this going:</p>
+<p><code><br />
+du *.dat | cut -f1 | awk ' { sum += $1 } END { print sum } '<br />
+</code></p>
+<p>or alternately if you hate awk as much as I do you could just use the following small perl script (kindly written by Roy Wallace) instead - apparently it runs quicker too :)<br />
+<code><br />
+#!/usr/bin/perl<br />
+use strict;<br />
+my $sum;<br />
+while() { chomp; $sum += $_; }<br />
+print "$sum\\n";<br />
+</code></p>
+<p>save it to say ~/bin/sum.pl<br />
+<code><br />
+du *.dat | cut -f1 | sum.pl<br />
+</code></p>
+<p><strong>UPDATE:</strong> <a href="http://www.cebidae.com/">David</a> points out that du -c will also give you a total.... I'm sticking with the minimalist output of the above perl script however :)</p>

@@ -1,0 +1,36 @@
+---
+layout: post
+title: Nessus command line
+date: 2006-07-08 18:10:59.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- linux
+- security
+- technology
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Was trying to get nessus up and running on my ubuntu server but ran bang into the X dependency problem. Turns out getting it to run from the command line is a lot of a hassle, but <a href="http://tadek.pietraszek.org/blog/2005/10/12/nessus-command-line-search/">this bloke</a> had some tips for it.</p>
+<blockquote cite="http://tadek.pietraszek.org/blog/2005/10/12/nessus-command-line-search/"><p>
+The easy part: <br />
+1. emerge nessus <br />
+2. nessus-mkcert <br />
+3. nessus-user-add <br />
+4. register at nessus website to get the actiovation code for plugin feeds (FYI: #GPL plugins: 1299, #registered plugins: 9575), so unless you register you get a very small subset of (probably outdated) scanners. <br />
+5. nessus-fetch –register  <br />
+6. nessus-update-plugins (it probably makes sense to add it to cron).Ok, now for scanning the most obvious choice is to run a nessus client with GTK interface. If we don’t want to do this we can either: - run the graphical console remotely - run a command-line interface.</p>
+<p>The tricky part: Scanning using command line interface:nessus -V -q 127.0.0.1 1241    </p></blockquote>
+<p class="citation"><cite><a href="http://tadek.pietraszek.org/blog/2005/10/12/nessus-command-line-search/"><br />
+</a></cite></p>
+<p>
+<p><!-- technorati tags begin -->
+<p style="font-size:10px;text-align:right;">technorati tags:<a href="http://technorati.com/tag/security" rel="tag">security</a>, <a href="http://technorati.com/tag/linux" rel="tag">linux</a></p>
+<p><!-- technorati tags end --></p></p>

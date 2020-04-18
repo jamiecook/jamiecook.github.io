@@ -1,0 +1,34 @@
+---
+layout: post
+title: Samba/CIFS and Windows 7
+date: 2013-01-27 01:31:33.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- cifs
+- samba
+- windows
+tags:
+- cifs
+- samba
+- windows7
+meta:
+  _publicize_pending: '1'
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Thanks to http://jlcoady.net/windows/how-to-resolve-mount-error12-cannot-allocate-memory-windows-share</p>
+<p>I was having problems with the cifs mount becoming unusable with the "cannot allocate memory" error. After performing steps 1-3 on the win 7 server, the cifs mount came back without having to do anything else on the linux side.</p>
+<blockquote><p>If you mount a Windows 7 share using Samba/CIFS you may run into “mount error(12): Cannot allocate memory” if you are using very large files on the Windows machine. Looks like in certain situations Windows needs to be told to run as a file server and to expect large files. You can read more details at Large Files are locking up Windows 7 32 bit and 64 bit, but the solution is to make two registry edits and then restart a service:</p>
+<ol>
+<li>Set “HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\LargeSystemCache” to “1″.</li>
+<li>Set “HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\Size” to “3″.</li>
+<li>Restart the “server” service.</li>
+</ol>
+<p>Once you have done that you should be able to mount the share using a command like “sudo mount -a” or just reboot the Linux machine.</p></blockquote>

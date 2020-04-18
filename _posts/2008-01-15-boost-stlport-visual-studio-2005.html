@@ -1,0 +1,177 @@
+---
+layout: post
+title: Boost + STLport + Visual Studio 2005
+date: 2008-01-15 16:17:20.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- bjam
+- boost
+- borland
+- headaches
+- software
+- stlport
+- visual studio
+- visual studio 2005
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Okay so here is the problem I've been having, I'm trying to use STLport (5.1.4), Boost (1.34.1) and Visual Studio 2005 and up to now they were not playing nice with one another. Specifically it was the boost::unit_test_framework that was causing the hassles as it has to be recompiled with STLport support. I've finally got it working (I think) so I'll give you the quick run down on what I did</p>
+<p><strong>The short version</strong></p>
+<ol>
+<li>I changed the runtime library from MTd (Multi-threaded debug) to MDd (Multi-threaded debug DLL)</li>
+<li>I added __STL_DEBUG to the list of preprocessor definitions for all my projects</li>
+<li>I recompiled the test lib with the following command</li>
+<pre>
+cd "\Program Files\boost\boost_1_34_1\libs\test\build"
+del /Q ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\stdlib-stlport\threading-multi\*
+bjam --toolset=msvc link=static stdlib=stlport threading=multi
+copy /Y ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\stdlib-stlport\threading-multi\libboost_unit_test_framework-vc80-mt-gdp-1_34_1.lib ..\..\..\lib
+bjam --toolset=msvc link=static stdlib=stlport threading=multi build=yes release
+copy /Y ..\..\..\bin.v2\libs\test\build\msvc-8.0\release\asynch-exceptions-on\link-static\stdlib-stlport\threading-multi\libboost_unit_test_framework-vc80-mt-gp-1_34_1.lib ..\..\..\lib
+</pre>
+<li>and then because I was also using the filesystem library I had to recompile that aswell using the same form. </li>
+<pre>
+cd "\Program Files\boost\boost_1_34_1\libs\filesystem\build"
+del /Q..\..\..\bin.v2\libs\filesystem\build\msvc-8.0\debug\link-static\stdlib-stlport\threading-multi\*
+bjam --toolset=msvc link=static stdlib=stlport threading=multi
+copy /Y ..\..\..\bin.v2\libs\filesystem\build\msvc-8.0\debug\link-static\stdlib-stlport\threading-multi\libboost_filesystem-vc80-mt-gdp-1_34_1.lib ..\..\..\lib
+</pre>
+</ol>
+<p><strong>The long version</strong><br />
+The host program that I am writing the plugins for provides an interface which uses a modified version of vector.h from the one that comes with visual studio (probably because they are using borland but I don't think that they are using a stock borland vector.h either). This file comes with their dll interface and must be included with the #include "vector.h" rather than the standard #include  (this will search the regular include search path first). The problem with this is that this vector.h causes problems when using boost::unit_test system and the problem was coming down to the order in which I included some files... put  before the call to the interface header and it would work in boost::test but would crash from the host program, and vice versa for the alternate include order (much hair pulling to figure that one).</p>
+<p>So my solution was to use the stlport alternative to stl - I'd used this previously for another plugin and knew that it worked just as well as the hacked version of vector.h and would hopefully also work with boost... right ? right? WRONG! well to start with anyway. Once I had stlport compiled, installed and correctly referenced on the Visual Studio search paths, I noticed some nice zero muss output coming out of the auto linking functionality</p>
+<pre>
+...
+DemographicAllocator.cpp
+STLport: Auto linking to stlportstld.5.1.lib
+Generating Code...
+Creating library...
+BeachAssignment_logic - 0 error(s), 0 warning(s)
+</pre>
+<p>And the same thing happened for my boost::test project, until it came time for the linking stage at which point I was told</p>
+<pre>
+Unable to find library libboost_unit_test_framework-vc80-mt-sgdp-1_34_1.lib
+</pre>
+<p>I had used the boost consulting prebuilt binaries for windows and had up until this point been very happy, but alas my usage is apparently in the minority and they don't even have the option to download that particular lib... so I'd have to build it myself - welcome to the world of bjam PAIN!!! Bjam is the Boost modified version of Perforce Jam build tool and I mucked about with it for a very long time until I finally got something close to the desired library to build using the following command:</p>
+<pre>
+C:\Program Files\boost\boost_1_34_1\libs\test\build&gt;bjam --toolset=msvc-stlport runtime-link=static link=static stdlib=stlport threading=multi
+WARNING: No python installation configured and autoconfiguration
+         failed.  See http://www.boost.org/libs/python/doc/building.html
+         for configuration instructions or pass --without-python to
+         suppress this message and silently skip all Boost.Python targets
+warning: Python location is not configured
+warning: the Boost.Python library won't be built
+Building Boost.Regex with the optional Unicode/ICU support disabled.
+Please refer to the Boost.Regex documentation for more information
+(don't panic: this is a strictly optional feature).
+...patience...
+...found 531 targets...
+...updating 6 targets...
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-stlport\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\cpp_main.obj cpp_main.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+msvc.archive ..\..\..\bin.v2\libs\test\build\msvc-stlport\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\libboost_prg_exec_monitor-vc-mt-sgdp-1_34_1.lib
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-stlport\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\exception_safety.obj exception_safety.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-stlport\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\interaction_based.obj interaction_based.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-stlport\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\logged_expectations.obj logged_expectations.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+msvc.archive ..\..\..\bin.v2\libs\test\build\msvc-stlport\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\libboost_unit_test_framework-vc-mt-sgdp-1_34_1.lib
+...updated 6 targets...
+</pre>
+<p>and then with a bit of sleuth work I got the following</p>
+<pre>
+C:\Program Files\boost\boost_1_34_1\libs\test\build&gt;bjam --toolset=msvc runtime-link=static link=static stdlib=stlport threading=multi
+WARNING: No python installation configured and autoconfiguration
+         failed.  See http://www.boost.org/libs/python/doc/building.html
+         for configuration instructions or pass --without-python to
+         suppress this message and silently skip all Boost.Python targets
+warning: Python location is not configured
+warning: the Boost.Python library won't be built
+Building Boost.Regex with the optional Unicode/ICU support disabled.
+Please refer to the Boost.Regex documentation for more information
+(don't panic: this is a strictly optional feature).
+...patience...
+...found 531 targets...
+...updating 6 targets...
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\cpp_main.obj cpp_main.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+msvc.archive ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\libboost_prg_exec_monitor-vc80-mt-sgdp-1_34_1.lib
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\exception_safety.obj exception_safety.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\interaction_based.obj interaction_based.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+compile-c-c++ ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\logged_expectations.obj logged_expectations.cpp
+STLport: Auto linking to stlportstld_x.5.1.lib
+msvc.archive ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\runtime-link-static\stdlib-stlport\threading-multi\libboost_unit_test_framework-vc80-mt-sgdp-1_34_1.lib
+...updated 6 targets...
+</pre>
+<p>I say close to the desired library because even after copying it to the correct library and linking against it I was getting unresolved external errors which I had no idea of how to fix, which is when I started from scratch and found that if I used the default runtime libraries from /MTd (Multi-threaded debug) to /MDd (Multi-threaded debug DLL) that I was now able to get through this problem... after I'd recompiled those two libraries again using the following command to use shared library linking against the common runtime</p>
+<pre>
+cd "\Program Files\boost\boost_1_34_1\libs\test\build"
+del /Q ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\stdlib-stlport\threading-multi\*
+bjam --toolset=msvc link=static stdlib=stlport threading=multi
+copy /Y ..\..\..\bin.v2\libs\test\build\msvc-8.0\debug\asynch-exceptions-on\link-static\stdlib-stlport\threading-multi\libboost_unit_test_framework-vc80-mt-gdp-1_34_1.lib ..\..\..\lib
+cd "\Program Files\boost\boost_1_34_1\libs\filesystem\build"
+del /Q..\..\..\bin.v2\libs\filesystem\build\msvc-8.0\debug\link-static\stdlib-stlport\threading-multi\*
+bjam --toolset=msvc link=static stdlib=stlport threading=multi
+copy /Y ..\..\..\bin.v2\libs\filesystem\build\msvc-8.0\debug\link-static\stdlib-stlport\threading-multi\libboost_filesystem-vc80-mt-gdp-1_34_1.lib ..\..\..\lib
+</pre>
+<p>Now I can compile correctly but for some reason there seems to be some memory leaks that weren't there before ...? WTF?</p>
+<p><strong>Memory Leak Hunting Season (be wery wery quiet)</strong></p>
+<p>The leaks would appear to be caused by the intelligent node allocation implemented in stlport, [[http://stlport.sourceforge.net/FAQ.shtml#leaks the FAQ]] notes this and calls these "pseudo" memory leaks as the memory is released, just not when the visual studio memory leak finding logic would expect it to be released. You can force STLport to use a more strict memory release mechanism by editing the file "${STL_ROOT}/stlport/stl/config/host.h" and uncommenting the following lines</p>
+<pre>
+/*
+ * Uncomment _STLP_LEAKS_PEDANTIC to force deallocation of ALL allocated
+ * memory chunks. Normally not required. But if you worry about quazi-leaks
+ * (may be reported by some leaks detection tools), use
+ * _STLP_LEAKS_PEDANTIC. It should be used with _STLP_USE_NEWALLOC or
+ * _STLP_USE_MALLOC (see below), the default node_alloc allocator also clean
+ * its internal memory pool but only if STLport is used as a dynamic library
+ * under Win32 (using MSVC like compilers).
+ */
+#define _STLP_LEAKS_PEDANTIC 1
+
+/*
+ * Uncomment _STLP_USE_NEWALLOC to force allocator to use plain "new"
+ * instead of STLport optimized node allocator engine.
+ */
+#define _STLP_USE_NEWALLOC 1
+</pre>
+<p>then recompile, install, recompile the boost libraries and recompile your application.... this resulted in the following change in memory leakage:</p>
+<pre>
+C:\Program Files\STLport-5.1.4\bin&gt;"c:\BDK\Source\BeachAssignment\vc7\Debug\BeachAssignment_test.exe"
+Running 1 test case...
+
+*** No errors detected
+Detected memory leaks!
+Dumping objects -&gt;
+{182} normal block at 0x00379DA0, 2616 bytes long.
+ Data:  C8 A1 37 00 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3
+{168} normal block at 0x00378A90, 3968 bytes long.
+ Data:  B0 91 37 00 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3
+{167} normal block at 0x00378790, 720 bytes long.
+ Data:  C0 88 37 00 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3
+{164} normal block at 0x00378180, 1280 bytes long.
+ Data:  A0 83 37 00 6C 61 74 69 6F 6E 53 74 61 74 69 73
+Object dump complete.
+
+C:\Program Files\STLport-5.1.4\bin&gt;"c:\BDK\Source\BeachAssignment\vc7\Debug\BeachAssignment_test.exe"
+Running 1 test case...
+
+*** No errors detected
+Detected memory leaks!
+Dumping objects -&gt;
+{164} normal block at 0x00378180, 1280 bytes long.
+ Data:  A0 83 37 00 6C 61 74 69 6F 6E 53 74 61 74 69 73
+Object dump complete.
+</pre>
+<p>Hmmm, there is still one block of memory that hasn't been released but I can not yet figure out where or why it is showing up... that is a job for tomorrow!</p>

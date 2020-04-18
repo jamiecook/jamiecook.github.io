@@ -1,0 +1,44 @@
+---
+layout: post
+title: Bash Script Argument Parsing
+date: 2006-07-13 14:51:46.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- linux
+- technology
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Here is a little block of code that I use at the start of my bash scripts to perform argument parsing, I'm putting it here so that I have somewhere to grab it from :)</p>
+<blockquote>
+<pre>
+# Give default values
+analyseOnly=0
+fuseOnly=0
+analyseList=""
+
+while [ $# -gt 0 ]
+do
+if [ $1 = "-a" ]; then
+    analyseOnly=1;
+    shift
+  elif [ $1 = "-f" ]; then
+    analyseList=tmp/fuse.sim
+    fuseOnly=1
+    shift
+  else
+    analyseList="$analyseList $1"
+    shift
+  fi
+done
+</pre>
+</blockquote>
+<p>Or if you listen to David you could use the getopt function but who wants to listen to David :p.</p>

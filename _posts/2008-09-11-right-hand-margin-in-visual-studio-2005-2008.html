@@ -1,0 +1,27 @@
+---
+layout: post
+title: Right hand margin in Visual Studio 2005, 2008
+date: 2008-09-11 10:38:13.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- margin
+- registry
+- right
+- visual studio
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I don't like having lines longer than 100 characters long in my source code. Many editors will allow you to specify a right hand margin so that you can see when a line is longer and hence wrap it sensibly to the next line. To do this in Visual Studio, however, requires a bit more work. As described in <a href="http://resharper.blogspot.com/2007/09/visualize-right-margin-in-visual-studio.html">this</a> blog post, you have to edit the registry to make Visual Studio display nice dotted vertical lines at specific column:</p>
+<p>    * Open "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\9.0\Text Editor" key<br />
+    * Create new string value "Guides"<br />
+    * Set its value to something like "RGB(192,192,192) 119" (columns in registry are zero-based)<br />
+    * Restart Visual Studio</p>
+<p>This works in VS2005 as well, just change 9.0 to 8.0 in the reg location.</p>

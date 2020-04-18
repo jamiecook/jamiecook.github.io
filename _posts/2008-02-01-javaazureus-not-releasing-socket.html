@@ -1,0 +1,37 @@
+---
+layout: post
+title: Java/Azureus not releasing socket
+date: 2008-02-01 08:30:48.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- azureus
+- crash
+- JVM_BIND
+- linux
+- port
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Last night I had a strange error, Azureus crashed and then would not start back up again. This was strange because it seemed to think that it was already running when clearly it wasn't :( Being a java application, azureus will spawn two processes</p>
+<ul>
+<li>the azureus executable</li>
+<li>the actual java virtual machine upon which it will run</li>
+</ul>
+<p>Both these processes were definetly dead but I was still getting an error message like the following</p>
+<pre>
+StartServer ERROR: unable to bind to 127.0.0.1:PORT# listening for passed torrent info: Address already in use: JVM_Bind
+StartSocket: passing startup args to already-running Azureus java process listening on 127.0.0.1: PORT#
+</pre>
+<p>where PORT# is the port that I'm running azureus on. Strange huh? So after a bit of googling I came up with a post by a couple of cluey fellows who have pretty much the same problem and came up with a solution. The forum post is<a href="https://answers.launchpad.net/ubuntu/+question/4356"> here,</a> but I'll let you know how I figured it just in case it is handy for someone :) The following is done as root (or sudo if you are running ubuntu)</p>
+<pre>
+fuser -n tcp PORT# -k
+</pre>
+<p>That simple :) The fuser is used to identify processes using a particular resource (file or socket) and has an optional switch to kill any processes it finds using said resource. The above command tells it to find processes still holding up that particular tcp port and kill them.</p>

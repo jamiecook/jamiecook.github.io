@@ -1,0 +1,35 @@
+---
+layout: post
+title: Building GSL on windows (sigh)
+date: 2014-02-27 14:21:59.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- code
+- mingw
+- windows
+tags:
+- gsl
+- mingw
+- numerical computing
+- windows
+meta:
+  _edit_last: '294474'
+  _publicize_pending: '1'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>So I wanted to do some numerical computing in ruby (who needs SciPy anyways) so the best advice out there seemed to be to install the GNU scientific libraries (GSL - http://www.gnu.org/software/gsl/) and then get the comprehensive ruby bindings for it (http://rb-gsl.rubyforge.org/). Sounds easy enough right? Not really... here is how I did it (maybe, I haven't finished yet)</p>
+<p>1) Install the FULL MinGW (Minimalist GNU for Windows) - I was able to use the automated installer http://www.mingw.org/wiki/InstallationHOWTOforMinGW<br />
+2) Run MSYS.bat (for me this was C:\MinGW\msys\1.0\msys.bat)<br />
+3) mount c:/MinGW /mingw<br />
+4) mount c:/gsl /gsl<br />
+5) cd /gsl/gsl-1.16<br />
+6) ./configure<br />
+7) make<br />
+8) make a cup of tea... and wait</p>

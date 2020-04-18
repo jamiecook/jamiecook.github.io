@@ -1,0 +1,35 @@
+---
+layout: post
+title: FRGC Workaround
+date: 2006-12-14 16:28:41.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- Face Recognition
+- linux
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Our internet access situation at Queensland University of Technology (QUT) is based entirely on&nbsp; keeping a browser pop-up window open on your computer. You log in and your username is associated with that computer (for quota purposes) for as long as that pop-up exists, the problem with this is that when you are running on a linux box in terminal mode there is no way to create such a pop up!! GRRRR!! </p>
+<p>Some of the experiments that I'm running require that xml parameter files are parsed using a XSD schema file which is located on a central (non-QUT) server, of course when the machine tries to go get it all it gets is a 'You aren't allowed to use the internet message'. To get around this our friendly IT support gurus have used the hosts file (/etc/hosts) to redirect traffic to that internet server back to the local machine</p>
+<pre>      127.0.0.2         www.bee-biometrics.org</pre>
+<p>Then we created an entry in the httpd.conf file (/etc/httpd/conf/httpd.conf) which served up the files from a local directory. Basically I used an X session once to download the files and now I can go nuts from the terminal. True story.</p>
+<pre>
+      &lt;VirtualHost www.bee-biometrics.org:80&gt;
+          ServerAdmin root@localhost
+          DocumentRoot /localdata/imageonr/FRGC/BEE_DIST
+          ServerName www.bee-biometrics.org
+          ErrorLog logs/www.bee-biometrics.org-error_log
+          CustomLog logs/www.bee-biometrics.org-access_log common
+          &lt;Directory "/localdata/imageonr/FRGC/BEE_DIST"&gt;
+            Options Indexes
+          &lt;/Directory&gt;
+      &lt;/VirtualHost&gt;
+</pre>

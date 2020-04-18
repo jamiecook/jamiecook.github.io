@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      xmlns:og="http://ogp.me/ns#"
+      lang="en-us">
+    <head>
+      <script>
+        var mp_global = {"author": null, "section": "news", "instance": "isthmus", "tag": [], "subsection": null, "urlname": "news", "type": "section"};
+      </script>
+      <script type="text/javascript">
+(function(d) {
+var config = {
+  kitId: 'uwv7mdj',
+  scriptTimeout: 3000},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(
+/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement(
+"script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";
+tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;
+f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+})(document);
+</script>
+      <title>Isthmus : Madison, Wisconsin : News - Isthmus | Madison, Wisconsin</title>
+      <meta name="generator" content="MetroPublisher (www.metropublisher.com)" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script type="text/javascript">var require = {"paths": {"facebook": "\/\/connect.facebook.net\/en_US\/sdk"}, "baseUrl": "https:\/\/d2az0yupc2akbm.cloudfront.net\/vanguardistas.publicview\/3.109\/gzip\/static\/", "shim": {"facebook": {"exports": "FB"}}};</script>
+      <script
+        id="requirejs"
+        src="https://d2az0yupc2akbm.cloudfront.net/vanguardistas.publicview/3.109/gzip/static/js_dirty/require-jquery.js"></script>
+      <meta name="description" content="Isthmus : Madison, Wisconsin : News, Analysis"/>
+      <meta name="keywords" content="Original reporting,investigative journalism,news,analysis,Dane County,City of Madison,Wisconsin state government,Scott Walker,Paul Soglin,Isthmus,alt weekly,alternative newspaper,downtown Madison,Wisconsin,tech news"/>
+      <meta name="thumbnail" content="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/IsthmusStackedSquare_rgb.png"/>
+      
+
+      <link href="http://isthmus.com/api/rss/content.rss" rel="alternate" type="application/rss+xml" title="Isthmus : Madison, Wisconsin : News - Isthmus | Madison, Wisconsin" />
+      <link href="http://isthmus.com/api/rss/flipboard.rss" rel="alternate" type="application/rss+xml" title="Isthmus : Madison, Wisconsin : News - Isthmus | Madison, Wisconsin" />
+      
+      <link rel="stylesheet" type="text/css" href="https://d2az0yupc2akbm.cloudfront.net/vanguardistas.publicview/3.109/gzip/design/static/css/theme-spare.css"/>
+      <link rel="stylesheet" type="text/css" href="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/screen.css"/>
+      
+      <script src="https://d2az0yupc2akbm.cloudfront.net/vanguardistas.publicview/3.109/gzip/static/js_dirty/image_loading.js" async="true"></script>
+      <link rel="shortcut icon" href="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/IsthmusStackedSquare_favicon.png"/>
+
+      <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-52704662-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+      <script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+(function() {
+  var gads = document.createElement('script');
+  gads.async = true;
+  gads.type = 'text/javascript';
+  var useSSL = 'https:' == document.location.protocol;
+  gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+  var node = document.getElementsByTagName('script')[0];
+  node.parentNode.insertBefore(gads, node);
+
+  var resizeTimer;
+  function resizer() {
+      googletag.pubads().refresh();
+  }
+
+  window.addEventListener("resize", function(){ 
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resizer, 250);
+  });
+})();
+
+googletag.cmd.push(function() {
+  var target_keys = ['tag', 'type', 'instance', 'section', 'subsection', 'urlname'],
+        i;
+  for (i = 0; i < target_keys.length; i++) {
+      googletag.pubads().setTargeting(target_keys[i], mp_global[target_keys[i]]);
+  }
+
+  var leaderboard_mapping = googletag.sizeMapping().
+  addSize([0, 0], [[320,50], [300, 50]]). 
+  // Same width as above, more available height
+  addSize([750, 200], [728, 90]). // Landscape tablet
+  addSize([1050, 250], [[970, 90], [970, 250]]). // Desktop
+  build();
+
+  var mpu_mapping = googletag.sizeMapping().
+  addSize([0, 0], [[300, 250], [300, 600]]).
+  build();
+
+  var billboard_mapping = googletag.sizeMapping().
+  addSize([0, 0], []).
+  addSize([970, 250], [970, 250]).
+  build();
+
+  var wallpaper_right_mapping = googletag.sizeMapping().
+  addSize([0, 0], []).
+  addSize([1000, 0], [160, 600]).
+  build();
+
+  var wallpaper_left_mapping = googletag.sizeMapping().
+  addSize([0, 0], []).
+  addSize([1000, 0], [160, 600]).
+  build();
+  
+  googletag.defineSlot('10130133/mp_leaderboard_top', [728, 90], 'leaderboard_top').defineSizeMapping(leaderboard_mapping).addService(googletag.pubads());
+  googletag.defineSlot('10130133/mp_leaderboard_bottom', [728, 90], 'leaderboard_bottom').defineSizeMapping(leaderboard_mapping).addService(googletag.pubads());
+  googletag.defineSlot('10130133/mp_leaderboard_nav', [728, 90], 'leaderboard_nav').defineSizeMapping(leaderboard_mapping).addService(googletag.pubads());
+  googletag.defineSlot('10130133/mp_mpu_right', [300, 250], 'mpu_right').defineSizeMapping(mpu_mapping).addService(googletag.pubads());
+  googletag.defineSlot('10130133/mp_wallpaper_left', [160, 600], 'wallpaper_left').defineSizeMapping(wallpaper_left_mapping).addService(googletag.pubads());
+  googletag.defineSlot('10130133/mp_wallpaper_right', [160, 600], 'wallpaper_right').defineSizeMapping(wallpaper_right_mapping).addService(googletag.pubads());
+  
+
+  googletag.pubads().enableSingleRequest();
+
+  googletag.pubads().collapseEmptyDivs(true);
+  googletag.enableServices();
+
+  var last_refresh = $.now();
+  $(document).bind('refresh_ads', function () {
+    if ($.now() - last_refresh > 1000) {
+        last_refresh = $.now();
+        googletag.pubads().refresh();
+    }
+  });
+
+});
+</script>
+
+      <meta property="og:image" content="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/IsthmusStackedSquare_rgb.png"/><meta property="og:url" content="http://isthmus.com/news"/><meta property="og:site_name" content="Isthmus | Madison, Wisconsin"/><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@Isthmus"/><meta name="twitter:creator" content="@Isthmus"/>
+      
+
+      
+      <link rel="apple-touch-icon" href="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/IsthmusStackedSquare_rgb.png" />
+      
+
+      
+      
+      
+      
+      <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+        
+        
+        <script type="text/javascript"> 
+        var _sf_section_list = [];
+        if (mp_global.section != null) {
+            _sf_section_list.push(mp_global.section);
+        }
+        if (mp_global.subsection != null) {
+            _sf_section_list.push(mp_global.subsection);
+        }
+        if (mp_global.type != null) {
+            _sf_section_list.push(mp_global.type);
+        }
+        if (mp_global.tag != null) {
+            _sf_section_list = _sf_section_list.concat(mp_global.tag);
+        }        
+        var _sf_async_config={};
+        /** CONFIGURATION START **/
+        _sf_async_config.uid = 62058;
+        _sf_async_config.domain = "isthmus.com";
+        if (_sf_section_list.length > 0) {
+            _sf_async_config.sections = _sf_section_list.join(',');
+        }
+        if (mp_global.author !== null) {
+            _sf_async_config.authors = mp_global.author.join(',');
+        }
+        /** CONFIGURATION END **/
+        (function(){
+          function loadChartbeat() {
+            window._sf_endpt=(new Date()).getTime();
+            var e = document.createElement("script");
+            e.setAttribute("language", "javascript");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            document.body.appendChild(e);
+          }
+          var oldonload = window.onload;
+          window.onload = (typeof window.onload != "function") ?
+            loadChartbeat : function() { oldonload(); loadChartbeat(); };
+         })();
+        </script> 
+    
+    </head>
+  <body class="yui-skin-sam">
+
+    <div id="body">
+    <div id="wallpaper_left">
+ <script type="text/javascript">
+     googletag.cmd.push(function() { googletag.display('wallpaper_left'); });
+ </script>
+</div>
+
+    <div class="body">
+      <div id="canvas">
+        <div id="section_news">
+          <div id="subsection_website">
+      <div id="page">
+
+
+
+
+        <div id="top">
+
+          <div id="topads"><div class="topads">
+
+            <div id="topad1"><div class="topad1">
+                <div id="leaderboard_top">
+ <script type="text/javascript">
+     googletag.cmd.push(function() { googletag.display('leaderboard_top'); });
+ </script>
+</div>
+
+            </div></div>
+
+            <div id="topad2"><div class="topad2">
+                <div id="house_top">
+ <script type="text/javascript">
+     googletag.cmd.push(function() { googletag.display('house_top'); });
+ </script>
+</div>
+
+            </div></div>
+
+          </div></div>
+
+	  <div id="logo">
+		<div id="CSE">
+<form action="/api/searchresults.html" id="cse-search-box">
+
+    <div>
+
+        <input type="hidden" name="cx" value="000681745509340133042:yd8sralogc0" />
+        <input type="hidden" name="cof" value="FORID:11" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text" name="q" size="20" title="Enter Search Words" />
+
+    <button class="search submit" type="submit" name="sa">Search</button>
+
+        </div>
+
+</form>
+<script type="text/javascript" src="//www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+
+</div>
+                <div class="logo">
+  <!--div class="header_links" tal:condition="python: header_links or socialmedia_urls"-->
+    
+    
+  <a rel="home" href="http://isthmus.com" title="Isthmus | Madison, Wisconsin"><img src="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/isthmus-logo.png" class="standard" alt="Isthmus | Madison, Wisconsin" title="Isthmus | Madison, Wisconsin" />
+                                                                       <img src="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/isthmus-logo.png" class="responsive" alt="Isthmus | Madison, Wisconsin" title="Isthmus | Madison, Wisconsin" /></a>
+</div>
+
+
+	  </div>
+          <nav id="topnav">
+            <a href="#" class="pull">Menu</a>
+            
+<ul class="mainnav">
+  <li class="menu_section_start menu_section_home">
+	<a href="/">ISTHMUS</a>
+    
+  </li>
+  <li class="selected menu_section_news">
+	<a href="http://isthmus.com/news">NEWS<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_news">
+        <a href="http://isthmus.com/news/news">News</a>
+      </li>
+      <li class="menu_subsection_cover-stories">
+        <a href="http://www.isthmus.com/topics/isthmus-cover-story/">Cover Stories</a>
+      </li>
+      <li class="menu_subsection_snapshot">
+        <a href="http://isthmus.com/news/snapshot">Snapshot</a>
+      </li>
+      <li class="menu_subsection_week-in-review">
+        <a href="http://isthmus.com/news/week-in-review">Week in Review</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_madison-matrix">
+        <a href="http://isthmus.com/news/madison-matrix">Madison Matrix</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_opinion">
+	<a href="http://isthmus.com/opinion">OPINION<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_opinion">
+        <a href="http://isthmus.com/opinion/opinion">Opinion</a>
+      </li>
+      <li class="menu_subsection_citizen-dave">
+        <a href="http://isthmus.com/opinion/citizen-dave">Citizen Dave</a>
+      </li>
+      <li class="menu_subsection_madland">
+        <a href="http://isthmus.com/opinion/madland">Madland</a>
+      </li>
+      <li class="menu_subsection_savage-love">
+        <a href="http://isthmus.com/opinion/savage-love">Savage Love</a>
+      </li>
+      <li class="menu_subsection_cartoons">
+        <a href="http://isthmus.com/opinion/cartoons">Cartoons</a>
+      </li>
+      <li class="menu_subsection_tell-all">
+        <a href="http://isthmus.com/opinion/tell-all">Tell All</a>
+      </li>
+      <li class="menu_subsection_feedback">
+        <a href="http://isthmus.com/opinion/feedback">Feedback</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_forum">
+        <a href="http://forum.isthmus.com" target="_blank">Forum</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_food-drink">
+	<a href="http://isthmus.com/food-drink">FOOD &amp; DRINK<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_beer">
+        <a href="http://isthmus.com/food-drink/beer">Beer</a>
+      </li>
+      <li class="menu_subsection_cocktails">
+        <a href="http://isthmus.com/food-drink/cocktails">Cocktails</a>
+      </li>
+      <li class="menu_subsection_cooking">
+        <a href="http://isthmus.com/food-drink/cooking">Cooking</a>
+      </li>
+      <li class="menu_subsection_reviews">
+        <a href="http://isthmus.com/food-drink/reviews">Reviews</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_restaurant-guide">
+        <a href="http://www.isthmus.com/search/location/local-dining/#ord=alpha&amp;category=0">Restaurant Guide</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_arts">
+	<a href="http://isthmus.com/arts">ARTS &amp; CULTURE<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_books">
+        <a href="http://isthmus.com/arts/books">Books</a>
+      </li>
+      <li class="menu_subsection_comedy">
+        <a href="http://isthmus.com/arts/comedy">Comedy</a>
+      </li>
+      <li class="menu_subsection_emphasis">
+        <a href="http://isthmus.com/arts/emphasis">Emphasis</a>
+      </li>
+      <li class="menu_subsection_sports">
+        <a href="http://isthmus.com/arts/sports">Sports</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_stage">
+        <a href="http://isthmus.com/arts/stage">Stage</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_music">
+	<a href="http://isthmus.com/music">MUSIC<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_music-calendar">
+        <a href="/search/event/music-calendar">Music Calendar</a>
+      </li>
+      <li class="menu_subsection_isthmus-live-sessions">
+        <a href="http://isthmus.com/music/isthmus-live-sessions">Isthmus Live Sessions</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_vinyl-cave">
+        <a href="http://isthmus.com/music/vinyl-cave">Vinyl Cave</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_screens">
+	<a href="http://isthmus.com/screens">SCREENS<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_movies">
+        <a href="http://isthmus.com/screens/movies">Movies</a>
+      </li>
+      <li class="menu_subsection_tv-video">
+        <a href="http://isthmus.com/screens/tv-video">TV &amp; Video</a>
+      </li>
+      <li class="menu_subsection_games">
+        <a href="http://isthmus.com/screens/games">Games</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_movie-times">
+        <a href="http://movietimes.isthmus.com" target="_blank">Movie Times</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_all-events">
+	<a href="/all-events/calendar-of-events-index">EVENTS<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_the-guide">
+        <a href="/search/event/calendar-of-events/">Calendar</a>
+      </li>
+      <li class="menu_subsection_contests">
+        <a href="http://isthmus.com/all-events/contests">Giveaways</a>
+      </li>
+      <li class="menu_subsection_isthmus-events">
+        <a href="http://isthmus.com/all-events/isthmus-events">Isthmus Events</a>
+      </li>
+      <li class="menu_subsection_isthmus-picks">
+        <a href="/search/event/isthmus-picks">Isthmus Picks</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_isthmus-tickets">
+        <a href="http://isthmustickets.com/" target="_blank">Isthmus Tickets</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_end menu_section_chefweek">
+	<a href="http://isthmus.com/chefweek">Chef Week</a>
+    
+  </li>
+</ul>
+<ul class="subnav">
+  <li class="menu_subsection_start menu_subsection_news">
+    <a href="http://isthmus.com/news/news">News</a>
+  </li>
+  <li class="menu_subsection_cover-stories">
+    <a href="http://www.isthmus.com/topics/isthmus-cover-story/">Cover Stories</a>
+  </li>
+  <li class="menu_subsection_snapshot">
+    <a href="http://isthmus.com/news/snapshot">Snapshot</a>
+  </li>
+  <li class="menu_subsection_week-in-review">
+    <a href="http://isthmus.com/news/week-in-review">Week in Review</a>
+  </li>
+  <li class="menu_subsection_end menu_subsection_madison-matrix">
+    <a href="http://isthmus.com/news/madison-matrix">Madison Matrix</a>
+  </li>
+</ul>
+
+
+          </nav>            
+            <div id="breadcrumbs"><a href="http://isthmus.com">Home</a> <a href="http://isthmus.com/news">NEWS</a></div>
+          
+        </div>
+        <div id="leaderboard_nav">
+ <script type="text/javascript">
+     googletag.cmd.push(function() { googletag.display('leaderboard_nav'); });
+ </script>
+</div>
+
+        
+<script>js_var = {"latest_entries": 11, "section_id": 8}</script>
+<script type="text/javascript" src="https://d2az0yupc2akbm.cloudfront.net/vanguardistas.publicview/3.109/gzip/static/js/section.js"></script>
+
+      <div id="pagetype_section">
+
+        <div id="main">
+
+          <div id="sectiontitle">
+		  <div class="sectiontitle">
+<h1>NEWS</h1>
+
+</div>
+
+          </div>
+          <div id="sectionlead">
+		  <div class="lead">
+    <div class="image">
+      <a href="http://isthmus.com/news/news/legislature-rewrites-water-regulations/" title="Rewriting the rules"
+        ><img title="" alt="" src="http://isthmus.com/downloads/37433/download/News-Water-Privitization-02282016.jpg?cb=05be1a5f1b79ab63fd69fe07291d57c6"/></a>
+        <p class="credits"></p>
+    </div>
+    <div class="text">
+      <h2><a href="http://isthmus.com/news/news/legislature-rewrites-water-regulations/"
+        >Rewriting the rules</a></h2>
+      <p class="description"
+        >​The Legislature has been busy rewriting the rules regarding wetlands, high-capacity wells and local control of land. Some fear that an essential human resource — water — is now threatened.</p>
+      <a href="http://isthmus.com/news/news/legislature-rewrites-water-regulations/" class="more_link" title="Rewriting the rules">more &#187;</a>
+    </div>
+  </div>
+
+          </div>
+
+          <div id="features" class="features_wide">
+          <a class="RSS_link" title="RSS button" href="http://isthmus.com/news/index.rss">RSS</a>
+<h2>Features</h2>
+
+
+
+        <div class="feature  sec_news sec_snapshot">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/snapshot/good-wisconsin-wood-state-capitol-renovations/" title="Isn’t it good, Wisconsin wood?">
+    <noscript><img alt="Snapshot-WisconsinWood-crBillLueders-02252016.jpg" src="http://isthmus.com/downloads/37427/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/Snapshot-WisconsinWood-crBillLueders-02252016.jpg?cb=660273f0aacd2911e269d92eb033e9f4" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37427/download/Snapshot-WisconsinWood-crBillLueders-02252016.jpg?cb=660273f0aacd2911e269d92eb033e9f4&amp;w={width}&amp;ar={aspect-ratio}" alt="Snapshot-WisconsinWood-crBillLueders-02252016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    <p class="credits">Bill Lueders </p>
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/snapshot/good-wisconsin-wood-state-capitol-renovations/">Isn’t it good, Wisconsin wood?</a></h3>
+<p class="description"><span>White oak paneling that Fighting Bob La Follette once leaned against is now being used to serve sandwiches. And a few other good yarns about Wisconsin white oak.</span> <a href="http://isthmus.com/news/snapshot/good-wisconsin-wood-state-capitol-renovations/" class="more_link" title="Read Isn’t it good, Wisconsin wood?">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 25, 2016</span><span class="time"> 5:00 AM</span>
+<span class="authors"><a rel="tag" href="http://isthmus.com/topics/bill-lueders/">Bill Lueders</a></span>
+<span class="section"><a href="http://isthmus.com/news/snapshot">Snapshot</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_cover-stories">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/cover-stories/frank-productions-endures/" title="Family act">
+    <noscript><img alt="Cover-Frank-Family-Frontpage-crRataj-Berard-02252016.jpg" src="http://isthmus.com/downloads/37484/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/Cover-Frank-Family-Frontpage-crRataj-Berard-02252016.jpg?cb=4064fd409f43306d011e9fcbc0f076d1" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37484/download/Cover-Frank-Family-Frontpage-crRataj-Berard-02252016.jpg?cb=4064fd409f43306d011e9fcbc0f076d1&amp;w={width}&amp;ar={aspect-ratio}" alt="Cover-Frank-Family-Frontpage-crRataj-Berard-02252016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    <p class="credits">Rataj-Berard</p>
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/cover-stories/frank-productions-endures/">Family act</a></h3>
+<p class="description"><span>​Madison’s family-owned, three-generation Frank Productions is one of a handful of independents remaining after years of industry consolidation that has seen global giants swallow up or shut down smaller competitors across the nation.</span> <a href="http://isthmus.com/news/cover-stories/frank-productions-endures/" class="more_link" title="Read Family act">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 25, 2016</span><span class="time"> 5:00 AM</span>
+<span class="authors"><a rel="tag" href="http://isthmus.com/topics/michael-popke/">Michael Popke</a></span>
+<span class="section"><a href="http://www.isthmus.com/topics/isthmus-cover-story/">Cover Stories</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_madison-matrix">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/madison-matrix/madison-matrix-2-25-16/" title="Madison Matrix for Feb. 25, 2016">
+    <noscript><img alt="Matrix-Latino-Protest-teaser-crDMM-02252016.jpg" src="http://isthmus.com/downloads/37473/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/Matrix-Latino-Protest-teaser-crDMM-02252016.jpg?cb=e7f32d860adad83f1d2f49a49f00ef2e" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37473/download/Matrix-Latino-Protest-teaser-crDMM-02252016.jpg?cb=e7f32d860adad83f1d2f49a49f00ef2e&amp;w={width}&amp;ar={aspect-ratio}" alt="Matrix-Latino-Protest-teaser-crDMM-02252016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    <p class="credits">David Michael Miller </p>
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/madison-matrix/madison-matrix-2-25-16/">Madison Matrix for Feb. 25, 2016</a></h3>
+<p class="description"><span>Madison sometimes defies categorization, but we give it a shot every week with the Madison Matrix.</span> <a href="http://isthmus.com/news/madison-matrix/madison-matrix-2-25-16/" class="more_link" title="Read Madison Matrix for Feb. 25, 2016">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 25, 2016</span><span class="time"> 5:00 AM</span>
+
+<span class="section"><a href="http://isthmus.com/news/madison-matrix">Madison Matrix</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_week-in-review">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/week-in-review/week-in-review-2-25-16/" title="Week in Review: Feb. 18-24, 2016">
+    <noscript><img alt="WIR-Supreme-Court-Race-02252016.jpg" src="http://isthmus.com/downloads/37471/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/WIR-Supreme-Court-Race-02252016.jpg?cb=e7f32d860adad83f1d2f49a49f00ef2e" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37471/download/WIR-Supreme-Court-Race-02252016.jpg?cb=e7f32d860adad83f1d2f49a49f00ef2e&amp;w={width}&amp;ar={aspect-ratio}" alt="WIR-Supreme-Court-Race-02252016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/week-in-review/week-in-review-2-25-16/">Week in Review: Feb. 18-24, 2016</a></h3>
+<p class="description"><span>Too busy to read all the news? No worries. Isthmus has got you covered with Week in Review.</span> <a href="http://isthmus.com/news/week-in-review/week-in-review-2-25-16/" class="more_link" title="Read Week in Review: Feb. 18-24, 2016">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 24, 2016</span><span class="time"> 4:33 PM</span>
+<span class="authors"><a rel="tag" href="http://isthmus.com/topics/isthmus-staff/">Isthmus Staff</a></span>
+<span class="section"><a href="http://isthmus.com/news/week-in-review">Week in Review</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_news">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/news/autistic-children-aided-by-video-game/" title="Balancing act">
+    <noscript><img alt="Tech-AutismVideoGames-crJeffMiller UWMadison-02252016.jpg" src="http://isthmus.com/downloads/37435/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/Tech-AutismVideoGames-crJeffMiller%20UWMadison-02252016.jpg?cb=9ad3c68c929b2e7752787870c7f05dc1" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37435/download/Tech-AutismVideoGames-crJeffMiller%20UWMadison-02252016.jpg?cb=9ad3c68c929b2e7752787870c7f05dc1&amp;w={width}&amp;ar={aspect-ratio}" alt="Tech-AutismVideoGames-crJeffMiller UWMadison-02252016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    <p class="credits">Jeff Miller/UW-Madison</p>
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/news/autistic-children-aided-by-video-game/">Balancing act</a></h3>
+<p class="description"><span>​Some autistic children struggle with balance skills. A UW team has developed a Wii computer game that it hopes might give them a leg up.</span> <a href="http://isthmus.com/news/news/autistic-children-aided-by-video-game/" class="more_link" title="Read Balancing act">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 24, 2016</span><span class="time"> 3:24 PM</span>
+<span class="authors"><a rel="tag" href="http://isthmus.com/topics/denise-thornton/">Denise Thornton</a></span>
+<span class="section"><a href="http://isthmus.com/news/news">News</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_news">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/news/porchlight-products-set-to-expand-in-new-location/" title="Kitchen rehab">
+    <noscript><img alt="News-PorchlightProducts1-AyotteWilfred2-crJoeTarr-03032016.jpg" src="http://isthmus.com/downloads/37410/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/News-PorchlightProducts1-AyotteWilfred2-crJoeTarr-03032016.jpg?cb=96b8d4b285e2ea669bfca68aad604274" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37410/download/News-PorchlightProducts1-AyotteWilfred2-crJoeTarr-03032016.jpg?cb=96b8d4b285e2ea669bfca68aad604274&amp;w={width}&amp;ar={aspect-ratio}" alt="News-PorchlightProducts1-AyotteWilfred2-crJoeTarr-03032016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    <p class="credits">Joe Tarr </p>
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/news/porchlight-products-set-to-expand-in-new-location/">Kitchen rehab</a></h3>
+<p class="description"><span>Porchlight Products will expand into a new, larger kitchen near East Towne Mall. The $4 million project also includes 28 new housing units.</span> <a href="http://isthmus.com/news/news/porchlight-products-set-to-expand-in-new-location/" class="more_link" title="Read Kitchen rehab">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 24, 2016</span><span class="time"> 11:52 AM</span>
+<span class="authors"><a rel="tag" href="http://isthmus.com/topics/joe-tarr/">Joe Tarr</a></span>
+<span class="section"><a href="http://isthmus.com/news/news">News</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_news">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/news/latinos-flood-capitol-to-protest-proposed-legislation/" title="Sí, se puede">
+    <noscript><img alt="News-DiaSinLatinos3-crLaurenJustice-02182018.jpg" src="http://isthmus.com/downloads/37383/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/News-DiaSinLatinos3-crLaurenJustice-02182018.jpg?cb=f3a696dd78bfab1005b252f4b58035b3" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37383/download/News-DiaSinLatinos3-crLaurenJustice-02182018.jpg?cb=f3a696dd78bfab1005b252f4b58035b3&amp;w={width}&amp;ar={aspect-ratio}" alt="News-DiaSinLatinos3-crLaurenJustice-02182018.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class="play slides_overlay"></div></a>
+    <p class="credits">Lauren Justice</p>
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/news/latinos-flood-capitol-to-protest-proposed-legislation/">Sí, se puede</a></h3>
+<p class="description"><span>In a show of solidarity and a protest of proposed legislation, thousands cram Capitol Square for a Day Without Latinos.</span> <a href="http://isthmus.com/news/news/latinos-flood-capitol-to-protest-proposed-legislation/" class="more_link" title="Read Sí, se puede">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 18, 2016</span><span class="time"> 4:15 PM</span>
+<span class="authors"><a rel="tag" href="http://isthmus.com/topics/nathan-j-comp/">Nathan J. Comp</a></span>
+<span class="section"><a href="http://isthmus.com/news/news">News</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_cover-story">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/cover-story/oakhill-prison-humanities-project-artists-in-absentia/" title="Insider art">
+    <noscript><img alt="Cover-Sleeping-Beauty-Geroge-A-02182016.jpg" src="http://isthmus.com/downloads/37362/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/Cover-Sleeping-Beauty-Geroge-A-02182016.jpg?cb=a1a8201abac5b8c703ad22327ac173a4" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37362/download/Cover-Sleeping-Beauty-Geroge-A-02182016.jpg?cb=a1a8201abac5b8c703ad22327ac173a4&amp;w={width}&amp;ar={aspect-ratio}" alt="Cover-Sleeping-Beauty-Geroge-A-02182016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    <p class="credits">George A.</p>
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/cover-story/oakhill-prison-humanities-project-artists-in-absentia/">Insider art</a></h3>
+<p class="description"><span>​The Oakhill Prison Humanities Project is unveiling “Artists in Absentia,” an exhibit of inmates’ art, music and writing at the Madison Central Library.</span> <a href="http://isthmus.com/news/cover-story/oakhill-prison-humanities-project-artists-in-absentia/" class="more_link" title="Read Insider art">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 18, 2016</span><span class="time"> 5:00 AM</span>
+<span class="authors"><a rel="tag" href="http://isthmus.com/topics/bill-lueders/">Bill Lueders</a></span>
+<span class="section"><a href="http://isthmus.com/news/cover-story">Isthmus Cover Stories</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_week-in-review">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/week-in-review/week-in-review-02-11-17/" title="Week in Review: Feb. 11-17, 2016">
+    <noscript><img alt="WIR-Fly-Swatter-02182016.jpg" src="http://isthmus.com/downloads/37372/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/WIR-Fly-Swatter-02182016.jpg?cb=52a68e862d078ffa0eef24534960d6ae" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37372/download/WIR-Fly-Swatter-02182016.jpg?cb=52a68e862d078ffa0eef24534960d6ae&amp;w={width}&amp;ar={aspect-ratio}" alt="WIR-Fly-Swatter-02182016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/week-in-review/week-in-review-02-11-17/">Week in Review: Feb. 11-17, 2016</a></h3>
+<p class="description"><span>Too busy to read all the news? No worries. Isthmus has got you covered with Week in Review.</span> <a href="http://isthmus.com/news/week-in-review/week-in-review-02-11-17/" class="more_link" title="Read Week in Review: Feb. 11-17, 2016">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 18, 2016</span><span class="time"> 5:00 AM</span>
+
+<span class="section"><a href="http://isthmus.com/news/week-in-review">Week in Review</a></span>
+
+</p>
+
+</div>
+
+
+        <div class="feature  sec_news sec_madison-matrix">
+
+
+<div class="image">
+  <a href="http://isthmus.com/news/madison-matrix/madison-matrix-2-18-16/" title="Madison Matrix for Feb. 18, 2016">
+    <noscript><img alt="Matrix-Zoo-Sleepover-02182016.jpg" src="http://isthmus.com/downloads/37369/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/Matrix-Zoo-Sleepover-02182016.jpg?cb=9148a78b0044c4c52e40000b5ee93800" itemprop="photo"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" class="mp-lazyload" data-src="http://isthmus.com/downloads/37369/download/Matrix-Zoo-Sleepover-02182016.jpg?cb=9148a78b0044c4c52e40000b5ee93800&amp;w={width}&amp;ar={aspect-ratio}" alt="Matrix-Zoo-Sleepover-02182016.jpg" itemprop="photo" data-widths="[100, 150, 220, 320, 450, 640]"/><div 
+                    class=""></div></a>
+    
+</div>
+
+
+
+<h3><a href="http://isthmus.com/news/madison-matrix/madison-matrix-2-18-16/">Madison Matrix for Feb. 18, 2016</a></h3>
+<p class="description"><span>Madison sometimes defies categorization, but we give it a shot every week with the Madison Matrix.</span> <a href="http://isthmus.com/news/madison-matrix/madison-matrix-2-18-16/" class="more_link" title="Read Madison Matrix for Feb. 18, 2016">more &#187;</a></p>
+<p class="infos">
+<span class="date">Feb 18, 2016</span><span class="time"> 5:00 AM</span>
+
+<span class="section"><a href="http://isthmus.com/news/madison-matrix">Madison Matrix</a></span>
+
+</p>
+
+</div>
+
+
+<div id="more_results"></div>
+
+<div class="more_div">
+    <a href="#" id="view_more" class="view_more">View more</a>
+</div>
+          </div>
+          
+          <div id="inline">
+		
+
+          </div>
+          
+        </div>
+
+        <div id="side">
+
+          <div id="rightads">            <div class="MPU_ad">
+<div id="mpu_right">
+ <script type="text/javascript">
+     googletag.cmd.push(function() { googletag.display('mpu_right'); });
+ </script>
+</div>
+
+            </div>
+</div>
+
+          <div class="slot">
+
+  
+<div class="sprocket sprocket_eventcal "><div class="sprocket_eventcal_inner">
+    <div class="title">
+  <a href="http://isthmus.com/search/event/isthmus-picks/"
+      ><noscript><img src="http://isthmus.com/downloads/32250/download/bitblt-300xNone-dcf8bbdfa5a1eea4ae628cd31c51cf829422b7af/IsthmusPicks-Button.jpg?cb=3ad61fdec2dc2fb7e4e5f6cc6ef0643b" title="Isthmus Picks" alt="Print" class="thumbnail"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" title="Isthmus Picks" data-widths="[100, 150, 220, 300]" data-src="http://isthmus.com/downloads/32250/download/IsthmusPicks-Button.jpg?cb=3ad61fdec2dc2fb7e4e5f6cc6ef0643b&amp;w={width}&amp;ar={aspect-ratio}" alt="Print" class="thumbnail mp-lazyload"/>
+    </a>
+</div>
+
+                <div class="tabber" id="calendar_74">
+                  
+                  <div class="tabbertab" title="Mon">
+                    <h4 class="event_header"
+                      >Monday</h4>
+
+						<p class="event_date">
+							<a href="http://isthmus.com/search/event/isthmus-picks/">February 29, 2016</a>
+							
+						</p>
+
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/beyond-likeness-mapping-the-self/"
+                            ><span itemprop="name">Beyond Likeness: Mapping the Self</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-18T00:00:00">Feb 18, 2016</time> - <time itemprop="endDate" datetime="2016-04-04T00:00:00">Apr 3, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/frank-stella/"
+                            ><span itemprop="name">Frank Stella</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-05T00:00:00">Feb 5, 2016</time> - <time itemprop="endDate" datetime="2016-05-16T00:00:00">May 15, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/uw-art-department-faculty-quadrennial-exhibition/"
+                            ><span itemprop="name">UW Art Department Faculty Quadrennial Exhibition</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/historic-photo-exhibit/"
+                            ><span itemprop="name">Historic Photo Exhibit</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2017-01-01T00:00:00">Dec 31, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/neighborhood-house/"
+                            ><span itemprop="name">Neighborhood House</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/debbie-kupinsky-allison-welch/"
+                            ><span itemprop="name">Debbie Kupinsky + Allison Welch</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-15T00:00:00">Jan 15, 2016</time> - <time itemprop="endDate" datetime="2016-03-07T00:00:00">Mar 6, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-james-watrous-gallery-of-the-wisconsin-academy/"
+                            ><span itemprop="name">Overture Center-James Watrous Gallery of the Wisconsin Academy</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/ellen-lanyon/"
+                            ><span itemprop="name">Ellen Lanyon</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2015-12-04T00:00:00">Dec 4, 2015</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+
+                  </div>
+
+                  <div class="tabbertab" title="Tue">
+                    <h4 class="event_header"
+                      >Tuesday</h4>
+
+						<p class="event_date">
+							<a href="http://isthmus.com/search/event/isthmus-picks/#search_date=2016-3-1">March 1, 2016</a>
+							
+						</p>
+
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/motown-the-musical/"
+                            ><span itemprop="name">Motown the Musical</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-01T19:30:00">Mar 1, 2016 7:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-overture-hall/"
+                            ><span itemprop="name">Overture Center-Overture Hall</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/beyond-likeness-mapping-the-self/"
+                            ><span itemprop="name">Beyond Likeness: Mapping the Self</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-18T00:00:00">Feb 18, 2016</time> - <time itemprop="endDate" datetime="2016-04-04T00:00:00">Apr 3, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/frank-stella/"
+                            ><span itemprop="name">Frank Stella</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-05T00:00:00">Feb 5, 2016</time> - <time itemprop="endDate" datetime="2016-05-16T00:00:00">May 15, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/uw-art-department-faculty-quadrennial-exhibition/"
+                            ><span itemprop="name">UW Art Department Faculty Quadrennial Exhibition</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/historic-photo-exhibit/"
+                            ><span itemprop="name">Historic Photo Exhibit</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2017-01-01T00:00:00">Dec 31, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/neighborhood-house/"
+                            ><span itemprop="name">Neighborhood House</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/debbie-kupinsky-allison-welch/"
+                            ><span itemprop="name">Debbie Kupinsky + Allison Welch</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-15T00:00:00">Jan 15, 2016</time> - <time itemprop="endDate" datetime="2016-03-07T00:00:00">Mar 6, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-james-watrous-gallery-of-the-wisconsin-academy/"
+                            ><span itemprop="name">Overture Center-James Watrous Gallery of the Wisconsin Academy</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/ellen-lanyon/"
+                            ><span itemprop="name">Ellen Lanyon</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2015-12-04T00:00:00">Dec 4, 2015</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+
+                  </div>
+
+                  <div class="tabbertab" title="Wed">
+                    <h4 class="event_header"
+                      >Wednesday</h4>
+
+						<p class="event_date">
+							<a href="http://isthmus.com/search/event/isthmus-picks/#search_date=2016-3-2">March 2, 2016</a>
+							
+						</p>
+
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/motown-the-musical/"
+                            ><span itemprop="name">Motown the Musical</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-02T19:30:00">Mar 2, 2016 7:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-overture-hall/"
+                            ><span itemprop="name">Overture Center-Overture Hall</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/dale-watson-his-lone-stars-nellie-wilson-the-hellbound-honey/"
+                            ><span itemprop="name">Dale Watson &amp; His Lone Stars</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-02T20:00:00">Mar 2, 2016 8:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/high-noon-saloon/"
+                            ><span itemprop="name">High Noon Saloon</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/beyond-likeness-mapping-the-self/"
+                            ><span itemprop="name">Beyond Likeness: Mapping the Self</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-18T00:00:00">Feb 18, 2016</time> - <time itemprop="endDate" datetime="2016-04-04T00:00:00">Apr 3, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/frank-stella/"
+                            ><span itemprop="name">Frank Stella</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-05T00:00:00">Feb 5, 2016</time> - <time itemprop="endDate" datetime="2016-05-16T00:00:00">May 15, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/uw-art-department-faculty-quadrennial-exhibition/"
+                            ><span itemprop="name">UW Art Department Faculty Quadrennial Exhibition</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/historic-photo-exhibit/"
+                            ><span itemprop="name">Historic Photo Exhibit</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2017-01-01T00:00:00">Dec 31, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/neighborhood-house/"
+                            ><span itemprop="name">Neighborhood House</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/debbie-kupinsky-allison-welch/"
+                            ><span itemprop="name">Debbie Kupinsky + Allison Welch</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-15T00:00:00">Jan 15, 2016</time> - <time itemprop="endDate" datetime="2016-03-07T00:00:00">Mar 6, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-james-watrous-gallery-of-the-wisconsin-academy/"
+                            ><span itemprop="name">Overture Center-James Watrous Gallery of the Wisconsin Academy</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/ellen-lanyon/"
+                            ><span itemprop="name">Ellen Lanyon</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2015-12-04T00:00:00">Dec 4, 2015</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+
+                  </div>
+
+                  <div class="tabbertab" title="Thu">
+                    <h4 class="event_header"
+                      >Thursday</h4>
+
+						<p class="event_date">
+							<a href="http://isthmus.com/search/event/isthmus-picks/#search_date=2016-3-3">March 3, 2016</a>
+							
+						</p>
+
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/elliott-brood/"
+                            ><span itemprop="name">Elliott Brood</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-03T18:30:00">Mar 3, 2016 6:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/high-noon-saloon/"
+                            ><span itemprop="name">High Noon Saloon</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/motown-the-musical/"
+                            ><span itemprop="name">Motown the Musical</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-03T19:30:00">Mar 3, 2016 7:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-overture-hall/"
+                            ><span itemprop="name">Overture Center-Overture Hall</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/university-theatre-smart-people/"
+                            ><span itemprop="name">Smart People</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-03T19:30:00">Mar 3, 2016 7:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/uw-vilas-hall-mitchell-theatre/"
+                            ><span itemprop="name">UW Vilas Hall-Mitchell Theatre</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/Li-Chiao-Ping-Dance-fluid-measure/"
+                            ><span itemprop="name">Li Chiao-Ping Dance</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-03T20:00:00">Mar 3, 2016 8:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/uw-lathrop-hall-hdoubler-performance-space/"
+                            ><span itemprop="name">UW Lathrop Hall-H'Doubler Performance Space</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/the-grawlix/"
+                            ><span itemprop="name">The Grawlix</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-03T20:30:00">Mar 3, 2016 8:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/comedy-club-on-state/"
+                            ><span itemprop="name">Comedy Club on State</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/zebras-aseethe-population-control-tubal-cain/"
+                            ><span itemprop="name">Zebras</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-03T21:00:00">Mar 3, 2016 9:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/frequency/"
+                            ><span itemprop="name">The Frequency</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/beyond-likeness-mapping-the-self/"
+                            ><span itemprop="name">Beyond Likeness: Mapping the Self</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-18T00:00:00">Feb 18, 2016</time> - <time itemprop="endDate" datetime="2016-04-04T00:00:00">Apr 3, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/frank-stella/"
+                            ><span itemprop="name">Frank Stella</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-05T00:00:00">Feb 5, 2016</time> - <time itemprop="endDate" datetime="2016-05-16T00:00:00">May 15, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/uw-art-department-faculty-quadrennial-exhibition/"
+                            ><span itemprop="name">UW Art Department Faculty Quadrennial Exhibition</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/historic-photo-exhibit/"
+                            ><span itemprop="name">Historic Photo Exhibit</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2017-01-01T00:00:00">Dec 31, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/neighborhood-house/"
+                            ><span itemprop="name">Neighborhood House</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+
+                  </div>
+
+                  <div class="tabbertab" title="Fri">
+                    <h4 class="event_header"
+                      >Friday</h4>
+
+						<p class="event_date">
+							<a href="http://isthmus.com/search/event/isthmus-picks/#search_date=2016-3-4">March 4, 2016</a>
+							
+						</p>
+
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/university-theatre-smart-people/"
+                            ><span itemprop="name">Smart People</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-04T19:30:00">Mar 4, 2016 7:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/uw-vilas-hall-mitchell-theatre/"
+                            ><span itemprop="name">UW Vilas Hall-Mitchell Theatre</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/the-caucasian-chalk-circle/"
+                            ><span itemprop="name">The Caucasian Chalk Circle</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-04T19:30:00">Mar 4, 2016 7:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/edgewood-college/"
+                            ><span itemprop="name">Edgewood College</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/Li-Chiao-Ping-Dance-fluid-measure/"
+                            ><span itemprop="name">Li Chiao-Ping Dance</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-04T20:00:00">Mar 4, 2016 8:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/uw-lathrop-hall-hdoubler-performance-space/"
+                            ><span itemprop="name">UW Lathrop Hall-H'Doubler Performance Space</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/motown-the-musical/"
+                            ><span itemprop="name">Motown the Musical</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-04T20:00:00">Mar 4, 2016 8:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-overture-hall/"
+                            ><span itemprop="name">Overture Center-Overture Hall</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/the-grawlix/"
+                            ><span itemprop="name">The Grawlix</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-04T20:00:00">Mar 4, 2016 8:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/comedy-club-on-state/"
+                            ><span itemprop="name">Comedy Club on State</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/beyond-likeness-mapping-the-self/"
+                            ><span itemprop="name">Beyond Likeness: Mapping the Self</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-18T00:00:00">Feb 18, 2016</time> - <time itemprop="endDate" datetime="2016-04-04T00:00:00">Apr 3, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/frank-stella/"
+                            ><span itemprop="name">Frank Stella</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-05T00:00:00">Feb 5, 2016</time> - <time itemprop="endDate" datetime="2016-05-16T00:00:00">May 15, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/uw-art-department-faculty-quadrennial-exhibition/"
+                            ><span itemprop="name">UW Art Department Faculty Quadrennial Exhibition</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/historic-photo-exhibit/"
+                            ><span itemprop="name">Historic Photo Exhibit</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2017-01-01T00:00:00">Dec 31, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/neighborhood-house/"
+                            ><span itemprop="name">Neighborhood House</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/debbie-kupinsky-allison-welch/"
+                            ><span itemprop="name">Debbie Kupinsky + Allison Welch</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-15T00:00:00">Jan 15, 2016</time> - <time itemprop="endDate" datetime="2016-03-07T00:00:00">Mar 6, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-james-watrous-gallery-of-the-wisconsin-academy/"
+                            ><span itemprop="name">Overture Center-James Watrous Gallery of the Wisconsin Academy</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+
+                  </div>
+
+                  <div class="tabbertab" title="Sat">
+                    <h4 class="event_header"
+                      >Saturday</h4>
+
+						<p class="event_date">
+							<a href="http://isthmus.com/search/event/isthmus-picks/#search_date=2016-3-5">March 5, 2016</a>
+							
+						</p>
+
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/motown-the-musical/"
+                            ><span itemprop="name">Motown the Musical</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-05T14:00:00">Mar 5, 2016 2:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-overture-hall/"
+                            ><span itemprop="name">Overture Center-Overture Hall</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/the-caucasian-chalk-circle/"
+                            ><span itemprop="name">The Caucasian Chalk Circle</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-05T14:00:00">Mar 5, 2016 2:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/edgewood-college/"
+                            ><span itemprop="name">Edgewood College</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/Li-Chiao-Ping-Dance-fluid-measure/"
+                            ><span itemprop="name">Li Chiao-Ping Dance</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-05T14:30:00">Mar 5, 2016 2:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/uw-lathrop-hall-hdoubler-performance-space/"
+                            ><span itemprop="name">UW Lathrop Hall-H'Doubler Performance Space</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/university-theatre-smart-people/"
+                            ><span itemprop="name">Smart People</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-05T19:30:00">Mar 5, 2016 7:30 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/uw-vilas-hall-mitchell-theatre/"
+                            ><span itemprop="name">UW Vilas Hall-Mitchell Theatre</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/the-grawlix/"
+                            ><span itemprop="name">The Grawlix</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-05T20:00:00">Mar 5, 2016 8:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/comedy-club-on-state/"
+                            ><span itemprop="name">Comedy Club on State</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/beyond-likeness-mapping-the-self/"
+                            ><span itemprop="name">Beyond Likeness: Mapping the Self</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-18T00:00:00">Feb 18, 2016</time> - <time itemprop="endDate" datetime="2016-04-04T00:00:00">Apr 3, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/frank-stella/"
+                            ><span itemprop="name">Frank Stella</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-05T00:00:00">Feb 5, 2016</time> - <time itemprop="endDate" datetime="2016-05-16T00:00:00">May 15, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/uw-art-department-faculty-quadrennial-exhibition/"
+                            ><span itemprop="name">UW Art Department Faculty Quadrennial Exhibition</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/historic-photo-exhibit/"
+                            ><span itemprop="name">Historic Photo Exhibit</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2017-01-01T00:00:00">Dec 31, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/neighborhood-house/"
+                            ><span itemprop="name">Neighborhood House</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/debbie-kupinsky-allison-welch/"
+                            ><span itemprop="name">Debbie Kupinsky + Allison Welch</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-15T00:00:00">Jan 15, 2016</time> - <time itemprop="endDate" datetime="2016-03-07T00:00:00">Mar 6, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-james-watrous-gallery-of-the-wisconsin-academy/"
+                            ><span itemprop="name">Overture Center-James Watrous Gallery of the Wisconsin Academy</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+
+                  </div>
+
+                  <div class="tabbertab" title="Sun">
+                    <h4 class="event_header"
+                      >Sunday</h4>
+
+						<p class="event_date">
+							<a href="http://isthmus.com/search/event/isthmus-picks/#search_date=2016-3-6">March 6, 2016</a>
+							
+						</p>
+
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/motown-the-musical/"
+                            ><span itemprop="name">Motown the Musical</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-06T13:00:00">Mar 6, 2016 1:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-overture-hall/"
+                            ><span itemprop="name">Overture Center-Overture Hall</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/university-theatre-smart-people/"
+                            ><span itemprop="name">Smart People</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-03-06T14:00:00">Mar 6, 2016 2:00 PM</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/uw-vilas-hall-mitchell-theatre/"
+                            ><span itemprop="name">UW Vilas Hall-Mitchell Theatre</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/beyond-likeness-mapping-the-self/"
+                            ><span itemprop="name">Beyond Likeness: Mapping the Self</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-18T00:00:00">Feb 18, 2016</time> - <time itemprop="endDate" datetime="2016-04-04T00:00:00">Apr 3, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/frank-stella/"
+                            ><span itemprop="name">Frank Stella</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-02-05T00:00:00">Feb 5, 2016</time> - <time itemprop="endDate" datetime="2016-05-16T00:00:00">May 15, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/uw-art-department-faculty-quadrennial-exhibition/"
+                            ><span itemprop="name">UW Art Department Faculty Quadrennial Exhibition</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/chazen-museum-of-art/"
+                            ><span itemprop="name">Chazen Museum of Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/historic-photo-exhibit/"
+                            ><span itemprop="name">Historic Photo Exhibit</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-28T00:00:00">Jan 28, 2016</time> - <time itemprop="endDate" datetime="2017-01-01T00:00:00">Dec 31, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/neighborhood-house/"
+                            ><span itemprop="name">Neighborhood House</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/debbie-kupinsky-allison-welch/"
+                            ><span itemprop="name">Debbie Kupinsky + Allison Welch</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2016-01-15T00:00:00">Jan 15, 2016</time> - <time itemprop="endDate" datetime="2016-03-07T00:00:00">Mar 6, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/overture-center-james-watrous-gallery-of-the-wisconsin-academy/"
+                            ><span itemprop="name">Overture Center-James Watrous Gallery of the Wisconsin Academy</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+                    <div class="event_list">
+                       <ul>
+                        <li itemscope="" itemtype="http://schema.org/Event">
+                          <p class="event_category"><span class="categ">Isthmus Picks</span></p>
+                          <a
+                              class="event_title"
+                                itemprop="url" href="http://isthmus.com/events/ellen-lanyon/"
+                            ><span itemprop="name">Ellen Lanyon</span></a>
+                          <p class="event_date"><time itemprop="startDate" datetime="2015-12-04T00:00:00">Dec 4, 2015</time> - <time itemprop="endDate" datetime="2016-04-18T00:00:00">Apr 17, 2016</time></p>
+                          <p class="event_location" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><a href="http://isthmus.com/locations/madison-museum-of-contemporary-art-2/"
+                            ><span itemprop="name">Madison Museum of Contemporary Art</span></a></p>
+                          </li>
+                      </ul>
+                    </div>
+                  
+
+                  </div>
+
+                </div>
+                <div class="foot">
+                  <p class="bottom">
+                  	
+                    	<a class="search" href="http://isthmus.com/search/event/isthmus-picks/">Search Events</a> 
+                    
+                    <a href="/events/submit.html" class="submit" target="_blank">Submit Yours</a>
+                  </p>
+                </div>
+              </div></div>
+<script>
+  require(["js_dirty/tabber"], function() {
+    tabberAutomatic({});
+    tabber = document.getElementById('calendar_74');
+    tabber.tabber.tabShow(0);
+  });
+</script>
+
+
+  <div class="sprocket sprocket_image"><a href="http://www.isthmus.com/search/event/calendar-of-events/" title="What to Do"><img class="thumbnail" title="What to Do" alt="What to Do" src="http://isthmus.com/downloads/35339/download/Search-All-Events.jpg?cb=0b1013469e5cc6811eaccca22de2d780"/></a></div>
+
+
+  <div class="sprocket sprocket_location_search">
+<script type="text/javascript" src="https://d2az0yupc2akbm.cloudfront.net/vanguardistas.publicview/3.109/gzip/static/js/support/sprocket_support.js"></script>
+<script type="text/javascript" src="https://d2az0yupc2akbm.cloudfront.net/vanguardistas.publicview/3.109/gzip/static/js/support/support.js"></script>
+
+<script>trans_loc_dict = {"selectAllString": "All", "selectMakeSelectionString": "Make selection above"};</script>
+
+<div class="form">
+<form action="http://isthmus.com/search/goto_location_search" name="sprocket_section_409_form" method="POST">
+	<input type="hidden" name="searchid" value="sprocket_section_409" />
+<div class="title">
+  <noscript><img src="http://isthmus.com/downloads/31575/download/bitblt-300xNone-dcf8bbdfa5a1eea4ae628cd31c51cf829422b7af/MadisonDining-Button.jpg?cb=1220b42f173506788487c8501aabe1ce" title="Madison Dining by Cuisine" alt="LogosForSite.indd" class="thumbnail"/></noscript><img sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" title="Madison Dining by Cuisine" data-widths="[100, 150, 220, 300]" data-src="http://isthmus.com/downloads/31575/download/MadisonDining-Button.jpg?cb=1220b42f173506788487c8501aabe1ce&amp;w={width}&amp;ar={aspect-ratio}" alt="LogosForSite.indd" class="thumbnail mp-lazyload"/>
+    
+</div>
+
+	<p class="description"></p>
+    <fieldset>
+    
+	    
+		
+			<input type="hidden" value="local-dining" name="sprocket_section_409_search" />
+		
+	</fieldset>
+	<fieldset id="sprocket_section_409_feature_set" style="display:none;">
+	<label id="sprocket_section_409_feature_label">Feature</label>
+			<select name="sprocket_section_409_feature">
+	    	  <option value="">All</option>
+			</select>
+	</fieldset>
+	<fieldset id="sprocket_where_sprocket_section_409_50">
+	<label>Where</label>
+			<select name="sprocket_section_409_quicklink" onchange="loadZones('sprocket_section_409_form','50','sprocket_section_409', trans_loc_dict['selectMakeSelectionString'])">
+	    	  <option value="">All</option>
+			</select>
+			<select class="quicklinks2" name="sprocket_section_409_zone">
+					<option></option>
+				</select>
+	</fieldset>
+	<fieldset>
+		<button class="submit" type="submit" value="None">Find</button>
+	</fieldset>
+</form>
+</div>
+
+<script type="text/javascript">
+if (QL === undefined) {
+    var QL = [];
+}    
+if (regQL === undefined) {
+    var regQL = [];
+}    
+
+if (MZ === undefined) {
+    var MZ = [];
+}    
+if (regMZ === undefined) {
+    var regMZ = [];
+}    
+
+if (FT === undefined) {
+    var FT = [];
+}    
+if (regFT === undefined) {
+    var regFT = [];
+}    
+if (UM === undefined) {
+    var UM = [];
+}    
+
+MZ[50] = {"local-dining": [[1, "Neighborhoods"]]};
+regMZ['sprocket_section_409'] = new Array();
+
+FT[50] = {"local-dining": [["Location Type", [["86_2364", "Bakery"], ["86_2463", "Bar"], ["86_2496", "Beer Garden"], ["86_2419", "Cafe/Coffee Shop"], ["86_2495", "Food Cart/Truck"], ["86_2399", "Lounge"], ["86_2417", "Pub"], ["86_2452", "Restaurant"], ["86_2433", "Tea Room"], ["86_2436", "Wine Bar"]]], ["Cuisine", [["83_2460", "Afghan"], ["83_2333", "American"], ["83_2497", "American Southern"], ["83_2348", "Argentine"], ["83_2489", "Asian"], ["83_2359", "Australian"], ["83_2349", "Barbecue"], ["83_2501", "Belgian"], ["83_2502", "Brazilian"], ["83_2388", "Burgers"], ["83_2367", "Burritos"], ["83_2427", "Cajun & Creole"], ["83_2410", "Caribbean"], ["83_2446", "Chinese"], ["83_2385", "Contemporary"], ["83_2458", "Costa Rican"], ["83_2518", "Crepes"], ["83_2504", "Cupcakes"], ["83_2508", "Deli"], ["83_2374", "Donuts"], ["83_2354", "Fish & Chips"], ["83_2520", "French"], ["83_2379", "Frozen Yogurt"], ["83_2522", "Fusion"], ["83_2356", "Gastro Pub"], ["83_2346", "German"], ["83_2375", "Greek"], ["83_2482", "Hot Dogs"], ["83_2445", "Ice Cream"], ["83_2449", "Indian"], ["83_2500", "Indonesian"], ["83_2480", "Irish"], ["83_2341", "Italian"], ["83_2435", "Jamaican"], ["83_2448", "Japanese"], ["83_2511", "Jewish"], ["83_2490", "Juice"], ["83_2432", "Korean"], ["83_2529", "Laotian"], ["83_2493", "Latin American"], ["83_2487", "Lebanese"], ["83_2334", "Locavore"], ["83_2443", "Mediterranean"], ["83_2516", "Mexican"], ["83_2420", "Middle Eastern"], ["83_2337", "Moroccan"], ["83_2402", "Nepalese"], ["83_2344", "New American"], ["83_2416", "Pan-Asian"], ["83_2456", "Persian"], ["83_2459", "Peruvian"], ["83_2485", "Pizza"], ["83_2454", "Poutine"], ["83_2394", "Pub Grub"], ["83_2371", "Russian"], ["83_2474", "Salad"], ["83_2467", "Sandwiches"], ["83_2513", "Scandinavian"], ["83_2465", "Seafood"], ["83_2376", "Soul Food"], ["83_2406", "Soup"], ["83_2412", "South American"], ["83_2400", "Spanish"], ["83_2350", "Sri Lankan"], ["83_2483", "Steakhouse"], ["83_2403", "Sushi"], ["83_2361", "Tacos"], ["83_2343", "Tapas"], ["83_2457", "Tex-Mex"], ["83_2472", "Thai"], ["83_2372", "Tibetan"], ["83_2509", "Trinidadian"], ["83_2528", "Turkish"], ["83_2378", "Venezuelan"], ["83_2517", "Vietnamese"]]], ["Features", [["81_2431", "Birthdays"], ["81_2424", "Cash Only"], ["81_2430", "Delivery"], ["81_2380", "Kid Friendly"], ["81_2519", "No Reservations"], ["81_2405", "Open Late/24 Hours"], ["81_2477", "Outdoor Seating"], ["81_2338", "Reservations Accepted"], ["81_2440", "Smoking"], ["81_2363", "Wedding & Bridal"], ["81_2413", "WiFi"]]], ["Food Considerations", [["79_2347", "Organic"], ["79_2377", "Vegan"], ["79_2352", "Vegetarian"], ["79_2523", "Wheat/Gluten Free"]]], ["Goods/Products", [["84_2466", "Music Venue"]]], ["Meal Type", [["85_2515", "Breakfast"], ["85_2384", "Brunch"], ["85_2342", "Buffet"], ["85_2425", "Delivery"], ["85_2373", "Dinner"], ["85_2527", "Lunch"], ["85_2339", "Take-Out"]]], ["Special Needs", [["82_2512", "Wheelchair Access"]]]]};
+regFT['sprocket_section_409'] = new Array();
+
+QL[50] = {"1": [[5, "Downtown"], [7, "East"], [13, "Fitchburg"], [14, "McFarland"], [9, "Middleton"], [6, "Near East"], [10, "Near West"], [8, "North"], [12, "South"], [16, "Stoughton"], [15, "Sun Prairie"], [17, "Waunakee"], [11, "West"]]};
+regQL['sprocket_section_409'] = new Array();
+
+UM[50] = {"local-dining": true};
+</script>
+	
+<script type="text/javascript">loadQuickLinks('sprocket_section_409_form','50','sprocket_section_409', trans_loc_dict['selectMakeSelectionString'], trans_loc_dict['selectAllString']);</script>
+</div>
+
+
+  <div class="sprocket sprocket_html">
+  <div style="padding-top:1.0em;"><img alt="LogosForSite.indd" src="/downloads/31572/download/IsthmusNewsletters-Button.jpg" style="width: 300px; height: 50px;" /></div>
+<!--<h3 style="color:#1c1c1c;">ISTHMUS IN YOUR INBOX</h3> -->
+
+<p><!-- Begin MailChimp Signup Form --></p>
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css" />
+<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+.asterisk { color:#ce1337l }
+</style>
+<p></p>
+
+<div id="mc_embed_signup">
+<form action="//isthmus.us4.list-manage.com/subscribe/post?u=6fe53e4e448c0bfd55ea770ca&amp;id=71543a57a4" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+<div id="mc_embed_signup_scroll">
+<div class="mc-field-group"><label for="mce-EMAIL" style="color:#ce1337; font-weight:600;">Email Address </label> <input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value="" /></div>
+<!-- <div class="mc-field-group input-group"><strong>Isthmus Newsletters </strong> -->
+
+<ul>
+	<li style="padding-bottom:.8em;"><input id="mce-group[1]-1-0" name="group[1][1]" type="checkbox" value="1" /><label for="mce-group[1]-1-0" style="font-size:1.0em; color:#1c1c1c; font-weight:600;">&nbsp;&nbsp;Isthmus On Tap:</label><br />
+	<span style="color:#ce1337; font-size:1.0em;">What&#39;s happening this weekend</span></li>
+	<li style="padding-bottom:.8em;"><input id="mce-group[1]-1-1" name="group[1][2]" type="checkbox" value="2" /><label for="mce-group[1]-1-1" style="font-size:1.0em; color:#1c1c1c; font-weight:600;">&nbsp;&nbsp;Isthmus Movie Times: </label><br />
+	<span style="color:#ce1337;font-size:1.0em;">All the movies, all the times</span></li>
+	<!-- <li><input id="mce-group[1]-1-2" name="group[1][4]" type="checkbox" value="4" /><label for="mce-group[1]-1-2">IsthmusParents</label></li> -->
+</ul>
+</div>
+
+<div class="clear" id="mce-responses">
+<div class="response" id="mce-error-response" style="display:none"></div>
+
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div>
+<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+<div style="position: absolute; left: -5000px;"><input name="b_6fe53e4e448c0bfd55ea770ca_71543a57a4" tabindex="-1" type="text" value="" /></div>
+
+<div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" style="background-color:#ce1337;" type="submit" value="Subscribe" /></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+</div>
+
+
+</div>
+
+
+        </div>
+
+      </div>
+
+
+
+
+
+        <div id="bottom"><div class="bottom">
+
+            <div id="bottomads"><div class="bottomads">
+                <div id="leaderboard_bottom">
+ <script type="text/javascript">
+     googletag.cmd.push(function() { googletag.display('leaderboard_bottom'); });
+ </script>
+</div>
+
+            </div></div>
+
+            
+                <nav id="bottomnav">
+                  
+<ul class="mainnav">
+  <li class="menu_section_start menu_section_home">
+	<a href="/">ISTHMUS</a>
+    
+  </li>
+  <li class="selected menu_section_news">
+	<a href="http://isthmus.com/news">NEWS<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_news">
+        <a href="http://isthmus.com/news/news">News</a>
+      </li>
+      <li class="menu_subsection_cover-stories">
+        <a href="http://www.isthmus.com/topics/isthmus-cover-story/">Cover Stories</a>
+      </li>
+      <li class="menu_subsection_snapshot">
+        <a href="http://isthmus.com/news/snapshot">Snapshot</a>
+      </li>
+      <li class="menu_subsection_week-in-review">
+        <a href="http://isthmus.com/news/week-in-review">Week in Review</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_madison-matrix">
+        <a href="http://isthmus.com/news/madison-matrix">Madison Matrix</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_opinion">
+	<a href="http://isthmus.com/opinion">OPINION<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_opinion">
+        <a href="http://isthmus.com/opinion/opinion">Opinion</a>
+      </li>
+      <li class="menu_subsection_citizen-dave">
+        <a href="http://isthmus.com/opinion/citizen-dave">Citizen Dave</a>
+      </li>
+      <li class="menu_subsection_madland">
+        <a href="http://isthmus.com/opinion/madland">Madland</a>
+      </li>
+      <li class="menu_subsection_savage-love">
+        <a href="http://isthmus.com/opinion/savage-love">Savage Love</a>
+      </li>
+      <li class="menu_subsection_cartoons">
+        <a href="http://isthmus.com/opinion/cartoons">Cartoons</a>
+      </li>
+      <li class="menu_subsection_tell-all">
+        <a href="http://isthmus.com/opinion/tell-all">Tell All</a>
+      </li>
+      <li class="menu_subsection_feedback">
+        <a href="http://isthmus.com/opinion/feedback">Feedback</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_forum">
+        <a href="http://forum.isthmus.com" target="_blank">Forum</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_food-drink">
+	<a href="http://isthmus.com/food-drink">FOOD &amp; DRINK<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_beer">
+        <a href="http://isthmus.com/food-drink/beer">Beer</a>
+      </li>
+      <li class="menu_subsection_cocktails">
+        <a href="http://isthmus.com/food-drink/cocktails">Cocktails</a>
+      </li>
+      <li class="menu_subsection_cooking">
+        <a href="http://isthmus.com/food-drink/cooking">Cooking</a>
+      </li>
+      <li class="menu_subsection_reviews">
+        <a href="http://isthmus.com/food-drink/reviews">Reviews</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_restaurant-guide">
+        <a href="http://www.isthmus.com/search/location/local-dining/#ord=alpha&amp;category=0">Restaurant Guide</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_arts">
+	<a href="http://isthmus.com/arts">ARTS &amp; CULTURE<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_books">
+        <a href="http://isthmus.com/arts/books">Books</a>
+      </li>
+      <li class="menu_subsection_comedy">
+        <a href="http://isthmus.com/arts/comedy">Comedy</a>
+      </li>
+      <li class="menu_subsection_emphasis">
+        <a href="http://isthmus.com/arts/emphasis">Emphasis</a>
+      </li>
+      <li class="menu_subsection_sports">
+        <a href="http://isthmus.com/arts/sports">Sports</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_stage">
+        <a href="http://isthmus.com/arts/stage">Stage</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_music">
+	<a href="http://isthmus.com/music">MUSIC<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_music-calendar">
+        <a href="/search/event/music-calendar">Music Calendar</a>
+      </li>
+      <li class="menu_subsection_isthmus-live-sessions">
+        <a href="http://isthmus.com/music/isthmus-live-sessions">Isthmus Live Sessions</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_vinyl-cave">
+        <a href="http://isthmus.com/music/vinyl-cave">Vinyl Cave</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_screens">
+	<a href="http://isthmus.com/screens">SCREENS<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_movies">
+        <a href="http://isthmus.com/screens/movies">Movies</a>
+      </li>
+      <li class="menu_subsection_tv-video">
+        <a href="http://isthmus.com/screens/tv-video">TV &amp; Video</a>
+      </li>
+      <li class="menu_subsection_games">
+        <a href="http://isthmus.com/screens/games">Games</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_movie-times">
+        <a href="http://movietimes.isthmus.com" target="_blank">Movie Times</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_all-events">
+	<a href="/all-events/calendar-of-events-index">EVENTS<button class="nav_handle"></button></a>
+    <ul class="subnav_nested">
+      <li class="menu_subsection_start menu_subsection_the-guide">
+        <a href="/search/event/calendar-of-events/">Calendar</a>
+      </li>
+      <li class="menu_subsection_contests">
+        <a href="http://isthmus.com/all-events/contests">Giveaways</a>
+      </li>
+      <li class="menu_subsection_isthmus-events">
+        <a href="http://isthmus.com/all-events/isthmus-events">Isthmus Events</a>
+      </li>
+      <li class="menu_subsection_isthmus-picks">
+        <a href="/search/event/isthmus-picks">Isthmus Picks</a>
+      </li>
+      <li class="menu_subsection_end menu_subsection_isthmus-tickets">
+        <a href="http://isthmustickets.com/" target="_blank">Isthmus Tickets</a>
+      </li>
+    </ul>
+  </li>
+  <li class="menu_section_end menu_section_chefweek">
+	<a href="http://isthmus.com/chefweek">Chef Week</a>
+    
+  </li>
+</ul>
+<ul class="subnav">
+  <li class="menu_subsection_start menu_subsection_news">
+    <a href="http://isthmus.com/news/news">News</a>
+  </li>
+  <li class="menu_subsection_cover-stories">
+    <a href="http://www.isthmus.com/topics/isthmus-cover-story/">Cover Stories</a>
+  </li>
+  <li class="menu_subsection_snapshot">
+    <a href="http://isthmus.com/news/snapshot">Snapshot</a>
+  </li>
+  <li class="menu_subsection_week-in-review">
+    <a href="http://isthmus.com/news/week-in-review">Week in Review</a>
+  </li>
+  <li class="menu_subsection_end menu_subsection_madison-matrix">
+    <a href="http://isthmus.com/news/madison-matrix">Madison Matrix</a>
+  </li>
+</ul>
+
+
+                </nav>
+    
+                <div id="textnav"><div class="textnav">
+                    <ul>
+  <li class="menu_section_start "
+    >
+    <a href="http://www.facebook.com/pages/Isthmus/19710366981?v=wall&amp;ref=nf" target="_blank">Facebook</a>
+  </li>
+  <li class=""
+    >
+    <a href="http://www.twitter.com/isthmus" target="_blank">Twitter</a>
+  </li>
+  <li class=""
+    >
+    <a href="https://www.youtube.com/user/IsthmusMadison" target="_blank">YouTuibe</a>
+  </li>
+  <li class=""
+    >
+    <a href="https://soundcloud.com/isthmusmadison" target="_blank">Soundcloud</a>
+  </li>
+  <li class=""
+    >
+    <a href="http://www.instagram.com/isthmusmadison" target="_blank">Instagram</a>
+  </li>
+  <li class="menu_section_end"
+    >
+    <a href="feed://isthmus.com/api/rss/content.rss">RSS</a>
+  </li>
+</ul>
+
+    
+                </div></div>
+            
+            
+
+            <div id="copyright">
+                <p>ISTHMUS is © 2016 Red Card Media, Inc. | All rights reserved. | Madison, Wisconsin | USA</p>
+            </div>
+
+            <div id="mp_credits">
+              Built with <a href="http://www.metropublisher.com" target="new">Metro Publisher&#8482;</a>
+            </div>
+
+        </div></div>
+
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div id="wallpaper_right">
+ <script type="text/javascript">
+     googletag.cmd.push(function() { googletag.display('wallpaper_right'); });
+ </script>
+</div>
+
+    </div>
+  
+  
+  <!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-uXJSMn0Phk7YX"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-uXJSMn0Phk7YX.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+<script>
+if (document.getElementById("pagetype_eventsubmit") !== null) {
+  var newentrypage = "<p style='padding:2.0em 0 2.0em 0;'><span style='font-size:1.6em; font-weight:600; color:#1c1c1c;'>To submit an event to Isthmus, please send an email with the following information to calendar@isthmus.com</span></p><p style='padding:2.0em 0 2.0em 0;'><span style='font-size:1.6em; font-weight:600; color:#1c1c1c;'>Here's the information we need to include your event in our calendar:</span></p><span style='font-size:1.4em; font-weight: 500;'><p>* event/performer/speaker name</p><p>* brief description/music genre/etc.</p><p>* start and end time</p><p>* event date; RSVP/ticket deadline if there is one</p><p>* venue/location</p><p>* cover charge/price</p><p>* contact phone number, email or website we can publish (REQUIRED)</p><p></p><p>Optional info:<br />* bios/press releases for posting with the online listing </p></span>";
+
+  document.getElementById("pagetype_eventsubmit").innerHTML = newentrypage; 
+}
+</script>
+
+<script>
+  var today = new Date()
+  var year = today.getFullYear()
+  document.getElementById("copyright").innerHTML = "<span style='color:#d1d3d4;'>Isthmus is &copy; " + year + " Red Card Media, Inc. | All rights reserved | Madison, WI | USA | <a href='/contact' style='color:#ffffff;'>CONTACT</a> | <a href='/newsletters' style='color:#ffffff;'>SUBSCRIBE</a> | <a href='http://isth.adqic.com' style='color:#ffffff;'>CLASSIFIEDS</a></span>";
+</script>
+  
+    <script src="http://isthmus.com/api/design-3c5aeb03d89343e6caad5a15abb4a316/footer.js"></script>
+  
+
+    
+
+        <script type="text/javascript">
+          require(["js/standard"], function() {});
+        </script>
+  </body>
+</html>

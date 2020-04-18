@@ -1,0 +1,38 @@
+---
+layout: post
+title: Debugging ruby backticks
+date: 2009-02-20 07:21:25.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- back ticks
+- backticks
+- command line
+- execute
+- kernel
+- ruby
+- system
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Stolen from <a href="http://blog.dalethatcher.com/2008/05/ruby-debugging-backticks.html">Dale's blog</a>... reposted here for my own reference. Also this link is good for a reference on<a href="http://rails.elctech.com/blog/i-m-in-ur-commandline-executin-ma-commands"> executing shell commands from ruby</a>.</p>
+<blockquote><p>
+I needed to knock up a Ruby script recently that orchestrated some external processes using backticks. However something was going wrong and I need to temporarily peek into the inputs and outputs of the external programs. Ruby bend-ability to the rescue:
+</p></blockquote>
+<pre>
+module Kernel
+  alias_method :real_backticks, :'`'
+
+  def `(cmd)
+    puts "`#{cmd}` =&gt; #{output = real_backticks(cmd)}"
+    output
+  end
+end
+</pre>

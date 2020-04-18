@@ -1,0 +1,28 @@
+---
+layout: post
+title: SVN command line
+date: 2009-03-31 11:26:57.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- automatic
+- conflict
+- resolution
+- subversion
+- svn
+- version control
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Have been wondering for a while now how to force the svn command line to resolve conflicts, didn't really see anything on google until I came across this: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.html</p>
+<p>Turns out there is a standard switch which I hadn't found! The accept switch "<em>specifies an action for automatic conflict resolution. Possible actions are postpone, base, mine-full, theirs-full, edit, and launch</em>". So to just use the local version (safest):</p>
+<pre>
+svn up --accept mine-full directory
+</pre>

@@ -1,0 +1,25 @@
+---
+layout: post
+title: Visual Studio excluding exceptions
+date: 2008-04-08 10:28:03.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- c++
+- Exceptions
+- MSVS
+- visual studio
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I was having a bit of a problem with Visual Studio and some code that I was working with, the author had used exceptions as a flow control mechanism for a properties object. If the object did not have a value for a given key it would throw an exception which he would then catch and replace with a default value. This led to some pain when I was looking to catch exceptions in the main body of code. If I turned c++ runtime exception catching on</p>
+<p> Debug -&gt; Exceptions -&gt; C++ Exceptions</p>
+<p>then it would give a pop up [break/continue/ignore] for each time this particular mechanism was called. Many many button clicks before getting to the main problem. Then a co-worker put me on to the following. Open up the c++ exceptions branch and click the add button, add the exception that you would like excluded, then when it pops up untick it. Simple!</p>
+<p><a href="http://jamie.homelinux.org/wp-content/uploads/2008/04/exceptions.jpg" title="Exception Catching"><img src="{{ site.baseurl }}/assets/exceptions.jpg" alt="Exception Catching" /></a></p>

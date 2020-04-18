@@ -1,0 +1,61 @@
+---
+layout: post
+title: Setting up PostgreSQL + postgis for rails on ubuntu
+date: 2011-11-24 03:32:12.000000000 +10:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- database
+- postgis
+- postgresql
+- rails
+- ubuntu
+meta:
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I know there are plenty of guides out there for this, but this is to allow me to tie together all the relevant info I've found about this. </p>
+<p>I already had postgres installed and configured so I just had to install the postgis extensions</p>
+<p><code><br />
+sudo apt-get install postgresql-8.4-postgis<br />
+</code></p>
+<p>The following is adapted from <a href="http://mapfish.org/doc/implementations/rails.html">this guide</a> to use the correct locations for postgres 8.4 </p>
+<p><code><br />
+sudo su - postgres<br />
+createdb -E UTF8 template_postgis # Create the template spatial database.<br />
+createlang -d template_postgis plpgsql # Adding PLPGSQL language support.<br />
+psql -d osm -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql<br />
+psql -d osm -f /usr/share/postgresql/8.4/contrib/postgis-1.5/spatial_ref_sys.sql<br />
+cat &lt;&lt;EOS | psql -d template_postgis<br />
+UPDATE pg_database SET datistemplate = TRUE WHERE datname = &#039;template_postgis&#039;;<br />
+REVOKE ALL ON SCHEMA public FROM public;<br />
+GRANT USAGE ON SCHEMA public TO public;<br />
+GRANT ALL ON SCHEMA public TO postgres;<br />
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE public.geometry_columns TO PUBLIC;<br />
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE public.spatial_ref_sys TO PUBLIC;<br />
+GRANT ALL ON geometry_columns TO PUBLIC;<br />
+GRANT ALL ON geography_columns TO PUBLIC;<br />
+GRANT ALL ON spatial_ref_sys TO PUBLIC;<br />
+VACUUM FULL FREEZE;<br />
+EOS<br />
+</code></p>
+<p><a href="http://whatcodecraves.com/articles/2008/02/05/setup_rails_with_postgresql/">This guide</a> shows how to setup your database.yml but you are probably better off following the advice from the <a href="https://github.com/fragility/spatial_adapter/wiki/Rails-and-PostGIS">spatial_adapter wiki</a>. Your database.yml should look like this</p>
+<p><code><br />
+test:<br />
+  adapter: postgresql<br />
+  encoding: utf8<br />
+  database: myproject_test<br />
+  template: template_postgis<br />
+</code></p>
+<p>Then you can create your db and perform any migrations with:</p>
+<p><code><br />
+rake db:create<br />
+rake db:migrate<br />
+</code></p>

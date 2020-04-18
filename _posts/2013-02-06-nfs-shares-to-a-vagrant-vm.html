@@ -1,0 +1,29 @@
+---
+layout: post
+title: NFS shares to a vagrant VM
+date: 2013-02-06 02:10:02.000000000 +10:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- mount
+- nfs
+- ubuntu
+- vagrant
+- vm
+meta:
+  _publicize_pending: '1'
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>While I'm on the subject of getting this Vagrant VM working I'll go into what I had to do to get an NFS share working and mounted on this new VM. </p>
+<p>According to this post (http://communities.vmware.com/thread/128695) getting a NFS mount to work through a firewalled or natted connection. The solution (if you are able) is to edit the /etc/exports entry for the mount point you want to use and add the 'insecure' option. </p>
+<p>Don't forget to restart the service afterwards with<br />
+<code>sudo service nfs-kernel-server restart</code></p>
+<p>Refer here for more comprehensive nfs setup details: https://help.ubuntu.com/community/NFSv4Howto</p>

@@ -1,0 +1,36 @@
+---
+layout: post
+title: Changing default font on gvim
+date: 2008-08-14 09:06:44.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- font
+- gvim
+- linux
+- setting
+- vi
+- vim
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I couldn't for the life of me figure out how to do it until I came across this web site: http://www.troubleshooters.com/linux/vifont.htm<br />
+Considering that it is GRAPHICAL vim and there is a graphical selection of the font/size/etc, you'd think they'd have an option for saving the settings you choose right? Wrong, instead after selecting the font you like, issue the command</p>
+<pre>
+:set gfm?
+</pre>
+<p>which returns something like</p>
+<pre>
+guifont=Nimbus Mono L 16
+</pre>
+<p>then edit your ~/.vimrc (creating it if it doesn't exist) and add the following line (dont forget to escape the spaces)</p>
+<pre>
+set gfn=Nimbus\\ Mono\\ L\\ 16
+</pre>

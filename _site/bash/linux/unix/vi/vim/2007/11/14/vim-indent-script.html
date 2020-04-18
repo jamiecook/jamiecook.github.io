@@ -1,0 +1,313 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Vim indent script &#8211; </title>
+<meta name="description" content="I've been using vi a lot lately and was bummed to have forgotten a very nice piece of .vimrc magic I used to have to autoindent an entire file at once. The way it works is you stick the following in your ~/.vimrc and then in any file you can just press -- and it will properly indent the entire file, I finally tracked it down and am putting it here as a central location to come back to later.
+
+" Stolen from some guy named ben :) benoit.cerrina@writeme.com
+fun BenIndent()
+let oldLine=line('.')
+normal(gg=G)
+execute ':' . oldLine
+endfun
+map -- :call BenIndent()
+
+I'm also going to put the rest of my vimrc up here just for completeness.
+
+" .vimrc
+"
+" Copied from Smylers's .vimrc
+" http://www.stripey.com/vim/
+"
+
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Vim indent script">
+<meta name="twitter:description" content="I've been using vi a lot lately and was bummed to have forgotten a very nice piece of .vimrc magic I used to have to autoindent an entire file at once. The way it works is you stick the following in your ~/.vimrc and then in any file you can just press -- and it will properly indent the entire file, I finally tracked it down and am putting it here as a central location to come back to later.
+
+" Stolen from some guy named ben :) benoit.cerrina@writeme.com
+fun BenIndent()
+let oldLine=line('.')
+normal(gg=G)
+execute ':' . oldLine
+endfun
+map -- :call BenIndent()
+
+I'm also going to put the rest of my vimrc up here just for completeness.
+
+" .vimrc
+"
+" Copied from Smylers's .vimrc
+" http://www.stripey.com/vim/
+"
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim indent script">
+<meta property="og:description" content="I've been using vi a lot lately and was bummed to have forgotten a very nice piece of .vimrc magic I used to have to autoindent an entire file at once. The way it works is you stick the following in your ~/.vimrc and then in any file you can just press -- and it will properly indent the entire file, I finally tracked it down and am putting it here as a central location to come back to later.
+
+" Stolen from some guy named ben :) benoit.cerrina@writeme.com
+fun BenIndent()
+let oldLine=line('.')
+normal(gg=G)
+execute ':' . oldLine
+endfun
+map -- :call BenIndent()
+
+I'm also going to put the rest of my vimrc up here just for completeness.
+
+" .vimrc
+"
+" Copied from Smylers's .vimrc
+" http://www.stripey.com/vim/
+"
+
+">
+<meta property="og:url" content="/bash/linux/unix/vi/vim/2007/11/14/vim-indent-script.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/bash/linux/unix/vi/vim/2007/11/14/vim-indent-script.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/bash/linux/unix/vi/vim/2007/11/14/vim-indent-script.html" rel="bookmark" title="Vim indent script">Vim indent script</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>I've been using vi a lot lately and was bummed to have forgotten a very nice piece of .vimrc magic I used to have to autoindent an entire file at once. The way it works is you stick the following in your ~/.vimrc and then in any file you can just press -- and it will properly indent the entire file, I finally tracked it down and am putting it here as a central location to come back to later.</p>
+<pre>
+" Stolen from some guy named ben :) benoit.cerrina@writeme.com
+fun BenIndent()
+let oldLine=line('.')
+normal(gg=G)
+execute ':' . oldLine
+endfun
+map -- :call BenIndent()
+</pre>
+<p>I'm also going to put the rest of my vimrc up here just for completeness.</p>
+<pre>
+" .vimrc
+"
+" Copied from Smylers's .vimrc
+" http://www.stripey.com/vim/
+"
+
+" use indents of 2 spaces, and have them copied down lines:
+set shiftwidth=2
+set shiftround
+set expandtab
+set autoindent
+set smarttab
+
+set bs=indent,eol,start         " allow backspacing over everything in insert mode
+
+" for C-like programming, have automatic indentation:
+autocmd FileType c,cpp,slang set cindent
+
+" show the `best match so far' as search strings are typed:
+set incsearch
+
+" Makefile sanity
+autocmd BufEnter ?akefile* set noet ts=8 sw=8
+autocmd BufEnter */debian/rules set noet ts=8 sw=8
+
+
+" Map f11 to toggle background
+map  :let &amp;background = ( &amp;background == "dark"? "light" : "dark" )
+" Map f5 to toggle search highlighting
+map  :set hls!set hls?
+
+" Change the colorscheme
+" colorscheme murphy
+colorscheme elflord
+
+" Stolen from some guy named ben :) benoit.cerrina@writeme.com
+fun BenIndent()
+let oldLine=line('.')
+normal(gg=G)
+execute ':' . oldLine
+endfun
+map -- :call BenIndent()
+</pre>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/bash/linux/unix/vi/vim/2007/11/14/vim-indent-script.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/bash/linux/unix/vi/vim/2007/11/14/vim-indent-script.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/bash/linux/unix/vi/vim/2007/11/14/vim-indent-script.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Vim indent script</strong> was published on <time datetime="2007-11-14T22:22:55+10:00">November 14, 2007</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

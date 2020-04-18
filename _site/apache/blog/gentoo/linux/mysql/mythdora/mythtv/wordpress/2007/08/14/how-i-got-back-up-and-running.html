@@ -1,0 +1,272 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>How I got back up and running &#8211; </title>
+<meta name="description" content="The reason for this site's extended absence from cyberspace was due mainly to a hardware changeover. The site is run as a secondary functionality off the back of my home media server, which recently underwent a major upgrade. I got sick of watching videos where the video would get out of sync with the audio, after this happened 1 of 2 things would happen: 1) a comical fast-forward effect would bring them back into sync 2) they would stay that way until a fast forward/rewind event brought about sync. Needless to say this was kind of annoying.
+The cause however was simple to diagnose, it was the Celeron 500MHz CPU that was doing the decoding. The fix was also (in essence) simple - upgrade the CPU, however given my constraints (mainly of the monetary variety) this was a bit harder to accomplish. What I ended up deciding to do was to beg some decommissioned equipment from work which would do a better job and then to buy a solid 320Gb HD to store all my digital media on.
+I decided that if I was doing a full hardware upgrade I might as well go the whole hog and scrap my previous Gentoo distribution in favour of something a bit more media centric. Enter Mythdora! Mythdora is a specialized Linux distribution based on Fedora Core 6 and MythTV 0.20-1 (thanks wikipedia), what that basically means is that it wraps up the mythtv package (very hard to install) with a nice fedora core 6 system install (very easy to install - if you have a blank harddrive to install to). I've been using fedora quite a bit as it is the distro of choice for our work computers so it wasn't hard for me to transition - plus being able to install new applications without having to fiddle with USE flags and such was such a relief.
+The unfortunate part of all this is that with wordpress being stored mainly in a MYSQL database it took me a while to transition the site over from the old Gentoo install to the new Mythdora. The default installation comes with the LAMP (linux, apache, mysql and PHP) stack already enabled so there wasn't a whole lot to do in the setup department, there were however a couple of gotchas. Firstly is the movement of the mysql database from the old machine to the new. The easiest way to do this was to reboot the machine into Gentoo (thank god I didn't wipe that)
+
+mysqldump -h localhost -u root -p wpress_db &gt; wpress_db.sql
+
+then reboot to mythdora
+
+mysql -h localhost -u root -p wpress_db &lt; wpress_db.sql
+
+After this I had to create a wordpress user for mysql and grant privileges to the newly created database. Things now worked well except that my settings weren't as I'd like them (don't know why my theme had reverted to default) but that was fairly easy to fix. The thing that took the longest was the lack of pages (ie. http://jamie.homelinux.org/publications/), I eventually tracked this down to the mod_rewrite apache module being incorrectly configured, well it was correctly configured for a default system but needed the following change to allow on the fly re-writes of urls for my blog.
+
+
+
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="How I got back up and running">
+<meta name="twitter:description" content="The reason for this site's extended absence from cyberspace was due mainly to a hardware changeover. The site is run as a secondary functionality off the back of my home media server, which recently underwent a major upgrade. I got sick of watching videos where the video would get out of sync with the audio, after this happened 1 of 2 things would happen: 1) a comical fast-forward effect would bring them back into sync 2) they would stay that way until a fast forward/rewind event brought about sync. Needless to say this was kind of annoying.
+The cause however was simple to diagnose, it was the Celeron 500MHz CPU that was doing the decoding. The fix was also (in essence) simple - upgrade the CPU, however given my constraints (mainly of the monetary variety) this was a bit harder to accomplish. What I ended up deciding to do was to beg some decommissioned equipment from work which would do a better job and then to buy a solid 320Gb HD to store all my digital media on.
+I decided that if I was doing a full hardware upgrade I might as well go the whole hog and scrap my previous Gentoo distribution in favour of something a bit more media centric. Enter Mythdora! Mythdora is a specialized Linux distribution based on Fedora Core 6 and MythTV 0.20-1 (thanks wikipedia), what that basically means is that it wraps up the mythtv package (very hard to install) with a nice fedora core 6 system install (very easy to install - if you have a blank harddrive to install to). I've been using fedora quite a bit as it is the distro of choice for our work computers so it wasn't hard for me to transition - plus being able to install new applications without having to fiddle with USE flags and such was such a relief.
+The unfortunate part of all this is that with wordpress being stored mainly in a MYSQL database it took me a while to transition the site over from the old Gentoo install to the new Mythdora. The default installation comes with the LAMP (linux, apache, mysql and PHP) stack already enabled so there wasn't a whole lot to do in the setup department, there were however a couple of gotchas. Firstly is the movement of the mysql database from the old machine to the new. The easiest way to do this was to reboot the machine into Gentoo (thank god I didn't wipe that)
+
+mysqldump -h localhost -u root -p wpress_db &gt; wpress_db.sql
+
+then reboot to mythdora
+
+mysql -h localhost -u root -p wpress_db &lt; wpress_db.sql
+
+After this I had to create a wordpress user for mysql and grant privileges to the newly created database. Things now worked well except that my settings weren't as I'd like them (don't know why my theme had reverted to default) but that was fairly easy to fix. The thing that took the longest was the lack of pages (ie. http://jamie.homelinux.org/publications/), I eventually tracked this down to the mod_rewrite apache module being incorrectly configured, well it was correctly configured for a default system but needed the following change to allow on the fly re-writes of urls for my blog.
+
+
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How I got back up and running">
+<meta property="og:description" content="The reason for this site's extended absence from cyberspace was due mainly to a hardware changeover. The site is run as a secondary functionality off the back of my home media server, which recently underwent a major upgrade. I got sick of watching videos where the video would get out of sync with the audio, after this happened 1 of 2 things would happen: 1) a comical fast-forward effect would bring them back into sync 2) they would stay that way until a fast forward/rewind event brought about sync. Needless to say this was kind of annoying.
+The cause however was simple to diagnose, it was the Celeron 500MHz CPU that was doing the decoding. The fix was also (in essence) simple - upgrade the CPU, however given my constraints (mainly of the monetary variety) this was a bit harder to accomplish. What I ended up deciding to do was to beg some decommissioned equipment from work which would do a better job and then to buy a solid 320Gb HD to store all my digital media on.
+I decided that if I was doing a full hardware upgrade I might as well go the whole hog and scrap my previous Gentoo distribution in favour of something a bit more media centric. Enter Mythdora! Mythdora is a specialized Linux distribution based on Fedora Core 6 and MythTV 0.20-1 (thanks wikipedia), what that basically means is that it wraps up the mythtv package (very hard to install) with a nice fedora core 6 system install (very easy to install - if you have a blank harddrive to install to). I've been using fedora quite a bit as it is the distro of choice for our work computers so it wasn't hard for me to transition - plus being able to install new applications without having to fiddle with USE flags and such was such a relief.
+The unfortunate part of all this is that with wordpress being stored mainly in a MYSQL database it took me a while to transition the site over from the old Gentoo install to the new Mythdora. The default installation comes with the LAMP (linux, apache, mysql and PHP) stack already enabled so there wasn't a whole lot to do in the setup department, there were however a couple of gotchas. Firstly is the movement of the mysql database from the old machine to the new. The easiest way to do this was to reboot the machine into Gentoo (thank god I didn't wipe that)
+
+mysqldump -h localhost -u root -p wpress_db &gt; wpress_db.sql
+
+then reboot to mythdora
+
+mysql -h localhost -u root -p wpress_db &lt; wpress_db.sql
+
+After this I had to create a wordpress user for mysql and grant privileges to the newly created database. Things now worked well except that my settings weren't as I'd like them (don't know why my theme had reverted to default) but that was fairly easy to fix. The thing that took the longest was the lack of pages (ie. http://jamie.homelinux.org/publications/), I eventually tracked this down to the mod_rewrite apache module being incorrectly configured, well it was correctly configured for a default system but needed the following change to allow on the fly re-writes of urls for my blog.
+
+
+
+">
+<meta property="og:url" content="/apache/blog/gentoo/linux/mysql/mythdora/mythtv/wordpress/2007/08/14/how-i-got-back-up-and-running.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/apache/blog/gentoo/linux/mysql/mythdora/mythtv/wordpress/2007/08/14/how-i-got-back-up-and-running.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/apache/blog/gentoo/linux/mysql/mythdora/mythtv/wordpress/2007/08/14/how-i-got-back-up-and-running.html" rel="bookmark" title="How I got back up and running">How I got back up and running</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>The reason for this site's extended absence from cyberspace was due mainly to a hardware changeover. The site is run as a secondary functionality off the back of my home media server, which recently underwent a major upgrade. I got sick of watching videos where the video would get out of sync with the audio, after this happened 1 of 2 things would happen: 1) a comical fast-forward effect would bring them back into sync 2) they would stay that way until a fast forward/rewind event brought about sync. Needless to say this was kind of annoying.</p>
+<p>The cause however was simple to diagnose, it was the Celeron 500MHz CPU that was doing the decoding. The fix was also (in essence) simple - upgrade the CPU, however given my constraints (mainly of the monetary variety) this was a bit harder to accomplish. What I ended up deciding to do was to beg some decommissioned equipment from work which would do a better job and then to buy a solid 320Gb HD to store all my digital media on.</p>
+<p>I decided that if I was doing a full hardware upgrade I might as well go the whole hog and scrap my previous <a href="http://www.gentoo.org/">Gentoo</a> distribution in favour of something a bit more media centric. Enter <a href="http://g-ding.tv/?q=MythDora">Mythdora</a>! Mythdora is a specialized Linux distribution based on Fedora Core 6 and MythTV 0.20-1 (thanks wikipedia), what that basically means is that it wraps up the mythtv package (very hard to install) with a nice fedora core 6 system install (very easy to install - if you have a blank harddrive to install to). I've been using fedora quite a bit as it is the distro of choice for our work computers so it wasn't hard for me to transition - plus being able to install new applications without having to fiddle with USE flags and such was such a relief.</p>
+<p>The unfortunate part of all this is that with wordpress being stored mainly in a MYSQL database it took me a while to transition the site over from the old Gentoo install to the new Mythdora. The default installation comes with the LAMP (linux, apache, mysql and PHP) stack already enabled so there wasn't a whole lot to do in the setup department, there were however a couple of gotchas. Firstly is the movement of the mysql database from the old machine to the new. The easiest way to do this was to reboot the machine into Gentoo (thank god I didn't wipe that)</p>
+<p><code><br />
+mysqldump -h localhost -u root -p wpress_db &gt; wpress_db.sql<br />
+</code></p>
+<p>then reboot to mythdora</p>
+<p><code><br />
+mysql -h localhost -u root -p wpress_db &lt; wpress_db.sql<br />
+</code></p>
+<p>After this I had to create a wordpress user for mysql and grant privileges to the newly created database. Things now worked well except that my settings weren't as I'd like them (don't know why my theme had reverted to default) but that was fairly easy to fix. The thing that took the longest was the lack of pages (ie. http://jamie.homelinux.org/publications/), I eventually tracked this down to the mod_rewrite apache module being incorrectly configured, well it was correctly configured for a default system but needed the following change to allow on the fly re-writes of urls for my blog.</p>
+<pre>
+<code>
+
+  Options Indexes FollowSymLinks
+  #AllowOverride None     # Comment out this line
+  AllowOverride All       # And add this line instead
+  ...
+
+</code>
+</pre>
+<p>Sweet! Now things were back up and running just the way I like them.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/apache/blog/gentoo/linux/mysql/mythdora/mythtv/wordpress/2007/08/14/how-i-got-back-up-and-running.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/apache/blog/gentoo/linux/mysql/mythdora/mythtv/wordpress/2007/08/14/how-i-got-back-up-and-running.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/apache/blog/gentoo/linux/mysql/mythdora/mythtv/wordpress/2007/08/14/how-i-got-back-up-and-running.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>How I got back up and running</strong> was published on <time datetime="2007-08-14T09:42:46+10:00">August 14, 2007</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

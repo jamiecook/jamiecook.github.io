@@ -1,0 +1,50 @@
+---
+layout: post
+title: SVN undelete of a directory
+date: 2009-02-06 09:12:07.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- restore
+- subversion
+- svn
+- undelete
+- version control
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Somewhere way back in the history of our project someone (read Partro) decided that we didn’t need a pesky little data folder anymore and decided that it should be deleted. Turns out he was pretty much right because it wasn’t until about 200 revisions later that I noted its absence, so the question was how to get it back again. The first thing I did was to throw the output of the change list into a text file so that I could identify which revision contained the delete</p>
+<pre>
+ i=250
+ while [ $i -lt 604 ]
+ do
+   echo $i &gt;&gt; /home/dev/bdk_changes.txt
+   svnlook changed bdk -r$i &gt;&gt; ~/bdk_changes.txt
+   i=`expr $i + 1`
+ done
+</pre>
+<p>(apparently the same thing can be done with svn log –verbose &gt; ~/a.text.file). Then after finding that the offending revision was 403 I wanted to copy the directory from revision 402 into my working copy; according to the svn manual this is accomplished using</p>
+<pre>
+ svn copy –revision 402 http://svn.server/repos/path/to/deleted_file ./deleted_file
+</pre>
+<p>this didn’t exactly work for me tho as I got the following error</p>
+<pre>
+ D:\BDK&gt;svn copy –revision 402 http://svn.vlc/svn/bdk/trunk/data .
+ svn: ‘/svn/bdk/!svn/bc/617/trunk/data’ path not found
+</pre>
+<p>well duh of course you can’t find the data directory at revision 617, that is why I want revision 402 (like I specified)… oh well lets try the following</p>
+<pre>
+ D:\BDK&gt;svn copy http://svn.vlc/svn/bdk/trunk/data@402 .
+ A    data\PTImporter
+ A    data\PTImporter\PtRoutes.csv
+ Checked out revision 402.
+ A         data
+</pre>
+<p>woot! I now have my directory back again!</p>

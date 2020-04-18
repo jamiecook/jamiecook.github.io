@@ -1,0 +1,42 @@
+---
+layout: post
+title: Calculating end-of-week (friday) from a date in postgresql
+date: 2013-04-26 09:30:58.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- database
+- date
+- postgres
+- postgresql
+tags:
+- date
+- postgres
+- postgresql
+meta:
+  _edit_last: '294474'
+  _publicize_pending: '1'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:6:"294474";s:7:"blog_id";s:8:"10551410";s:9:"mod_stamp";s:19:"2013-04-25
+    23:30:58";}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>So I want to have, for any given date, the date of the corresponding friday in that week (for a timesheeting application)</p>
+<p>To do this I use the following postgres trickery: </p>
+<p><code>Select day + ((12-extract(dow from day)::int) % 7) as "Week ending"</code></p>
+<p>Lets break that down. </p>
+<p><code>Select day + an_offset as "Week ending"</code></p>
+<p>What we are doing is taking the date and adding an offset to take us to the following friday (end of week) date. To calculate that offset we first extract the day of the week (dow) number of the date, this is a number representing the day of the week (1 - Monday, 2 - Tuesday, etc)</p>
+<p><code>extract(dow from day)::int</code></p>
+<p>We then subtract this number from 12 (following on from the numbering above, 12 is Friday <strong>next week</strong>)</p>
+<p><code>(12-extract(dow from day)::int)</code></p>
+<p>We then calculate a modulus with 7 to make sure that we only shift upto 6 days into the future. </p>
+<p><code>(12-extract(dow from day)::int) % 7</code></p>
+<p>The first time I implemented this I used </p>
+<p><code>(5-extract(dow from day)::int) % 7</code></p>
+<p>But this results in a negative number for Saturday and Sunday, meaning that for Saturday the date of the next Friday will be given as the day before. By using next friday (12) as our reference we avoid the negative number problem.</p>

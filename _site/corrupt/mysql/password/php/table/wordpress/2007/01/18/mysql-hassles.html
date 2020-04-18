@@ -1,0 +1,296 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>MySQL Hassles &#8211; </title>
+<meta name="description" content="After recompiling my version of php5 to support the new wordpress widgets I started getting these messages from mysql (/var/log/mysql/mysqld.err)
+
+060810 12:01:52 [Warning] â€˜./mysql/hostâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [Warning] â€˜./mysql/userâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [Warning] â€˜./mysql/dbâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [ERROR] Fatal error: mysql.user table is damaged or in unsupported 3.20 format.
+
+Thankfully I found the following series of instructions,
+mysqld_safe -â€“skip-grant-tables -â€“user=root &amp;
+mysql_fix_privilege_tables
+pkill mysqld
+/etc/init.d/mysqld restart
+This simply starts mysql as user root ignoring the now defunct table structure in the users file.  This fixed my immediate problem, but I then found that my passwords had been corrupted aswell... sigh!
+   1. Stop mysqld and restart it with the --skip-grant-tables --user=root options (Windows users omit the --user=root portion).
+   2. Connect to the mysqld server with this command:
+      shell&gt; mysql -u root
+   3. Issue the following statements in the mysql client:
+      mysql&gt; UPDATE mysql.user SET Password=PASSWORD('newpwd')
+            -&gt;                   WHERE User='root';
+      mysql&gt; FLUSH PRIVILEGES;
+      Replace â€œnewpwdâ€ with the actual root password that you want to use.
+   4. You should be able to connect using the new password.
+Then I had to repeat step 3 of the above procedure for all the other users in the mysql.user table as their passwords had been corrupted aswell.
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="MySQL Hassles">
+<meta name="twitter:description" content="After recompiling my version of php5 to support the new wordpress widgets I started getting these messages from mysql (/var/log/mysql/mysqld.err)
+
+060810 12:01:52 [Warning] â€˜./mysql/hostâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [Warning] â€˜./mysql/userâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [Warning] â€˜./mysql/dbâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [ERROR] Fatal error: mysql.user table is damaged or in unsupported 3.20 format.
+
+Thankfully I found the following series of instructions,
+mysqld_safe -â€“skip-grant-tables -â€“user=root &amp;
+mysql_fix_privilege_tables
+pkill mysqld
+/etc/init.d/mysqld restart
+This simply starts mysql as user root ignoring the now defunct table structure in the users file.  This fixed my immediate problem, but I then found that my passwords had been corrupted aswell... sigh!
+   1. Stop mysqld and restart it with the --skip-grant-tables --user=root options (Windows users omit the --user=root portion).
+   2. Connect to the mysqld server with this command:
+      shell&gt; mysql -u root
+   3. Issue the following statements in the mysql client:
+      mysql&gt; UPDATE mysql.user SET Password=PASSWORD('newpwd')
+            -&gt;                   WHERE User='root';
+      mysql&gt; FLUSH PRIVILEGES;
+      Replace â€œnewpwdâ€ with the actual root password that you want to use.
+   4. You should be able to connect using the new password.
+Then I had to repeat step 3 of the above procedure for all the other users in the mysql.user table as their passwords had been corrupted aswell.
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL Hassles">
+<meta property="og:description" content="After recompiling my version of php5 to support the new wordpress widgets I started getting these messages from mysql (/var/log/mysql/mysqld.err)
+
+060810 12:01:52 [Warning] â€˜./mysql/hostâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [Warning] â€˜./mysql/userâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [Warning] â€˜./mysql/dbâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed
+060810 12:01:52 [ERROR] Fatal error: mysql.user table is damaged or in unsupported 3.20 format.
+
+Thankfully I found the following series of instructions,
+mysqld_safe -â€“skip-grant-tables -â€“user=root &amp;
+mysql_fix_privilege_tables
+pkill mysqld
+/etc/init.d/mysqld restart
+This simply starts mysql as user root ignoring the now defunct table structure in the users file.  This fixed my immediate problem, but I then found that my passwords had been corrupted aswell... sigh!
+   1. Stop mysqld and restart it with the --skip-grant-tables --user=root options (Windows users omit the --user=root portion).
+   2. Connect to the mysqld server with this command:
+      shell&gt; mysql -u root
+   3. Issue the following statements in the mysql client:
+      mysql&gt; UPDATE mysql.user SET Password=PASSWORD('newpwd')
+            -&gt;                   WHERE User='root';
+      mysql&gt; FLUSH PRIVILEGES;
+      Replace â€œnewpwdâ€ with the actual root password that you want to use.
+   4. You should be able to connect using the new password.
+Then I had to repeat step 3 of the above procedure for all the other users in the mysql.user table as their passwords had been corrupted aswell.
+">
+<meta property="og:url" content="/corrupt/mysql/password/php/table/wordpress/2007/01/18/mysql-hassles.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/corrupt/mysql/password/php/table/wordpress/2007/01/18/mysql-hassles.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/corrupt/mysql/password/php/table/wordpress/2007/01/18/mysql-hassles.html" rel="bookmark" title="MySQL Hassles">MySQL Hassles</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>After recompiling my version of php5 to support the new wordpress widgets I started getting these messages from mysql (/var/log/mysql/mysqld.err)</p>
+<p><code><br />
+060810 12:01:52 [Warning] â€˜./mysql/hostâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed<br />
+060810 12:01:52 [Warning] â€˜./mysql/userâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed<br />
+060810 12:01:52 [Warning] â€˜./mysql/dbâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed<br />
+060810 12:01:52 [ERROR] Fatal error: mysql.user table is damaged or in unsupported 3.20 format.<br />
+</code></p>
+<p>Thankfully I found the following <a href="http://grebowiec.net/2006/08/10/131/">series of instructions</a>,</p>
+<p><code>mysqld_safe -â€“skip-grant-tables -â€“user=root &amp;<br />
+mysql_fix_privilege_tables<br />
+pkill mysqld<br />
+/etc/init.d/mysqld restart</code></p>
+<p>This simply starts mysql as user root ignoring the now defunct table structure in the users file.  This fixed my immediate problem, but I then found that my <a href="http://dev.mysql.com/doc/refman/5.0/en/resetting-permissions.html">passwords had been corrupted aswell</a>... sigh!</p>
+<p>   1. Stop mysqld and restart it with the --skip-grant-tables --user=root options (Windows users omit the --user=root portion).<br />
+   2. Connect to the mysqld server with this command:<br />
+      shell&gt; mysql -u root<br />
+   3. Issue the following statements in the mysql client:<br />
+      mysql&gt; UPDATE mysql.user SET Password=PASSWORD('newpwd')<br />
+            -&gt;                   WHERE User='root';<br />
+      mysql&gt; FLUSH PRIVILEGES;<br />
+      Replace â€œnewpwdâ€ with the actual root password that you want to use.<br />
+   4. You should be able to connect using the new password.</p>
+<p>Then I had to repeat step 3 of the above procedure for all the other users in the mysql.user table as their passwords had been corrupted aswell.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/corrupt/mysql/password/php/table/wordpress/2007/01/18/mysql-hassles.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/corrupt/mysql/password/php/table/wordpress/2007/01/18/mysql-hassles.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/corrupt/mysql/password/php/table/wordpress/2007/01/18/mysql-hassles.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>MySQL Hassles</strong> was published on <time datetime="2007-01-18T10:47:19+10:00">January 18, 2007</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

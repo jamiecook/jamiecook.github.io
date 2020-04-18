@@ -1,0 +1,23 @@
+---
+layout: post
+title: Changing the font in Windows command prompt
+date: 2009-10-13 12:00:42.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- command prompt
+- font
+- windows
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Should be easy but it's not... like some pretty basic things in windows this one actually requires a registry edit in order to use the fonts that are already installed on your system for your command prompt.</p>
+<p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont</p>
+<p>There you will see a string value (0 =&gt; "Lucida Console") or something similar, to add your own fonts which will show up you have to add a new string value with the name of your required font (00 =&gt; "Consolas"). Subsequent fonts can be added at (000 =&gt; "someotherfont") etc. I then had to do some dicking around to get the properties to stick on my command prompt shortcut but eventually I had a nice looking font for my command line hacking. Best of luck to you!</p>

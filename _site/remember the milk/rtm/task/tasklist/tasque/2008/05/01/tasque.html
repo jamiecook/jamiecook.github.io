@@ -1,0 +1,320 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Tasque &#8211; </title>
+<meta name="description" content="Just saw this app from the Remember the Milk page and decided to give it a go. Tasque is a gnome mono app that allows you to manage your RTM task list from the desktop, which is quite handy for me (I can add stuff straight from gmail but I don't want to have gmail open all day - plus the notes system from gmail is horrible - you have to navigate via three or four clicks back the RTM note taking page yuck!)
+However I had some problems compiling from source (seems that there is a debian package but nothing in the ubuntu repositories just yet).
+First thing - had to install gmcs
+
+sudo apt-get install mono-gmcs
+
+Then cairo
+sudo apt-get install libmono-cairo2.0-cil
+Then gettext, this was hard to track down as it manifested as a weird variable $(GMSGFMT) in the makefile in a po subdir not being defined. Thus this rule from the makefile
+
+file=`echo $* | sed 's,.*/,,'`.gmo \
+  &amp;&amp; rm -f $$file &amp;&amp; $(GMSGFMT) -o $$file $&lt;
+
+resulted in the following error in the build
+
+file=`echo fi | sed 's,.*/,,'`.gmo \
+        &amp;&amp; rm -f $file &amp;&amp;  -o $file fi.po
+/bin/sh: -o: not found
+
+To fix that particular one
+
+sudo apt-get install gettext
+./configure # (again)
+
+Then it compiled but wouldn't run
+System.DllNotFoundException: gdk-x11-2.0
+Which I had to install the gtk development libraries to fix (which is weird to me because the binaries are already compiled.. why is a dev package required to run them?
+sudo apt-get install libgtk2.0-dev
+After all that tho it seems to run quite well.
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Tasque">
+<meta name="twitter:description" content="Just saw this app from the Remember the Milk page and decided to give it a go. Tasque is a gnome mono app that allows you to manage your RTM task list from the desktop, which is quite handy for me (I can add stuff straight from gmail but I don't want to have gmail open all day - plus the notes system from gmail is horrible - you have to navigate via three or four clicks back the RTM note taking page yuck!)
+However I had some problems compiling from source (seems that there is a debian package but nothing in the ubuntu repositories just yet).
+First thing - had to install gmcs
+
+sudo apt-get install mono-gmcs
+
+Then cairo
+sudo apt-get install libmono-cairo2.0-cil
+Then gettext, this was hard to track down as it manifested as a weird variable $(GMSGFMT) in the makefile in a po subdir not being defined. Thus this rule from the makefile
+
+file=`echo $* | sed 's,.*/,,'`.gmo \
+  &amp;&amp; rm -f $$file &amp;&amp; $(GMSGFMT) -o $$file $&lt;
+
+resulted in the following error in the build
+
+file=`echo fi | sed 's,.*/,,'`.gmo \
+        &amp;&amp; rm -f $file &amp;&amp;  -o $file fi.po
+/bin/sh: -o: not found
+
+To fix that particular one
+
+sudo apt-get install gettext
+./configure # (again)
+
+Then it compiled but wouldn't run
+System.DllNotFoundException: gdk-x11-2.0
+Which I had to install the gtk development libraries to fix (which is weird to me because the binaries are already compiled.. why is a dev package required to run them?
+sudo apt-get install libgtk2.0-dev
+After all that tho it seems to run quite well.
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tasque">
+<meta property="og:description" content="Just saw this app from the Remember the Milk page and decided to give it a go. Tasque is a gnome mono app that allows you to manage your RTM task list from the desktop, which is quite handy for me (I can add stuff straight from gmail but I don't want to have gmail open all day - plus the notes system from gmail is horrible - you have to navigate via three or four clicks back the RTM note taking page yuck!)
+However I had some problems compiling from source (seems that there is a debian package but nothing in the ubuntu repositories just yet).
+First thing - had to install gmcs
+
+sudo apt-get install mono-gmcs
+
+Then cairo
+sudo apt-get install libmono-cairo2.0-cil
+Then gettext, this was hard to track down as it manifested as a weird variable $(GMSGFMT) in the makefile in a po subdir not being defined. Thus this rule from the makefile
+
+file=`echo $* | sed 's,.*/,,'`.gmo \
+  &amp;&amp; rm -f $$file &amp;&amp; $(GMSGFMT) -o $$file $&lt;
+
+resulted in the following error in the build
+
+file=`echo fi | sed 's,.*/,,'`.gmo \
+        &amp;&amp; rm -f $file &amp;&amp;  -o $file fi.po
+/bin/sh: -o: not found
+
+To fix that particular one
+
+sudo apt-get install gettext
+./configure # (again)
+
+Then it compiled but wouldn't run
+System.DllNotFoundException: gdk-x11-2.0
+Which I had to install the gtk development libraries to fix (which is weird to me because the binaries are already compiled.. why is a dev package required to run them?
+sudo apt-get install libgtk2.0-dev
+After all that tho it seems to run quite well.
+">
+<meta property="og:url" content="/remember%20the%20milk/rtm/task/tasklist/tasque/2008/05/01/tasque.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/remember%20the%20milk/rtm/task/tasklist/tasque/2008/05/01/tasque.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/remember%20the%20milk/rtm/task/tasklist/tasque/2008/05/01/tasque.html" rel="bookmark" title="Tasque">Tasque</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Just saw <a href="http://live.gnome.org/Tasque">this app</a> from the <a href="http://www.rememberthemilk.com/">Remember the Milk</a> page and decided to give it a go. Tasque is a gnome mono app that allows you to manage your RTM task list from the desktop, which is quite handy for me (I can add stuff straight from gmail but I don't want to have gmail open all day - plus the notes system from gmail is horrible - you have to navigate via three or four clicks back the RTM note taking page yuck!)</p>
+<p>However I had some problems compiling from source (seems that there is a debian package but nothing in the ubuntu repositories just yet).</p>
+<p>First thing - had to install gmcs</p>
+<p><code><br />
+sudo apt-get install mono-gmcs<br />
+</code></p>
+<p>Then cairo</p>
+<p><code>sudo apt-get install libmono-cairo2.0-cil</code></p>
+<p>Then gettext, this was hard to track down as it manifested as a weird variable $(GMSGFMT) in the makefile in a po subdir not being defined. Thus this rule from the makefile</p>
+<pre><code>
+file=`echo $* | sed 's,.*/,,'`.gmo \
+  &amp;&amp; rm -f $$file &amp;&amp; $(GMSGFMT) -o $$file $&lt;
+</code></pre>
+<p>resulted in the following error in the build</p>
+<pre><code>
+file=`echo fi | sed 's,.*/,,'`.gmo \
+        &amp;&amp; rm -f $file &amp;&amp;  -o $file fi.po
+/bin/sh: -o: not found
+</code></pre>
+<p>To fix that particular one</p>
+<pre><code>
+sudo apt-get install gettext
+./configure # (again)
+</code></pre>
+<p>Then it compiled but wouldn't run</p>
+<p><code>System.DllNotFoundException: gdk-x11-2.0</code></p>
+<p>Which I had to install the gtk development libraries to fix (which is weird to me because the binaries are already compiled.. why is a dev package required to run them?</p>
+<p><code>sudo apt-get install libgtk2.0-dev</code></p>
+<p>After all that tho it seems to run quite well.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/remember%20the%20milk/rtm/task/tasklist/tasque/2008/05/01/tasque.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/remember%20the%20milk/rtm/task/tasklist/tasque/2008/05/01/tasque.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/remember%20the%20milk/rtm/task/tasklist/tasque/2008/05/01/tasque.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Tasque</strong> was published on <time datetime="2008-05-01T12:01:19+10:00">May 01, 2008</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

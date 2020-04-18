@@ -1,0 +1,42 @@
+---
+layout: post
+title: Gentoo emerge - specifying package version
+date: 2006-07-16 15:43:58.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- gentoo
+- home theatre
+- linux
+- mythtv
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I've been spending the last couple of days trying to figure out how to install mythTV on my gentoo linux box. I'd been having trouble with QT, here is a quick run down of the stages I went through:</p>
+<ol>
+<li>the version on my system was 3.3.3 (which is compatible) but hadn't been compiled with mysql support.</li>
+<p>
+<li>Simple solution was to set the appropriate flags in my /etc/portage/package.use and re-emerge the package.</p>
+<pre>echo "x11-libs/qt mysql opengl" &gt;&gt; /etc/portage/package.use
+emerge -1 qt</pre>
+</li>
+<p></p>
+<li>emerge however wants to install the newest version of QT (4.1.2) which is not compatible with mythtv.</li>
+<p>
+<li>After a lot of searching I was finally able to come up with a solution to what is essentially a very simple problem. Turns out that emerge doesn't like the full package descriptor when specifying versions. So
+<pre>emerge -1 =qt-3.3.6-r1 </pre>
+<p> works, but
+<pre>emerge -1 =x11-libs/qt-3.3.6-r1</pre>
+<p>doesn't.</li>
+<p>
+<li>Also there is also a qt3 descriptor for the version 3 of QT
+<pre>echo "x11-libs/qt3 mysql opengl" &gt;&gt; /etc/portage/package.use</pre>
+</li>
+<p></ol>

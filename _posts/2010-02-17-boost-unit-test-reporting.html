@@ -1,0 +1,32 @@
+---
+layout: post
+title: Boost Unit Test Reporting
+date: 2010-02-17 10:47:00.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- 1.42.0
+- boost
+- c++
+tags:
+- 1.42.0
+- boost
+- c++
+meta:
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>In case it's not obvious, I'm doing some work with boost today upgrading from 1.34.1 -&gt; 1.42.0. I just came across this following error while running my tests</p>
+<p>&lt;pre&gt;C:\projects\svn\bdk\ot51&gt;ZenithBase_test.exe --report_level=yes<br />
+Test setup error: invalid report level yes&lt;/pre&gt;</p>
+<p>Thats funny because 'yes' used to be a valid option and I can't see what they've changed it to or even what the possible options are anywhere on the internet... so I decided to put them down here based on my digging through the source:</p>
+<p>* confirm - CONFIRMATION_REPORT,<br />
+* short - SHORT_REPORT,<br />
+* detailed - DETAILED_REPORT,<br />
+* no - NO_REPORT</p>

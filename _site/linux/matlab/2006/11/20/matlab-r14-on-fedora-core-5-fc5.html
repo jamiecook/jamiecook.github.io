@@ -1,0 +1,292 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Matlab R14 on Fedora Core 5 (FC5) &#8211; </title>
+<meta name="description" content="I've been playing around with this all afternoon so I thought I'd just write up some notes on how I managed to get things working smoothly. My problem was that I was trying to compile a matlab library from m files that I wanted to call from C++ code, and the version of matlab I have was compiled with different versions of libstdc++.so than FC5 uses (gcc 4.1 with version 6 of libstdc++).
+
+R13 compiled with gcc-2.95.3, libstdc++ 2.9 or below
+R14 compiled with gcc-3.2.3, libstdc++.so.5                  &lt;== This is the version I&#039;m using
+R2006a compiled with gcc-3.4.5, libstdc++.so.6
+
+So anyway I was following instruction from here, and was getting errors warning that libstdc++.so.5 may conflict with libstdc++.so.6. The end solution was to dual install the version of gcc that was used to build matlab R14, in this case 3.2.3. This isn't the easiest thing in the world so the references I used was from the gcc faq. For convenience the process was as follows
+
+Download the source for gcc-3.2.3 (I used ftp://ftp.aarnet.edu.au/pub/gnu/gcc)
+Unzip / Untar the source package and change into the created directory
+./configure --prefix=/usr/local/gcc3 --program-suffix=-3.2.3
+make bootstrap - I don't know where the bootstrap option was recommended to me but it turned out to be invaluable as I got a bucket load of errors when trying to compile gcc-3.2.3 with gcc-4.1
+make install
+Then I had to create symlinks in /usr/local
+
+cd /usr/local/gcc3
+for i in *-3.2.3; do ln -s `pwd`/$i /usr/local/$i; done
+
+
+
+Then I had to edit my mbuild options file [~/.matlab/R14/mbuildopt.sh] and change any reference to gcc or g++ to gcc-3.2.3 and g++-3.2.3 respectively. DONE.
+UPDATE: This was an interesting exercise but I ended up simply updating my installation of Matlab rather than rebuilding all my libraries using the older compiler. It worked but too many things like xml parsing libraries and my biometrics libraries were compiled using gcc 4.1 so path of least resistance was just to update Matlab.
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Matlab R14 on Fedora Core 5 (FC5)">
+<meta name="twitter:description" content="I've been playing around with this all afternoon so I thought I'd just write up some notes on how I managed to get things working smoothly. My problem was that I was trying to compile a matlab library from m files that I wanted to call from C++ code, and the version of matlab I have was compiled with different versions of libstdc++.so than FC5 uses (gcc 4.1 with version 6 of libstdc++).
+
+R13 compiled with gcc-2.95.3, libstdc++ 2.9 or below
+R14 compiled with gcc-3.2.3, libstdc++.so.5                  &lt;== This is the version I&#039;m using
+R2006a compiled with gcc-3.4.5, libstdc++.so.6
+
+So anyway I was following instruction from here, and was getting errors warning that libstdc++.so.5 may conflict with libstdc++.so.6. The end solution was to dual install the version of gcc that was used to build matlab R14, in this case 3.2.3. This isn't the easiest thing in the world so the references I used was from the gcc faq. For convenience the process was as follows
+
+Download the source for gcc-3.2.3 (I used ftp://ftp.aarnet.edu.au/pub/gnu/gcc)
+Unzip / Untar the source package and change into the created directory
+./configure --prefix=/usr/local/gcc3 --program-suffix=-3.2.3
+make bootstrap - I don't know where the bootstrap option was recommended to me but it turned out to be invaluable as I got a bucket load of errors when trying to compile gcc-3.2.3 with gcc-4.1
+make install
+Then I had to create symlinks in /usr/local
+
+cd /usr/local/gcc3
+for i in *-3.2.3; do ln -s `pwd`/$i /usr/local/$i; done
+
+
+
+Then I had to edit my mbuild options file [~/.matlab/R14/mbuildopt.sh] and change any reference to gcc or g++ to gcc-3.2.3 and g++-3.2.3 respectively. DONE.
+UPDATE: This was an interesting exercise but I ended up simply updating my installation of Matlab rather than rebuilding all my libraries using the older compiler. It worked but too many things like xml parsing libraries and my biometrics libraries were compiled using gcc 4.1 so path of least resistance was just to update Matlab.
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab R14 on Fedora Core 5 (FC5)">
+<meta property="og:description" content="I've been playing around with this all afternoon so I thought I'd just write up some notes on how I managed to get things working smoothly. My problem was that I was trying to compile a matlab library from m files that I wanted to call from C++ code, and the version of matlab I have was compiled with different versions of libstdc++.so than FC5 uses (gcc 4.1 with version 6 of libstdc++).
+
+R13 compiled with gcc-2.95.3, libstdc++ 2.9 or below
+R14 compiled with gcc-3.2.3, libstdc++.so.5                  &lt;== This is the version I&#039;m using
+R2006a compiled with gcc-3.4.5, libstdc++.so.6
+
+So anyway I was following instruction from here, and was getting errors warning that libstdc++.so.5 may conflict with libstdc++.so.6. The end solution was to dual install the version of gcc that was used to build matlab R14, in this case 3.2.3. This isn't the easiest thing in the world so the references I used was from the gcc faq. For convenience the process was as follows
+
+Download the source for gcc-3.2.3 (I used ftp://ftp.aarnet.edu.au/pub/gnu/gcc)
+Unzip / Untar the source package and change into the created directory
+./configure --prefix=/usr/local/gcc3 --program-suffix=-3.2.3
+make bootstrap - I don't know where the bootstrap option was recommended to me but it turned out to be invaluable as I got a bucket load of errors when trying to compile gcc-3.2.3 with gcc-4.1
+make install
+Then I had to create symlinks in /usr/local
+
+cd /usr/local/gcc3
+for i in *-3.2.3; do ln -s `pwd`/$i /usr/local/$i; done
+
+
+
+Then I had to edit my mbuild options file [~/.matlab/R14/mbuildopt.sh] and change any reference to gcc or g++ to gcc-3.2.3 and g++-3.2.3 respectively. DONE.
+UPDATE: This was an interesting exercise but I ended up simply updating my installation of Matlab rather than rebuilding all my libraries using the older compiler. It worked but too many things like xml parsing libraries and my biometrics libraries were compiled using gcc 4.1 so path of least resistance was just to update Matlab.
+">
+<meta property="og:url" content="/linux/matlab/2006/11/20/matlab-r14-on-fedora-core-5-fc5.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/linux/matlab/2006/11/20/matlab-r14-on-fedora-core-5-fc5.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/linux/matlab/2006/11/20/matlab-r14-on-fedora-core-5-fc5.html" rel="bookmark" title="Matlab R14 on Fedora Core 5 (FC5)">Matlab R14 on Fedora Core 5 (FC5)</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>I've been playing around with this all afternoon so I thought I'd just write up some notes on how I managed to get things working smoothly. My problem was that I was trying to compile a matlab library from m files that I wanted to call from C++ code, and the version of matlab I have was compiled with different versions of libstdc++.so than FC5 uses (gcc 4.1 with version 6 of libstdc++).</p>
+<ul>
+<li>R13 compiled with gcc-2.95.3, libstdc++ 2.9 or below</li>
+<li>R14 compiled with gcc-3.2.3, libstdc++.so.5                  &lt;== This is the version I&#039;m using</li>
+<li>R2006a compiled with gcc-3.4.5, libstdc++.so.6</li>
+</ul>
+<p>So anyway I was following instruction from <a href="http://www.cs.bham.ac.uk/~ccm/cppmatlab.html">here</a>, and was getting errors warning that libstdc++.so.5 may conflict with libstdc++.so.6. The end solution was to dual install the version of gcc that was used to build matlab R14, in this case 3.2.3. This isn't the easiest thing in the world so the references I used was from the <a href="http://www.gnu.org/software/gcc/faq.html#multiple">gcc faq</a>. For convenience the process was as follows</p>
+<ol>
+<li>Download the source for gcc-3.2.3 (I used ftp://ftp.aarnet.edu.au/pub/gnu/gcc)</li>
+<li>Unzip / Untar the source package and change into the created directory</li>
+<li><code>./configure --prefix=/usr/local/gcc3 --program-suffix=-3.2.3</code></li>
+<li><code>make bootstrap</code> - I don't know where the bootstrap option was recommended to me but it turned out to be invaluable as I got a bucket load of errors when trying to compile gcc-3.2.3 with gcc-4.1</li>
+<li><code>make install</code></li>
+<li>Then I had to create symlinks in /usr/local
+<ul>
+<li><code>cd /usr/local/gcc3</code></li>
+<li><code>for i in *-3.2.3; do ln -s `pwd`/$i /usr/local/$i; done</code></li>
+</ul>
+</li>
+</ol>
+<p>Then I had to edit my mbuild options file [~/.matlab/R14/mbuildopt.sh] and change any reference to gcc or g++ to gcc-3.2.3 and g++-3.2.3 respectively. DONE.</p>
+<p><strong>UPDATE</strong>: This was an interesting exercise but I ended up simply updating my installation of Matlab rather than rebuilding all my libraries using the older compiler. It worked but too many things like xml parsing libraries and my biometrics libraries were compiled using gcc 4.1 so path of least resistance was just to update Matlab.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/linux/matlab/2006/11/20/matlab-r14-on-fedora-core-5-fc5.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/linux/matlab/2006/11/20/matlab-r14-on-fedora-core-5-fc5.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/linux/matlab/2006/11/20/matlab-r14-on-fedora-core-5-fc5.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Matlab R14 on Fedora Core 5 (FC5)</strong> was published on <time datetime="2006-11-20T19:30:06+10:00">November 20, 2006</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

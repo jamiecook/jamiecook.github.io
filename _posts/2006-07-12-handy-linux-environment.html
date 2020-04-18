@@ -1,0 +1,31 @@
+---
+layout: post
+title: Handy Linux Environment
+date: 2006-07-12 11:53:48.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- linux
+- technology
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>A very handy little binding to have when you are working in the bash shell... instead of pressing up many times to get to a previous command you can type the first few characters and then press Ctrl-P to skip all previous commands which don't match what you've typed and go directly too it. This is incredibly handy when you have long commands and a have been prolific on the command line.</p>
+<p>You can enable this by adding the following lines to your ~/.bashrc file</p>
+<pre>
+# rebind Ctrl+n and Crtl+p to search history based on command line rather than just browse through history
+bind "\C-p":history-search-backward
+bind "\C-n":history-search-forward
+</pre>
+<p>Also you can bind Ctrl-K to kill the entire line instead of just the portion from the cursor to the end of line with</p>
+<pre>
+# rebind Ctrl+k to delete whole line
+bind "\C-k":kill-whole-line
+</pre>

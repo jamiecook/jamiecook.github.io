@@ -1,0 +1,38 @@
+---
+layout: post
+title: Xine and Real Media
+date: 2007-08-15 08:45:13.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- codec
+- mythtv
+- real
+- video
+- xine
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>MythTV uses xine to play media files it has no clue about, generally this is xine (although I think I've seen it use mplayer occasionally). Out of the box xine doesn't play real media files so some fiddling was in order to get that working.</p>
+<p>First I downloaded the mplayer codecs from <a href="http://www.mplayerhq.hu/homepage/design7/dload.html">mplayerHQ</a>. I grabbed the linux x86 binaries and unzipped them to /usr/lib/win32</p>
+<pre><code>
+...
+wget ftp://ftp1.mplayerhq.hu/MPlayer/releases/codecs/essential-20061022.tar.bz2
+tar xvjf essential-20061022.tar.bz2
+mkdir /usr/lib/win32
+mv essential-20061022/* /usr/lib/win32
+</code></pre>
+<p>I then went into my xine config file for the mythtv user (/home/mythtv/.xine/config) and uncommented the following line, making sure that it pointed to the same directory that I created in the previous step.</p>
+<pre><code>
+...
+# path to RealPlayer codecs
+# string, default: /usr/lib/codecs
+decoder.external.real_codecs_path:/usr/lib/win32
+</code></pre>

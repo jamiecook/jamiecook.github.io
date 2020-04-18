@@ -1,0 +1,28 @@
+---
+layout: post
+title: Infinite scroll bug in byobu/screen
+date: 2013-02-06 01:45:42.000000000 +10:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- byobu
+- linux
+- screen
+- ubuntu
+meta:
+  _edit_last: '294474'
+  _publicize_pending: '1'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I was installing byobu on a precise pangolin vagrant box and found that when I launched it the screen started scrolling infinitely upwards.<br />
+<a href="http://i.imgur.com/yFHr6mB.png"><img class="alignnone" alt="" src="{{ site.baseurl }}/assets/yFHr6mB.png" /></a><br />
+Tracked it down to this bug report here https://bugs.launchpad.net/ubuntu/+source/byobu/+bug/952724</p>
+<p>The solution is to edit your ~/.byobu/status file and change the tmux left status line from "logo" -&gt; "#logo"</p>
+<p><img class="alignnone" alt="" src="{{ site.baseurl }}/assets/a9vRu2d.png" width="613" height="77" /></p>

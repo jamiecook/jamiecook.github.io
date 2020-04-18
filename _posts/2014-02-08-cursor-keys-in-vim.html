@@ -1,0 +1,34 @@
+---
+layout: post
+title: Cursor keys in vim
+date: 2014-02-08 15:07:59.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- vi
+- vim
+- vimrc
+tags:
+- cursor keys
+- vim
+- vimrc
+meta:
+  _edit_last: '294474'
+  _publicize_pending: '1'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>So I've been meaning to post more often for a while so to get myself back in the blogging mindset here is what I'm experimenting with today. I've been doing a lot more work in vim lately thanks to some encouragement from @nkpart and one of things I find myself still doing a lot is using the cursor keys to navigate, especially when I'm in edit mode... but not anymore thanks to this little gem from https://chris-lamb.co.uk/posts/kicking-vim-cursor-key-habit</p>
+<p>[code]<br />
+&quot; Unbind the cursor keys in insert, normal and visual modes.<br />
+for prefix in ['i', 'n', 'v']<br />
+   for key in ['', '', '', '']<br />
+     exe prefix . &quot;noremap &quot; . key . &quot; &quot;<br />
+   endfor<br />
+endfor<br />
+[/code]</p>

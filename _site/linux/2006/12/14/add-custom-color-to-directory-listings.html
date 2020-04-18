@@ -1,0 +1,660 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Add custom color to directory listings &#8211; </title>
+<meta name="description" content="Shamelessly ripped from ubuntu forums.
+You ever fire up an xterm and perform an "ls" command?  Sure you have!  If so, did you ever wish that:
+
+certain files would "stand out" with a custom color, and not the defaults?
+you can add other filename extensions to the database with their own custom color as well?
+
+Well, here's how...
+NOTE: All commands to be entered in a terminal shell or changes
+made to a file are hilighted in red. You only need to cut/paste those
+items which are highlighted, the surrounding text is left for
+illustration purposes.
+1. Edit the '.bashrc' file.  You need to make a few small changes to the existing bash script.
+
+(optional) Backup the file.  Copy your existing '.bashrc' file in case you wish to restore it at a latter time.  For example,
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; cp .bashrc .bashrc~
+skoal@morpheus://~ $ ls .bashrc*
+.bashrc  .bashrc~
+
+
+Modify the file. Using your favorite text editor,
+open the file '~/.bashrc' and make the following changes highlighted in
+red (which should appear somewhere near the top of that file - line 17
+if no prior alterations were made). You will basically be modifying one
+line and adding two more above it.
+
+Code:
+
+skoal@morpheus:///tmp $ gedit ~/.bashrc
+
+and make these changes in the file,
+
+Code:
+
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ]; then
+    [ -e "$HOME/.dircolors" ] &amp;&amp; DIR_COLORS="$HOME/.dircolors"
+    [ -e "$DIR_COLORS" ] || DIR_COLORS=""
+    eval "`dircolors -b $DIR_COLORS`"
+    alias ls='ls --color=auto'
+    #alias dir='ls --color=auto --format=vertical'
+    #alias vdir='ls --color=auto --format=long'
+fi
+
+
+
+2. Create the '.dircolors' file. The
+'.dircolors' file is created by using the 'dircolors' program. It will
+generate a default color scheme to be used with the "LS_COLORS"
+environment variable, which gives the colored output while using "ls".
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; dircolors -p &gt; .dircolors
+
+3. Edit the '.dircolors' file.  Here is where you will be modifying/creating new color schemes to reflect your own unique style.
+NOTE: Lines 34-41 within this file give you the color codes for three
+specific keys: attribute, text, and background. You can choose to use
+all three keys, or simply pick and choose only those keys you wish to
+apply. Look at some of the pre-defined ones you may already recognize
+as a good example to follow.
+
+Modify existing color schemes.
+For example, I can't stand big bold blue directory listings, so I
+change the bold attribute from "01" to "00" (none) but keep the blue
+color. It will lighten things up a bit.
+
+Code:
+
+FILE 00         # normal file
+DIR 00;34       # directory
+LINK 01;36      # symbolic link.
+
+or, change the "01" to an "07", making your debian packages really stand out!
+
+Code:
+
+.gz  01;31
+.bz2 01;31
+.deb 07;31
+.rpm 01;31
+.jar 01;31
+
+which will "reverse" the red (31) foreground color - basically
+making it black text inside a red box! Whoa! Ugly but effective, no?
+
+Create new color schemes. I like to program, yet
+for some reason, there are no default colors for well known language
+extensions. I like my c/c++ source to show up as green and my header
+files as yellow. Here's how I added these extensions to the bottom of
+that file:
+
+Code:
+
+# audio formats
+.ogg 01;35
+.mp3 01;35
+.wav 01;35
+# programming languages
+.c 00;32
+.cc 00;32
+.cpp 00;32
+.h 00;33
+
+
+
+4. Source the '.bashrc' file.  In order for your changes to take effect within the current shell, you need to source the '.bashrc' file.
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; . .bashrc
+
+">
+<meta name="keywords" content="">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Add custom color to directory listings">
+<meta name="twitter:description" content="Shamelessly ripped from ubuntu forums.
+You ever fire up an xterm and perform an "ls" command?  Sure you have!  If so, did you ever wish that:
+
+certain files would "stand out" with a custom color, and not the defaults?
+you can add other filename extensions to the database with their own custom color as well?
+
+Well, here's how...
+NOTE: All commands to be entered in a terminal shell or changes
+made to a file are hilighted in red. You only need to cut/paste those
+items which are highlighted, the surrounding text is left for
+illustration purposes.
+1. Edit the '.bashrc' file.  You need to make a few small changes to the existing bash script.
+
+(optional) Backup the file.  Copy your existing '.bashrc' file in case you wish to restore it at a latter time.  For example,
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; cp .bashrc .bashrc~
+skoal@morpheus://~ $ ls .bashrc*
+.bashrc  .bashrc~
+
+
+Modify the file. Using your favorite text editor,
+open the file '~/.bashrc' and make the following changes highlighted in
+red (which should appear somewhere near the top of that file - line 17
+if no prior alterations were made). You will basically be modifying one
+line and adding two more above it.
+
+Code:
+
+skoal@morpheus:///tmp $ gedit ~/.bashrc
+
+and make these changes in the file,
+
+Code:
+
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ]; then
+    [ -e "$HOME/.dircolors" ] &amp;&amp; DIR_COLORS="$HOME/.dircolors"
+    [ -e "$DIR_COLORS" ] || DIR_COLORS=""
+    eval "`dircolors -b $DIR_COLORS`"
+    alias ls='ls --color=auto'
+    #alias dir='ls --color=auto --format=vertical'
+    #alias vdir='ls --color=auto --format=long'
+fi
+
+
+
+2. Create the '.dircolors' file. The
+'.dircolors' file is created by using the 'dircolors' program. It will
+generate a default color scheme to be used with the "LS_COLORS"
+environment variable, which gives the colored output while using "ls".
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; dircolors -p &gt; .dircolors
+
+3. Edit the '.dircolors' file.  Here is where you will be modifying/creating new color schemes to reflect your own unique style.
+NOTE: Lines 34-41 within this file give you the color codes for three
+specific keys: attribute, text, and background. You can choose to use
+all three keys, or simply pick and choose only those keys you wish to
+apply. Look at some of the pre-defined ones you may already recognize
+as a good example to follow.
+
+Modify existing color schemes.
+For example, I can't stand big bold blue directory listings, so I
+change the bold attribute from "01" to "00" (none) but keep the blue
+color. It will lighten things up a bit.
+
+Code:
+
+FILE 00         # normal file
+DIR 00;34       # directory
+LINK 01;36      # symbolic link.
+
+or, change the "01" to an "07", making your debian packages really stand out!
+
+Code:
+
+.gz  01;31
+.bz2 01;31
+.deb 07;31
+.rpm 01;31
+.jar 01;31
+
+which will "reverse" the red (31) foreground color - basically
+making it black text inside a red box! Whoa! Ugly but effective, no?
+
+Create new color schemes. I like to program, yet
+for some reason, there are no default colors for well known language
+extensions. I like my c/c++ source to show up as green and my header
+files as yellow. Here's how I added these extensions to the bottom of
+that file:
+
+Code:
+
+# audio formats
+.ogg 01;35
+.mp3 01;35
+.wav 01;35
+# programming languages
+.c 00;32
+.cc 00;32
+.cpp 00;32
+.h 00;33
+
+
+
+4. Source the '.bashrc' file.  In order for your changes to take effect within the current shell, you need to source the '.bashrc' file.
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; . .bashrc
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Add custom color to directory listings">
+<meta property="og:description" content="Shamelessly ripped from ubuntu forums.
+You ever fire up an xterm and perform an "ls" command?  Sure you have!  If so, did you ever wish that:
+
+certain files would "stand out" with a custom color, and not the defaults?
+you can add other filename extensions to the database with their own custom color as well?
+
+Well, here's how...
+NOTE: All commands to be entered in a terminal shell or changes
+made to a file are hilighted in red. You only need to cut/paste those
+items which are highlighted, the surrounding text is left for
+illustration purposes.
+1. Edit the '.bashrc' file.  You need to make a few small changes to the existing bash script.
+
+(optional) Backup the file.  Copy your existing '.bashrc' file in case you wish to restore it at a latter time.  For example,
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; cp .bashrc .bashrc~
+skoal@morpheus://~ $ ls .bashrc*
+.bashrc  .bashrc~
+
+
+Modify the file. Using your favorite text editor,
+open the file '~/.bashrc' and make the following changes highlighted in
+red (which should appear somewhere near the top of that file - line 17
+if no prior alterations were made). You will basically be modifying one
+line and adding two more above it.
+
+Code:
+
+skoal@morpheus:///tmp $ gedit ~/.bashrc
+
+and make these changes in the file,
+
+Code:
+
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ]; then
+    [ -e "$HOME/.dircolors" ] &amp;&amp; DIR_COLORS="$HOME/.dircolors"
+    [ -e "$DIR_COLORS" ] || DIR_COLORS=""
+    eval "`dircolors -b $DIR_COLORS`"
+    alias ls='ls --color=auto'
+    #alias dir='ls --color=auto --format=vertical'
+    #alias vdir='ls --color=auto --format=long'
+fi
+
+
+
+2. Create the '.dircolors' file. The
+'.dircolors' file is created by using the 'dircolors' program. It will
+generate a default color scheme to be used with the "LS_COLORS"
+environment variable, which gives the colored output while using "ls".
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; dircolors -p &gt; .dircolors
+
+3. Edit the '.dircolors' file.  Here is where you will be modifying/creating new color schemes to reflect your own unique style.
+NOTE: Lines 34-41 within this file give you the color codes for three
+specific keys: attribute, text, and background. You can choose to use
+all three keys, or simply pick and choose only those keys you wish to
+apply. Look at some of the pre-defined ones you may already recognize
+as a good example to follow.
+
+Modify existing color schemes.
+For example, I can't stand big bold blue directory listings, so I
+change the bold attribute from "01" to "00" (none) but keep the blue
+color. It will lighten things up a bit.
+
+Code:
+
+FILE 00         # normal file
+DIR 00;34       # directory
+LINK 01;36      # symbolic link.
+
+or, change the "01" to an "07", making your debian packages really stand out!
+
+Code:
+
+.gz  01;31
+.bz2 01;31
+.deb 07;31
+.rpm 01;31
+.jar 01;31
+
+which will "reverse" the red (31) foreground color - basically
+making it black text inside a red box! Whoa! Ugly but effective, no?
+
+Create new color schemes. I like to program, yet
+for some reason, there are no default colors for well known language
+extensions. I like my c/c++ source to show up as green and my header
+files as yellow. Here's how I added these extensions to the bottom of
+that file:
+
+Code:
+
+# audio formats
+.ogg 01;35
+.mp3 01;35
+.wav 01;35
+# programming languages
+.c 00;32
+.cc 00;32
+.cpp 00;32
+.h 00;33
+
+
+
+4. Source the '.bashrc' file.  In order for your changes to take effect within the current shell, you need to source the '.bashrc' file.
+
+Code:
+
+skoal@morpheus:///tmp $ cd &amp;&amp; . .bashrc
+
+">
+<meta property="og:url" content="/linux/2006/12/14/add-custom-color-to-directory-listings.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/linux/2006/12/14/add-custom-color-to-directory-listings.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/linux/2006/12/14/add-custom-color-to-directory-listings.html" rel="bookmark" title="Add custom color to directory listings">Add custom color to directory listings</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Shamelessly ripped from <a href="http://ubuntuforums.org/showthread.php?t=41538">ubuntu forums</a>.</p>
+<p>You ever fire up an xterm and perform an "ls" command?  Sure you have!  If so, did you ever wish that:
+<ul>
+<li>certain files would "stand out" with a <i>custom</i> color, and <b>not</b> the <i>defaults</i>?</li>
+<li>you can add other filename extensions to the database with their own custom color as well?</li>
+</ul>
+<p>Well, here's how...</p>
+<p>NOTE: All <font color="DarkRed">commands</font> to be entered in a terminal shell or <font color="DarkRed">changes</font><br />
+made to a file are hilighted in red. You only need to cut/paste those<br />
+items which are highlighted, the surrounding text is left for<br />
+illustration purposes.</p>
+<p>1. <b>Edit the '.bashrc' file</b>.  You need to make a few small changes to the existing bash script.
+<ol style="list-style-type:lower-roman;">
+<li>(optional) <b>Backup the file</b>.  Copy your existing '.bashrc' file in case you wish to restore it at a latter time.  For example,</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:66px;margin:0;padding:6px;" />
+<div style="text-align:left;">skoal@morpheus:///tmp $ <font color="DarkRed">cd &amp;&amp; cp .bashrc .bashrc~</font><br />
+skoal@morpheus://~ $ ls .bashrc*<br />
+.bashrc  .bashrc~</div>
+</div>
+</li>
+<li><b>Modify the file</b>. Using your favorite text editor,<br />
+open the file '~/.bashrc' and make the following changes highlighted in<br />
+red (which should appear somewhere near the top of that file - line 17<br />
+if no prior alterations were made). You will basically be modifying one<br />
+line and adding two more above it.</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:34px;margin:0;padding:6px;" />
+<div style="text-align:left;">skoal@morpheus:///tmp $ <font color="DarkRed">gedit ~/.bashrc</font></div>
+</div>
+<p>and make these changes in the file,</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:162px;margin:0;padding:6px;" />
+<div style="text-align:left;"># enable color support of ls and also add handy aliases<br />
+if [ "$TERM" != "dumb" ]; then<br />
+    <font color="DarkRed">[ -e "$HOME/.dircolors" ] &amp;&amp; DIR_COLORS="$HOME/.dircolors"<br />
+    [ -e "$DIR_COLORS" ] || DIR_COLORS=""<br />
+    eval "`dircolors -b $DIR_COLORS`"</font><br />
+    alias ls='ls --color=auto'<br />
+    #alias dir='ls --color=auto --format=vertical'<br />
+    #alias vdir='ls --color=auto --format=long'<br />
+fi</div>
+</div>
+</li>
+</ol>
+<p>2. <b>Create the '.dircolors' file</b>. The<br />
+'.dircolors' file is created by using the 'dircolors' program. It will<br />
+generate a default color scheme to be used with the "LS_COLORS"<br />
+environment variable, which gives the colored output while using "ls".</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:34px;margin:0;padding:6px;" />
+<div style="text-align:left;">skoal@morpheus:///tmp $ <font color="DarkRed">cd &amp;&amp; dircolors -p &gt; .dircolors</font></div>
+</div>
+<p>3. <b>Edit the '.dircolors' file</b>.  Here is where you will be modifying/creating new color schemes to reflect your own unique style.</p>
+<p>NOTE: Lines 34-41 within this file give you the color codes for three<br />
+specific keys: attribute, text, and background. You can choose to use<br />
+all three keys, or simply pick and choose only those keys you wish to<br />
+apply. Look at some of the pre-defined ones you may already recognize<br />
+as a good example to follow.
+<ol style="list-style-type:lower-roman;">
+<li><b>Modify existing color schemes</b>.<br />
+For example, I can't stand big bold blue directory listings, so I<br />
+change the bold attribute from "01" to "00" (none) but keep the blue<br />
+color. It will lighten things up a bit.</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:66px;margin:0;padding:6px;" />
+<div style="text-align:left;">FILE 00         # normal file<br />
+DIR <font color="DarkRed">00</font>;34       # directory<br />
+LINK 01;36      # symbolic link.</div>
+</div>
+<p>or, change the "01" to an "07", making your debian packages really stand out!</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:98px;margin:0;padding:6px;" />
+<div style="text-align:left;">.gz  01;31<br />
+.bz2 01;31<br />
+<font color="DarkRed">.deb 07;31</font><br />
+.rpm 01;31<br />
+.jar 01;31</div>
+</div>
+<p>which will "reverse" the red (31) foreground color - basically<br />
+making it black text inside a red box! Whoa! Ugly but effective, no?</p>
+</li>
+<li><b>Create new color schemes</b>. I like to program, yet<br />
+for some reason, there are no default colors for well known language<br />
+extensions. I like my c/c++ source to show up as green and my header<br />
+files as yellow. Here's how I added these extensions to the bottom of<br />
+that file:</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:178px;margin:0;padding:6px;" />
+<div style="text-align:left;"># audio formats<br />
+.ogg 01;35<br />
+.mp3 01;35<br />
+.wav 01;35</p>
+<p><font color="DarkRed"># programming languages<br />
+.c 00;32<br />
+.cc 00;32<br />
+.cpp 00;32<br />
+.h 00;33</font></div>
+</div>
+</li>
+</ol>
+<p>4. <b>Source the '.bashrc' file</b>.  In order for your changes to take effect within the current shell, you need to source the '.bashrc' file.</p>
+<div style="margin:5px 20px 20px;">
+<div class="smallfont" style="margin-bottom:2px;">Code:</div>
+<pre class="ubuntu_codebackground" style="border:1px inset;overflow:auto;width:480px;height:34px;margin:0;padding:6px;" />
+<div style="text-align:left;">skoal@morpheus:///tmp $ <font color="DarkRed">cd &amp;&amp; . .bashrc</font></div>
+</div>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/linux/2006/12/14/add-custom-color-to-directory-listings.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/linux/2006/12/14/add-custom-color-to-directory-listings.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/linux/2006/12/14/add-custom-color-to-directory-listings.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Add custom color to directory listings</strong> was published on <time datetime="2006-12-14T14:21:59+10:00">December 14, 2006</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

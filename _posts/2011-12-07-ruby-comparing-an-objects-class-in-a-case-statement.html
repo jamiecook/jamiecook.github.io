@@ -1,0 +1,36 @@
+---
+layout: post
+title: 'Ruby: Comparing an Object’s Class in a Case Statement'
+date: 2011-12-07 23:14:42.000000000 +10:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- case
+- class
+- ruby
+meta:
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Thanks to the <a href="http://www.postal-code.com/mrhappy/blog/2007/02/01/ruby-comparing-an-objects-class-in-a-case-statement/">o.b blog</a> for this ruby tidbit. If you want to use an object's class in a case statement in ruby the intuitive<br />
+<code><br />
+    case obj.class<br />
+      when String: "blah"<br />
+      when Fixnum: "foo"<br />
+    end<br />
+</code><br />
+doesn't actually work? Why not you ask? Surely String == String will return true. Alas it seems we are now victims of ruby being too clever for it's own good; if you've put class objects in the when clause you are obviously (?) wanting to compare the class of the object in the case statement. So ruby is helpfully inserting an extra .class call for you.</p>
+<p>So if you want it to actually work<br />
+<code><br />
+    case obj<br />
+      when String: "blah"<br />
+      when Fixnum: "foo"<br />
+    end<br />
+</code></p>

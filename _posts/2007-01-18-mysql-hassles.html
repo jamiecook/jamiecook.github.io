@@ -1,0 +1,46 @@
+---
+layout: post
+title: MySQL Hassles
+date: 2007-01-18 10:47:19.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- corrupt
+- mysql
+- password
+- php
+- table
+- wordpress
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>After recompiling my version of php5 to support the new wordpress widgets I started getting these messages from mysql (/var/log/mysql/mysqld.err)</p>
+<p><code><br />
+060810 12:01:52 [Warning] â€˜./mysql/hostâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed<br />
+060810 12:01:52 [Warning] â€˜./mysql/userâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed<br />
+060810 12:01:52 [Warning] â€˜./mysql/dbâ€™ had no or invalid character set, and default character set is multi-byte, so character column sizes may have changed<br />
+060810 12:01:52 [ERROR] Fatal error: mysql.user table is damaged or in unsupported 3.20 format.<br />
+</code></p>
+<p>Thankfully I found the following <a href="http://grebowiec.net/2006/08/10/131/">series of instructions</a>,</p>
+<p><code>mysqld_safe -â€“skip-grant-tables -â€“user=root &amp;<br />
+mysql_fix_privilege_tables<br />
+pkill mysqld<br />
+/etc/init.d/mysqld restart</code></p>
+<p>This simply starts mysql as user root ignoring the now defunct table structure in the users file.  This fixed my immediate problem, but I then found that my <a href="http://dev.mysql.com/doc/refman/5.0/en/resetting-permissions.html">passwords had been corrupted aswell</a>... sigh!</p>
+<p>   1. Stop mysqld and restart it with the --skip-grant-tables --user=root options (Windows users omit the --user=root portion).<br />
+   2. Connect to the mysqld server with this command:<br />
+      shell&gt; mysql -u root<br />
+   3. Issue the following statements in the mysql client:<br />
+      mysql&gt; UPDATE mysql.user SET Password=PASSWORD('newpwd')<br />
+            -&gt;                   WHERE User='root';<br />
+      mysql&gt; FLUSH PRIVILEGES;<br />
+      Replace â€œnewpwdâ€ with the actual root password that you want to use.<br />
+   4. You should be able to connect using the new password.</p>
+<p>Then I had to repeat step 3 of the above procedure for all the other users in the mysql.user table as their passwords had been corrupted aswell.</p>

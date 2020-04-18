@@ -1,0 +1,51 @@
+---
+layout: post
+title: NFS and iptables
+date: 2008-01-21 22:27:50.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- filesystem
+- iptables
+- linux
+- network
+- nfs
+- share
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Trying to share a folder on my fedora box with my new ubuntu box, couldn't figure out why it wasn't able to connect, until I remember good ole iptables (sigh). And the issue is complicated by the fact that nfs seems to start its various services on random ports (sigh)... still I found a good post <a href="http://fconfig.wordpress.com/2006/08/17/setting-up-a-fedora-nfs-server/">here </a>which got me through it.</p>
+<pre>
+cat &gt;&gt; /etc/sysconfig/nfs
+LOCKD_TCPPORT=48620
+LOCKD_UDPPORT=48620
+MOUNTD_PORT=48621
+STATD_PORT=48622
+RQUOTAD=no
+RQUOTAD_PORT=48623
+^D
+</pre>
+<p>then put together a little script to allow the requisite ports to be opened via iptables</p>
+<pre>
+cat &gt; ~/iptable-allow.sh
+#!/bin/bash
+for i in 111 2049 48620 48621 48622 48623
+do
+  iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport $i -j ACCEPT
+  iptables -I INPUT -m state --state NEW -m udp -p udp --dport $i -j ACCEPT
+done
+^D
+</pre>
+<p>then a quick</p>
+<pre>
+chmod +x ~/iptable-allow.sh
+~/iptable-allow.sh
+</pre>
+<p>and I was in business</p>

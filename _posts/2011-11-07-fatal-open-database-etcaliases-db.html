@@ -1,0 +1,33 @@
+---
+layout: post
+title: 'fatal: open database /etc/aliases.db'
+date: 2011-11-07 03:06:39.000000000 +10:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- linux
+- mail
+- postfix
+meta:
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Thanks to these guys (http://www.scriptinstallation.in/fatal_database_aliases.html) I was able to solve this with</p>
+<p>On a new postfix mail server installation, i got following error on console</p>
+<p>[sourcecode language="log" light="true"]<br />
+Jul 11 19:19:32 freebsd postfix/local[654]: fatal: open database /etc/aliases.db: No such file or directory<br />
+[/sourcecode]</p>
+<p>The error is because postfix can't find "/etc/aliases.db". Problem is fixed with by recreating aliases.db file.</p>
+<p>[sourcecode language="bash" light="true"]<br />
+postfix stop<br />
+rm -f /etc/aliases.db<br />
+newaliases<br />
+postfix start<br />
+[/sourcecode]</p>

@@ -1,0 +1,240 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Samba/CIFS and Windows 7 &#8211; </title>
+<meta name="description" content="Thanks to http://jlcoady.net/windows/how-to-resolve-mount-error12-cannot-allocate-memory-windows-share
+I was having problems with the cifs mount becoming unusable with the "cannot allocate memory" error. After performing steps 1-3 on the win 7 server, the cifs mount came back without having to do anything else on the linux side.
+If you mount a Windows 7 share using Samba/CIFS you may run into “mount error(12): Cannot allocate memory” if you are using very large files on the Windows machine. Looks like in certain situations Windows needs to be told to run as a file server and to expect large files. You can read more details at Large Files are locking up Windows 7 32 bit and 64 bit, but the solution is to make two registry edits and then restart a service:
+
+Set “HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\LargeSystemCache” to “1″.
+Set “HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\Size” to “3″.
+Restart the “server” service.
+
+Once you have done that you should be able to mount the share using a command like “sudo mount -a” or just reboot the Linux machine.
+">
+<meta name="keywords" content="cifs, samba, windows7">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Samba/CIFS and Windows 7">
+<meta name="twitter:description" content="Thanks to http://jlcoady.net/windows/how-to-resolve-mount-error12-cannot-allocate-memory-windows-share
+I was having problems with the cifs mount becoming unusable with the "cannot allocate memory" error. After performing steps 1-3 on the win 7 server, the cifs mount came back without having to do anything else on the linux side.
+If you mount a Windows 7 share using Samba/CIFS you may run into “mount error(12): Cannot allocate memory” if you are using very large files on the Windows machine. Looks like in certain situations Windows needs to be told to run as a file server and to expect large files. You can read more details at Large Files are locking up Windows 7 32 bit and 64 bit, but the solution is to make two registry edits and then restart a service:
+
+Set “HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\LargeSystemCache” to “1″.
+Set “HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\Size” to “3″.
+Restart the “server” service.
+
+Once you have done that you should be able to mount the share using a command like “sudo mount -a” or just reboot the Linux machine.
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Samba/CIFS and Windows 7">
+<meta property="og:description" content="Thanks to http://jlcoady.net/windows/how-to-resolve-mount-error12-cannot-allocate-memory-windows-share
+I was having problems with the cifs mount becoming unusable with the "cannot allocate memory" error. After performing steps 1-3 on the win 7 server, the cifs mount came back without having to do anything else on the linux side.
+If you mount a Windows 7 share using Samba/CIFS you may run into “mount error(12): Cannot allocate memory” if you are using very large files on the Windows machine. Looks like in certain situations Windows needs to be told to run as a file server and to expect large files. You can read more details at Large Files are locking up Windows 7 32 bit and 64 bit, but the solution is to make two registry edits and then restart a service:
+
+Set “HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\LargeSystemCache” to “1″.
+Set “HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\Size” to “3″.
+Restart the “server” service.
+
+Once you have done that you should be able to mount the share using a command like “sudo mount -a” or just reboot the Linux machine.
+">
+<meta property="og:url" content="/cifs/samba/windows/2013/01/27/sambacifs-and-windows-7.html">
+<meta property="og:site_name" content="">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/cifs/samba/windows/2013/01/27/sambacifs-and-windows-7.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/"></a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				    <li><a href="/posts/" >Sample Posts</a></li>
+				
+				    
+				    <li><a href="/theme-setup/" >Theme Setup</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/" class="bio-photo" alt=" bio photo">
+
+
+  <h3 itemprop="name"></h3>
+  <p></p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/cifs/samba/windows/2013/01/27/sambacifs-and-windows-7.html" rel="bookmark" title="Samba/CIFS and Windows 7">Samba/CIFS and Windows 7</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Thanks to http://jlcoady.net/windows/how-to-resolve-mount-error12-cannot-allocate-memory-windows-share</p>
+<p>I was having problems with the cifs mount becoming unusable with the "cannot allocate memory" error. After performing steps 1-3 on the win 7 server, the cifs mount came back without having to do anything else on the linux side.</p>
+<blockquote><p>If you mount a Windows 7 share using Samba/CIFS you may run into “mount error(12): Cannot allocate memory” if you are using very large files on the Windows machine. Looks like in certain situations Windows needs to be told to run as a file server and to expect large files. You can read more details at Large Files are locking up Windows 7 32 bit and 64 bit, but the solution is to make two registry edits and then restart a service:</p>
+<ol>
+<li>Set “HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\LargeSystemCache” to “1″.</li>
+<li>Set “HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\Size” to “3″.</li>
+<li>Restart the “server” service.</li>
+</ol>
+<p>Once you have done that you should be able to mount the share using a command like “sudo mount -a” or just reboot the Linux machine.</p></blockquote>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/cifs/samba/windows/2013/01/27/sambacifs-and-windows-7.html" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/cifs/samba/windows/2013/01/27/sambacifs-and-windows-7.html" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/cifs/samba/windows/2013/01/27/sambacifs-and-windows-7.html" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Samba/CIFS and Windows 7</strong> was published on <time datetime="2013-01-27T01:31:33+10:00">January 27, 2013</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/2015/11/10/run-in-with-an-angry-man.html" title="Run in with an angry man">Run in with an angry man</a></li>
+    
+      <li><a href="/themes/minimal-mistakes/2014/07/31/author-override.html" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/code/mingw/windows/2014/02/27/building-gsl-on-windows-sigh.html" title="Building GSL on windows (sigh)">Building GSL on windows (sigh)</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

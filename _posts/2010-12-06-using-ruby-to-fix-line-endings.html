@@ -1,0 +1,28 @@
+---
+layout: post
+title: Using ruby to fix line endings
+date: 2010-12-06 23:45:06.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- ruby
+tags:
+- line-endings
+- ruby
+- svn
+meta:
+  _wp_old_slug: ''
+  _edit_last: '294474'
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I just f*@&amp;ed up my svn entries file by changing the line endings during a manual edit (note: don't try that at home). But anyways the fix was to load the file in binary mode, strip the spurious line endings and re-write the file in binary mode</p>
+<p>[sourcecode language="ruby" light="false"]<br />
+e = []; File.open('entries', 'rb') {|f| e = f.read }<br />
+File.open('entries', 'wb') {|f| f.write(e.gsub(/\x0D\x0A/, &quot;\x0A&quot;) }<br />
+[/sourcecode]</p>

@@ -1,0 +1,22 @@
+---
+layout: post
+title: ddclient
+date: 2007-04-19 11:48:05.000000000 +10:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>As you may or may not know (or care) this site is currently hosted from a linux box running in my living room. One of the annoying things about this is that it sits behind a rather flaky modem / wireless router combination that has issues staying online constantly for long periods of time. In fact recently the uplink port on the router went burko and I lost all access to the nice functionality of the router and had to revert to using the old modem for everything. Most crucial to this post however was the ability for the router to automatically detect when the ip address changed and update my dyndns account accordingly.... Well to keep the web site visible I had to find another solution, enter <a href="http://ddclient.sourceforge.net/">ddclient</a>.</p>
+<p>This nifty little program runs as a perl script and will check every 3 minutes to make sure that my ip address is upto date, if not it does it automatically for me. It will use an ip discovery service on the internet (as I'm behind a NAT device) and also has support for a wide variety of modems and routers.</p>
+<p>As I'm running gentoo the init scripts provided from the distribution don't really work 100% but you can just run</p>
+<p>emerge ddclient</p>
+<p>to get gentoo versions of these... I then went and downloaded the latest version from the website and overwrote the actual script with the latest version. Easy.</p>

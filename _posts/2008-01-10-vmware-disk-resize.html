@@ -1,0 +1,28 @@
+---
+layout: post
+title: VMware Disk resize
+date: 2008-01-10 14:28:39.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- disk
+- linux
+- resize
+- ubuntu
+- VMware
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Was looking through the GUI options for a virtual machine I have and could not for the life of me figure out how to resize the hard disk. I originally thought that 10Gb would be sufficient for my windows image but that notion was quickly disabused after I'd installed Visual Studio and pulled down some data to work with. It would seem a fairly simple thing to do (memory and number of cpus allocated can be easily changed as long as the image is not currently running) but alas it would appear that you are stuck with what you originally budgeted for ... if you are stuck in the GUI anyways.</p>
+<p>The solution, as always involved a bit of command line magic. I store my images under /var/vm and the magic command was actually quite straight forward:</p>
+<pre>
+  vmware-vdiskmanager -x 20GB /var/vm/WinXP/Windows\ XP\ Professional.vmdk
+</pre>
+<p>and voila after I'd restarted the vmware server console and rebooted the image there was 20Gb of space available!!! But wait.... the windows drive is only using 10Gb of it, how to get it using the whole thing. In the end our sysadmin came over with an Acronis Imager boot disk and we booted the image and quickly pulled up the boot ordering menu, selected "boot from cd" and then used the Acronis application for resizing a partition to use unallocated space. Reboot once more and then we were finally done!!</p>

@@ -1,0 +1,70 @@
+---
+layout: post
+title: Boost tokenize for the win
+date: 2009-05-21 08:00:28.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- boost
+- c++
+- string
+- token
+- tokenize
+- tokens
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>String manipulation has historically been a major shortfalling of the C++ language, or at least it was until boost came along. Something as simple as spliting a string up on a delimeter is now made so much easier thanks to the boost::tokenizer and boost string algorithms.</p>
+<pre>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;boost/foreach.hpp&gt;
+#include &lt;boost/tokenizer.hpp&gt;
+
+using namespace std;
+using namespace boost;
+
+int main(int argc, char** argv)
+{
+   string text = "token, test   string";
+
+   char_separator&lt;char&gt; sep(", ");
+   tokenizer&lt;char_separator&lt;char&gt;&gt; tokens(text, sep);
+   for (tokenizer&lt;char_separator&lt;char&gt; &gt;::iterator it = tokens.begin(); it != tokens.end(); ++it)
+   {
+      cout &lt;&lt; *it &lt;&lt; "." &lt;&lt; endl;
+   }
+}
+</pre>
+<p>And my personal favourite is to push the result of the tokenization into a vector/list/stl container.</p>
+<pre>
+#include 
+#include 
+#include 
+#include 
+#include 
+
+using namespace std;
+using namespace boost;
+
+int main(int argc, char** argv)
+{
+   string text = "token, test   string";
+
+   list tokenList;
+   split(tokenList, text, is_any_of(", "), token_compress_on);
+   (list::iterator it = tokenList.begin(); it != tokenList.end(); ++it)
+   {
+      cout &lt;&lt; *it &lt;&lt; &quot;.&quot; &lt;&lt; endl;
+   }
+}
+</pre>
+<p>So awesome!</p>
+<p>Stolen from <a href="http://the-lazy-programmer.com/blog/?p=28">the lazy programmer</a> and reposted here for my own reference.</p>

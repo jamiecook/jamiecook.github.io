@@ -1,0 +1,31 @@
+---
+layout: post
+title: Ruby file loading
+date: 2008-12-10 10:52:04.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- file
+- IO
+- ruby
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Just coz I always forget them, three good ways to load files into memory in ruby</p>
+<pre>File.open(filename, 'r') do |f| f.readlines end
+IO.readlines(filename).each do |line| end
+lines = IO.read(filename).split("\n")
+</pre>
+<p>thanks to Partro for the outline along with the following three points</p>
+<ul>
+<li>File.open gives you a file handle you can stream from</li>
+<li>while the IO methods read it all in at once</li>
+<li>read gives you a single string of the contents, readlines splits it on line endings</li>
+</ul>

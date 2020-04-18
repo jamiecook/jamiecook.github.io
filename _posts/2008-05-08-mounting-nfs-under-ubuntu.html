@@ -1,0 +1,38 @@
+---
+layout: post
+title: Mounting NFS under Ubuntu
+date: 2008-05-08 08:42:24.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- '7.10'
+- mount
+- nfs
+- ubuntu
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>Just realised that NFS support is (somehow) not included out of the box with 7.10 so when I added an NFS mount to my fstab like so</p>
+<pre><code>
+192.168.xx.xx:/bigraid/sunshine  /sunshine nfs user
+</code></pre>
+<p>and then attempted to mount with "sudo mount /sunshine", I got an error as follows</p>
+<pre><code>
+mount: wrong fs type, bad option, bad superblock on 192.168.xx.xx:/bigraid/sunshine,
+       missing codepage or helper program, or other error
+       (for several filesystems (e.g. nfs, cifs) you might
+       need a /sbin/mount. helper program)
+       In some cases useful info is found in syslog - try
+       dmesg | tail  or so
+</code></pre>
+<p>The solution was as simple as</p>
+<pre><code>
+sudo apt-get install nfs-common
+</code></pre>

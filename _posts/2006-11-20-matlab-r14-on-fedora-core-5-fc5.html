@@ -1,0 +1,41 @@
+---
+layout: post
+title: Matlab R14 on Fedora Core 5 (FC5)
+date: 2006-11-20 19:30:06.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- linux
+- matlab
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<p>I've been playing around with this all afternoon so I thought I'd just write up some notes on how I managed to get things working smoothly. My problem was that I was trying to compile a matlab library from m files that I wanted to call from C++ code, and the version of matlab I have was compiled with different versions of libstdc++.so than FC5 uses (gcc 4.1 with version 6 of libstdc++).</p>
+<ul>
+<li>R13 compiled with gcc-2.95.3, libstdc++ 2.9 or below</li>
+<li>R14 compiled with gcc-3.2.3, libstdc++.so.5                  &lt;== This is the version I&#039;m using</li>
+<li>R2006a compiled with gcc-3.4.5, libstdc++.so.6</li>
+</ul>
+<p>So anyway I was following instruction from <a href="http://www.cs.bham.ac.uk/~ccm/cppmatlab.html">here</a>, and was getting errors warning that libstdc++.so.5 may conflict with libstdc++.so.6. The end solution was to dual install the version of gcc that was used to build matlab R14, in this case 3.2.3. This isn't the easiest thing in the world so the references I used was from the <a href="http://www.gnu.org/software/gcc/faq.html#multiple">gcc faq</a>. For convenience the process was as follows</p>
+<ol>
+<li>Download the source for gcc-3.2.3 (I used ftp://ftp.aarnet.edu.au/pub/gnu/gcc)</li>
+<li>Unzip / Untar the source package and change into the created directory</li>
+<li><code>./configure --prefix=/usr/local/gcc3 --program-suffix=-3.2.3</code></li>
+<li><code>make bootstrap</code> - I don't know where the bootstrap option was recommended to me but it turned out to be invaluable as I got a bucket load of errors when trying to compile gcc-3.2.3 with gcc-4.1</li>
+<li><code>make install</code></li>
+<li>Then I had to create symlinks in /usr/local
+<ul>
+<li><code>cd /usr/local/gcc3</code></li>
+<li><code>for i in *-3.2.3; do ln -s `pwd`/$i /usr/local/$i; done</code></li>
+</ul>
+</li>
+</ol>
+<p>Then I had to edit my mbuild options file [~/.matlab/R14/mbuildopt.sh] and change any reference to gcc or g++ to gcc-3.2.3 and g++-3.2.3 respectively. DONE.</p>
+<p><strong>UPDATE</strong>: This was an interesting exercise but I ended up simply updating my installation of Matlab rather than rebuilding all my libraries using the older compiler. It worked but too many things like xml parsing libraries and my biometrics libraries were compiled using gcc 4.1 so path of least resistance was just to update Matlab.</p>

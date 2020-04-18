@@ -1,0 +1,32 @@
+---
+layout: post
+title: Bash using ruby for min and max
+date: 2009-11-16 09:37:14.000000000 +10:00
+type: post
+published: true
+status: publish
+categories:
+- bash
+- max
+- min
+- ruby
+tags: []
+meta: {}
+author:
+  login: jamiecook
+  email: jimi_cook@yahoo.com
+  display_name: jamiecook
+  first_name: ''
+  last_name: ''
+---
+<pre>
+alias min='ruby -e "ARGF.select{|e| e =~ /^[+-]?\d+[.]?\d*/ }.map{|e| e.to_f }.min"'
+alias max='ruby -e "ARGF.select{|e| e =~ /^[+-]?\d+[.]?\d*/ }.map{|e| e.to_f }.max"'
+</pre>
+<p>Then you can simply do</p>
+<pre>
+[user@host]# echo "1" &gt;&gt; numbers.txt
+[user@host]# echo "5" &gt;&gt; numbers.txt
+[user@host]# cat numbers.txt | min
+1
+</pre>
